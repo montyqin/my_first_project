@@ -1,0 +1,242 @@
+html,body {
+	padding: 0;
+	margin: 0;
+	overflow-x:hidden;
+	outline: none;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+html{
+	height:101%;
+}
+body{
+	height:100%;
+}
+img {
+	display: block;
+	border:0;
+	max-width:100%;
+}
+.nav-top {
+	width:100%;
+	margin:0;
+	padding:0;	
+}
+.nav-top > div.logo{
+	position:relative;
+}
+.nav-top > div.logo img{
+	width:100%;
+}
+.nav-top .btns{
+	position:absolute;
+	height:35px;
+	right:7px;
+	top:5px;
+	z-index:90;
+}
+.nav-top .btns > span{
+	display:inline-block;
+}
+.count{
+	width:22px;
+	height:22px;
+	line-height:22px;
+	text-align:center;
+	display:block;
+	font-style:italic;
+}
+.buy-count{
+	background:url(../img/ui/count.png) no-repeat;
+	width:22px;
+	height:22px;
+	color:#fff;
+	font-size:12px;
+	line-height:22px;
+	position:absolute;
+	top:-3px;
+	right:37px;
+	text-align:center;
+	z-index:2;
+}
+.nav-content {
+	overflow: hidden;
+	background: url(../img/ui/bg1.png) repeat-x;
+	margin: 0;
+	paddign: 0;
+	width: 100%;
+}
+
+.nav-border {
+	float: left;
+	width: 100%;
+	height: 1px;
+}
+
+.nav-border-l {
+	float: left;
+	width: 50%;
+	height: 100%;
+	background: -webkit-gradient(linear, 0% 100%, 100% 100%, from(#efefef),
+		to(#929292) );
+	background: -webkit-linear-gradient(left, #efefef, #929292) repeat
+		scroll 0 0 #efefef;
+	background: -moz-linear-gradient(left, #efefef, #929292) repeat scroll 0
+		0 #efefef;
+	background: -ms-linear-gradient(left, #efefef, #929292) repeat scroll 0
+		0 #efefef;
+	background: -moz-linear-gradient(left, #efefef, #929292) repeat scroll 0
+		0 #efefef;
+	background: linear-gradient(left, #efefef, #929292) repeat scroll 0 0
+		#efefef;
+}
+
+.nav-border-r {
+	float: left;
+	width: 50%;
+	height: 100%;
+	background: -webkit-gradient(linear, 0% 100%, 100% 100%, from(#929292),
+		to(#efefef) );
+	background: -webkit-linear-gradient(left, #929292, #efefef) repeat
+		scroll 0 0 #efefef;
+	background: -moz-linear-gradient(left, #929292, #efefef) repeat scroll 0
+		0 #efefef;
+	background: -ms-linear-gradient(left, #929292, #efefef) repeat scroll 0
+		0 #efefef;
+	background: -moz-linear-gradient(left, #929292, #efefef) repeat scroll 0
+		0 #efefef;
+	background: linear-gradient(left, #929292, #efefef) repeat scroll 0 0
+		#efefef;
+}
+
+ul.lancome-nav {
+	float: left;
+	height: 35px;
+	overflow: hidden;
+	background: url(../img/ui/bg1.png) repeat-x;
+	margin: 0;
+	margin-left:-30px;
+	width: 100%;
+	border: 0;
+}
+ul.lancome-nav a{
+	text-decoration: none;
+	color:#a6a6a6;
+}
+ul.lancome-nav li {
+	list-style-type: none;
+	padding: 0px;
+	margin: 0px;
+	float: left;
+	line-height: 35px;
+	padding-left: 21px;
+	padding-right: 21px;
+	margin-left: -11px;
+	overflow: hidden;
+	color: #a6a6a6;
+	font-size:12px;
+}
+
+ul.lancome-nav li div {
+	height: 100%;
+	float: left;
+	display: inline;
+}
+
+ul.lancome-nav .li-out {
+	background: url(../img/ui/arrow1.png) no-repeat 0 center;
+}
+
+ul.lancome-nav .li-current {
+	cursor: hand;
+	background: url(../img/ui/arrow2.png) no-repeat 0 center;
+	color: #000;
+}
+
+ul.lancome-nav .li-next-current {
+	cursor: hand;
+	background: url(../img/ui/arrow3.png) no-repeat 0 center;
+}
+
+ul.lancome-nav .div-current {
+	background: url(../img/ui/bg2.png) repeat-x;
+	padding-left: 11px;
+	margin-left: -11px;
+	margin-right: -10px;
+	padding-right: 10px;
+}
+
+.nav-menu {
+	background: url(../img/ui/nav-btns.png) no-repeat 0px 0px;
+	height: 35px;
+	padding-left: 37px;
+	background-size:35px 210px;
+}
+
+.nav-menu-d {
+	background: url(../img/ui/nav-btns.png) no-repeat 0px -35px;
+	height: 35px;
+	padding-left: 37px;
+	background-size:35px 210px;
+}
+
+.nav-phone {
+	background: url(../img/ui/nav-btns.png) no-repeat 0px -70px;
+	height: 35px;
+	padding-left: 37px;
+	background-size:35px 210px;
+}
+
+.nav-phone-d {
+	background: url(../img/ui/nav-btns.png) no-repeat 0px -105px;
+	height: 35px;
+	padding-left: 37px;
+	background-size:35px 210px;
+}
+
+.nav-bag {
+	background: url(../img/ui/nav-btns.png) no-repeat 0px -140px;
+	height: 35px;
+	padding-left: 37px;
+	background-size:35px 210px;
+}
+
+.nav-bag-d {
+	background: url(../img/ui/nav-btns.png) no-repeat 0px -175px;
+	height: 35px;
+	padding-left: 37px;
+	background-size:35px 210px;
+}
+.menu-right{
+	background:url(../img/ui/menu-bg.jpg) repeat;
+	position:absolute;
+	width:125px;
+	height:100%;
+	left:100%;
+	top:0px;
+	bottom:0px;
+	z-index:99;
+}
+.menu-right ul{
+	list-style:none outside none;
+	test-align:left;
+	width:100%;
+	padding:0;
+	margin:0;
+}
+.menu-right ul li{
+	margin:0;
+	padding:0;
+	width:100%;
+}
+.menu-right img{
+	width:100%;
+}
+.menu-list a{
+	text-decoration: none;
+}
+.menu-close{
+	position:absolute;
+	right:0px;
+}

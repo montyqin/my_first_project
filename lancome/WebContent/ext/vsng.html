@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+	<meta name="author" content="lancome" />
+	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <script src="../js/jquery-1.9.1.min.js"></script>
+    <script src="js/tool.js"></script>
+	<script src="js/ZHUIKit.js"></script>
+    <script src="js/vsng.js"></script>
+
+    <link rel="stylesheet" href="js/ZHStyle.css">
+    <title>兰蔻</title>
+    
+    <script type="text/javascript">
+			$(document).ready(init);
+
+            function init(){
+	            window.setTimeout(function(){window.scrollTo(0,1)},3);
+
+	            var mm = new VSNG();
+	            mm.init($("body"));
+	            //$("body").append(indexView.view);
+				
+	            $(document).click(function(){
+	            	window.location.href = '../index.jsp';
+	            });
+	            
+				$(window).resize(function(){
+					mm.resize();
+				});
+            }
+            
+	</script>
+	<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-19298438-1']);
+_gaq.push(['_setDomainName', '.lancome.com.cn']);
+_gaq.push(['_setAllowLinker', true]);
+_gaq.push(['_setAllowHash', false]);
+_gaq.push(['_trackPageview']);
+
+//_gaq.push(['_trackEvent','navigate','hotlaine','test',1,true]);
+
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

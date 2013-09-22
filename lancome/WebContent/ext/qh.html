@@ -1,0 +1,106 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="description" content="兰蔻官网2013秋季化妆品节">
+<meta name="Keywords" content="兰蔻官网2013秋季化妆品节" />
+<meta name="author" content="arvato">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+<title>兰蔻官网2013秋季化妆品节</title>
+<style type="text/css">
+html,body{
+	padding:0;
+	margin:0;
+	width:100%;
+	background-color:#fff;
+}
+div{
+	width:100%;
+}
+img{
+	display:block;
+	border:0 none;
+	width:100%;
+	float:left;
+}
+.code{
+    position:absolute;
+    color:#852e97;
+    font-size:14px;
+    text-aligh:center;
+    width:10%;
+}
+</style>
+</head>
+<body>
+<div><img name="link1" src="imgs/qh/detail-1_01.jpg" /></div>
+<div><img name="link1" src="imgs/qh/detail-1_02.jpg" /></div>
+<div><img name="link1" src="imgs/qh/detail-1_03.jpg" /></div>
+<div><img name="link1" src="imgs/qh/detail-1_04.jpg" style="width:90%"/></div>
+<div><img name="link" src="imgs/qh/detail-1_05.jpg" style="width:10%"/></div>
+<div class='code' id='code1'>L3D9</div>
+<div class='code' id='code2'>L3D9</div>
+<div class='code' id='code3'>L3D9U</div>
+
+<script src="js/jquery-1.7.2.min.js"></script>
+<script src="js/tool.js"></script>
+<script type="text/javascript">
+$(function(){
+	$('#content img[name="product"]').click(function(){
+		arvato.buyItem($(this).data('id'),'np');
+	});
+	
+	
+	$('img[name="link1"]').click(function(){
+		window.location.href = "http://m.lancome.com.cn";
+	});
+	
+	$('img[name="link"]').click(function(){
+		window.scrollTo(0,0);
+	});
+	
+	var scale = 640/window.innerWidth;
+	$('#code1').css("left",300/scale+'px');
+	$('#code1').css("top",589/scale+'px');
+	
+	$('#code2').css("left",310/scale+'px');
+	$('#code2').css("top",1260/scale+'px');
+	
+	$('#code3').css("left",310/scale+'px');
+	$('#code3').css("top",1955/scale+'px');
+	
+});
+
+document.write(unescape('%3Cscript type="text/javascript" src="http://m.icybercode.com/tracking/track.js"%3E%3C/script%3E'));
+</script>	
+<script type="text/javascript">
+try{
+	var arvatoTracker = _arvato_t._getArvatoTracker("handy_兰蔻_np","index");
+	arvatoTracker._trackView();
+} catch(err) {
+	
+}
+</script>	
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-19298438-1']);
+_gaq.push(['_setDomainName', '.lancome.com.cn']);
+_gaq.push(['_setAllowLinker', true]);
+_gaq.push(['_setAllowHash', false]);
+_gaq.push(['_trackPageview']);
+
+//_gaq.push(['_trackEvent','navigate','hotlaine','test',1,true]);
+
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+
+</script>	
+</body>
+</html>

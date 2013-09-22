@@ -1,0 +1,40 @@
+{
+    "id": "752-753-754",
+    "name": "兰蔻新梦魅香水",
+    "price": "",
+    "desc": "HYPNÔSE EDP<br />8月5日起，购买任意香水产品，即可获赠精美定制香球+金纯玫瑰唇膏便携装。仅限100份。<br />由两位出色的调香师为您度身定做的全新的梦魅香水浓缩了纯净的女性特质，又保留了经典梦魅香水原有的特性——热情的鲜花，香草和木香的混合，散发出全新的香味特质；清新的花果芬芳为这一款东方调的香水带来更为活泼的节奏，同时也传递出女性独特的娇媚和迷人的魅力。",
+    "giftid": "",
+    "color": "",
+    "efficacy": "",
+    "commentid": "",
+    "recommend": "",
+    "offer": "",
+    "classify": "capacity",
+    "products": [
+        {
+            "color": "",
+            "rgb": "",
+            "capacity": "30ml",
+            "price": 610,
+            "id": "752",
+			"pcode":"LF00003"
+        },
+        {
+            "color": "",
+            "rgb": "",
+            "capacity": "50ml",
+            "price": 795,
+            "id": "753",
+			"pcode":"LF00003"
+        },
+        {
+            "color": "",
+            "rgb": "",
+            "capacity": "75ml",
+            "price": 840,
+            "id": "754",
+			"pcode":"LF00003"
+        }
+    ],
+    "imgs": "/handy/upload/images/goods/20130802/59/201308021509180_main_M.jpg"
+}

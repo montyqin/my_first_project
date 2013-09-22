@@ -1,0 +1,176 @@
+@charset "UTF-8";
+/* CSS Document */
+
+html,body{
+    margin: 0px;
+    padding: 0px;
+	width:100%;
+	height:100%;
+}
+
+img{
+   vertical-align:bottom;
+}
+
+
+.ZHView{
+	margin: 0px;
+    padding: 0px;
+	background-color:#FFFFFF;
+	position:relative;
+	float:left;
+}
+
+.ZHNavBar{
+	margin: 0px;
+    padding: 0px;
+	height:40px;
+	background-color:#000000;
+	background-size: 100%;
+	position:absolute;
+	left:0px;
+	top:0px;
+	z-index:3;
+}
+
+.ZHBarTitle{
+	margin: 0px;
+    padding: 0px;
+	height:40px;
+	text-align:center;
+	font-size:25;
+	color:#FFFFFF;
+	margin-top:9px;
+	position:absolute;
+	left:0px;
+	top:2px;
+	z-index:4;
+}
+
+
+.ZHButton{
+	margin: 0px;
+    padding: 0px;
+	position:absolute;
+	z-index:5;
+	background-repeat:no-repeat;
+}
+
+.ZHImg{
+	margin: 0px;
+    padding: 0px;
+	width:100%;
+}
+
+
+.ZHTextField{
+	margin: 0px;
+    padding: 0px;
+	position:absolute;
+	font-size:15px;
+	color:#666;
+	text-align:center;
+}
+
+.ZHCell{
+	margin: 0px;
+    padding: 0px;
+	position:absolute;
+	background-color:#FFF;
+	border-top:1px solid #DDD;
+}
+
+.ZHLabel{
+	margin: 0px;
+    padding: 0px;
+	position:absolute;
+	color:#666666;
+	font-size:15;
+}
+
+.ZHAlert{
+	margin: 0px;
+    padding: 0px;
+	position:absolute;
+	width:320px;
+	height:480px;
+}
+
+.ZHAlertTitle{
+	margin: 0px;
+    padding: 0px;
+	position:absolute;
+	text-align:center;
+	width:160px;
+	height:50px;
+	color:#000000;
+	font-size:20px;
+	z-index:5;
+}
+
+.ZHTableView {
+	position:absolute; z-index:1;
+	top:40px; bottom:0px; left:0;
+	background:#fff;
+	width:100%;
+	overflow:auto;
+}
+
+
+#scroller {
+	position:absolute; z-index:1;
+/*	-webkit-touch-callout:none;*/
+	-webkit-tap-highlight-color:rgba(0,0,0,0);
+	width:100%;
+	padding:0;
+}
+
+#scroller ul {
+	list-style:none;
+	padding:0;
+	margin:0;
+	width:100%;
+	text-align:left;
+}
+
+#scroller li {
+	padding:0;
+	height:40px;
+	line-height:40px;
+	border-bottom:1px solid #eee;
+	border-top:1px solid #eee;
+	background-color:#ffffff;
+}
+
+
+#indicator, #indicator > li {
+	display:block; float:left;
+	list-style:none;
+	padding:0; margin:0;
+}
+
+#indicator {
+	position:absolute;
+	width:110px;
+	padding:12px 0 0 30px;
+}
+
+#indicator > li {
+	text-indent:-9999em;
+	width:8px; height:8px;
+	-webkit-border-radius:4px;
+	-moz-border-radius:4px;
+	-o-border-radius:4px;
+	border-radius:4px;
+	background:#ddd;
+	overflow:hidden;
+	margin-right:4px;
+}
+
+#indicator > li.active {
+	background:#888;
+}
+
+#indicator > li:last-child {
+	margin:0;
+}

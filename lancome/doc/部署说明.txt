@@ -1,0 +1,18 @@
+1.开发环境部署到生产环境
+WebContent里的index.jsp开始的
+<!-- <html manifest="manifest/indexAppCache.manifest"> -->
+<html>
+
+2.部署到服务器上要换成
+<html manifest="manifest/indexAppCache.manifest">
+<!-- <html> -->
+同时改动WebContent/manifest/indexAppCache.manifest，例如将VERSION后面的版本号增加
+
+3.虽然做了缓存自动更新，但是为了提高效率，还是尽量延长缓存时间，在更新file里的json文件后，访问网络接口
+http://mg.lancome.com.cn/lancome/config?ope=clear_cache
+缓存的策略在resources文件夹下的ehcache.xml的 cache name="lancomeCache" 节点配置
+
+4.注意工程名是lancome2，是为了和以前的lancome区别，但是部署的web context名是lancome
+如果是用eclipse等ide导入工程，请自行修改Web Project Settings的Context root为lancome
+
+5.导入工程的时候要把resources文件夹做为Source Folder

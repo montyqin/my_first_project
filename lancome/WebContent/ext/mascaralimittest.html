@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+	<meta name="author" content="arvato" />
+	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <script src="js/jquery-1.7.2.min.js"></script>
+    <script src="js/tool.js"></script>
+	<script src="js/ZHUIKit.js"></script>
+    <script src="js/mascaralimittest.js"></script>
+
+    <link rel="stylesheet" href="js/ZHStyle.css">
+    <link rel="stylesheet" href="js/style.css">
+    <title>兰蔻限量版睫毛膏</title>
+    
+    <script type="text/javascript">
+			$(document).ready(init);
+
+            function init(){
+	            window.setTimeout(function(){window.scrollTo(0,1)},3);
+
+	            var mm = new Mascaralimit();
+	            mm.init($("body"));
+	            //$("body").append(indexView.view);
+				
+				$(window).resize(function(){
+					mm.resize();
+				});
+            }
+	</script>
+</head>
+<body>
+
+</body>
+</html>

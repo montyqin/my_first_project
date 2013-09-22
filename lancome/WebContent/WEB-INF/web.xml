@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  
+  <display-name>lancome</display-name>
+  
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <listener>
+    <listener-class>com.arvato.lancome2.web.listener.LancomeContextListener</listener-class>
+  </listener>
+  
+  <servlet>
+    <description></description>
+    <display-name>ConfigServlet</display-name>
+    <servlet-name>ConfigServlet</servlet-name>
+    <servlet-class>com.arvato.lancome2.web.servlet.ConfigServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ConfigServlet</servlet-name>
+    <url-pattern>/config</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>CatalogServlet</display-name>
+    <servlet-name>CatalogServlet</servlet-name>
+    <servlet-class>com.arvato.lancome2.web.servlet.CatalogServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CatalogServlet</servlet-name>
+    <url-pattern>/catalog/*</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <description></description>
+    <display-name>InfoServlet</display-name>
+    <servlet-name>InfoServlet</servlet-name>
+    <servlet-class>com.arvato.lancome2.web.servlet.InfoServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>InfoServlet</servlet-name>
+    <url-pattern>/info/*</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>default</servlet-name>
+    <url-pattern>*.css</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>default</servlet-name>
+    <url-pattern>*.gif</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>default</servlet-name>
+    <url-pattern>*.jpg</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>default</servlet-name>
+    <url-pattern>*.png</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>default</servlet-name>
+    <url-pattern>*.js</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>default</servlet-name>
+    <url-pattern>*.manifest</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>default</servlet-name>
+    <url-pattern>*.html</url-pattern>
+  </servlet-mapping>
+  
+</web-app>

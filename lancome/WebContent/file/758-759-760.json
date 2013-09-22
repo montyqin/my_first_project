@@ -1,0 +1,40 @@
+{
+    "id": "758-759-760",
+    "name": "兰蔻梦魅情迷香水",
+    "price": "",
+    "desc": "HYPNÔSE SENSES<br />8月5日起，购买任意香水产品，即可获赠精美定制香球+金纯玫瑰唇膏便携装。仅限100份。<br />这是一款带有清新的花香西普调的香水，玫瑰清新的的芬芳传递出优雅感性的女人味，粉胡椒的辛辣又带出些许灵动顽皮，融合天竺薄荷，缔造出这款唤醒感官，散发着感性优雅女性气息的梦魅迷情香水。",
+    "giftid": "",
+    "color": "",
+    "efficacy": "",
+    "commentid": "",
+    "recommend": "",
+    "offer": "",
+    "classify": "capacity",
+    "products": [
+        {
+            "color": "",
+            "rgb": "",
+            "capacity": "30ml",
+            "price": 450,
+            "id": "758",
+			"pcode":"LF00001"
+        },
+        {
+            "color": "",
+            "rgb": "",
+            "capacity": "50ml",
+            "price": 620,
+            "id": "759",
+			"pcode":"LF00001"
+        },
+        {
+            "color": "",
+            "rgb": "",
+            "capacity": "75ml",
+            "price": 720,
+            "id": "760",
+			"pcode":"LF00001"
+        }
+    ],
+    "imgs": "/handy/upload/images/goods/20130802/59/201308021517490_main_M.jpg"
+}
