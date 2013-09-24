@@ -1,7 +1,7 @@
 [{
 	"id" : "c1",
 	"name" : "护肤",
-	"img" : "../img/product/pic3.jpg",
+	"img" : "../img/product/skincare.jpg",
 	"link" : "catalog/c1/c106",
 	"subCategory" : [{
 		"id" : "c104",
@@ -52,7 +52,7 @@
 },{
 	"id" : "c2",
 	"name" : "礼盒",
-	"img" : "../img/product/pic2.jpg",
+	"img" : "../img/product/skincare.jpg",
 	"link" : "info/c201/737",
 	"subCategory" : [ {
 		"id" : "c201",
@@ -79,7 +79,7 @@
 },{
     "id": "c4",
     "name": "彩妆",
-    "img": "../img/product/pic1.jpg",
+    "img": "../img/product/makeup.jpg",
     "link": "catalog/c4/c403",
     "subCategory": [
         {

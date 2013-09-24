@@ -282,7 +282,7 @@ body{
 			 ************************************************************************
 			 */
 			// 定义图片列表
-			var scrollImgs = ['jzqy.jpg','inloveLanding.jpg','qsfamily_v2.jpg','vsnlp.jpg'];
+			var scrollImgs = ['qsfamily.jpg','mascaralp.jpg','mlrs_lp.jpg','vsnlp.jpg'];
 			// 处理图片的方法
 			var gotoDetialView = function(index){
 				switch(index){
