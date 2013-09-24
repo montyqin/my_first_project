@@ -1,4 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%
 	String contextPath = request.getContextPath();
 	//String f = request.getParameter("f");
@@ -214,10 +217,11 @@ body{
 		if(!navigator.cookieEnabled){
 			alert('您的浏览器未开启cookie，将无法正常购物，请开启后再来，谢谢您的关注');
 		}
+
 		if(!!navigator.userAgent.match(/AppleWebKit.*Mobile.*/)||!!navigator.userAgent.match(/AppleWebKit/)||navigator.userAgent.indexOf('Linux')>-1){
 			
 		}else{
-			window.location.replace('http://www.lancome.com.cn/lancome/_zh/_cn/index.aspx');
+			//window.location.replace('http://www.lancome.com.cn/lancome/_zh/_cn/index.aspx');
 		}
 	</script>
 </head>
@@ -282,7 +286,7 @@ body{
 			 ************************************************************************
 			 */
 			// 定义图片列表
-			var scrollImgs = ['jzqy.jpg','inloveLanding.jpg','qsfamily_v2.jpg','vsnlp.jpg'];
+			var scrollImgs = ['qsfamily.jpg','mascaralp.jpg','mlrs_lp.jpg','vsnlp.jpg'];
 			// 处理图片的方法
 			var gotoDetialView = function(index){
 				switch(index){
@@ -622,5 +626,15 @@ body{
 	</script>
 	
 <%@include file="common-track.jsp" %>
+<c:forEach items="${categories}" var="item">
+<ul>
+	<div>${item.name}</div>
+	<c:forEach items="${item.subCategory}" var="subitem">
+		<li>
+			<a href="<%=contextPath%>/catalog/${subitem.id}">${subitem.name}</a>
+		</li>
+	</c:forEach>
+</ul>
+</c:forEach>
 </body>
 </html>

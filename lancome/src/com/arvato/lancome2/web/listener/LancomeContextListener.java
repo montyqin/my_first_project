@@ -1,5 +1,7 @@
 package com.arvato.lancome2.web.listener;
 
+import java.util.List;
+
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 
@@ -13,7 +15,11 @@ public class LancomeContextListener implements ServletContextListener {
 		ConfigUtil.setJsonFolderPath(contextEvent.getServletContext().getRealPath("/")+"file");
 		ConfigUtil.setContextPath(contextEvent.getServletContext().getContextPath());
 		ConfigUtil.initCatalog();
-//		ConfigUtil.initComment();
+		
+		List categories = (List) CacheUtil.getObjectCache("catalog_level_0");
+		//ConfigUtil.initComment();
+		
+		contextEvent.getServletContext().setAttribute("categories", categories);
 	}
 
 	@Override
