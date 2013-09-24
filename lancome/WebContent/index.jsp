@@ -3,6 +3,7 @@
 	String contextPath = request.getContextPath();
 	//String f = request.getParameter("f");
 %>
+<!-- laiguangtao changed -->
 <!DOCTYPE html>
 <%-- <html manifest="manifest/indexAppCache.manifest">  --%>
 <html>
