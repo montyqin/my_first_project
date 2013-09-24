@@ -286,8 +286,7 @@ body{
 			 ************************************************************************
 			 */
 			// 定义图片列表
-			//var scrollImgs = ['jzqy.jpg','inloveLanding.jpg','qsfamily_v2.jpg','vsnlp.jpg'];
-			var scrollImgs = ['qsfamily.jpg','vsnlp.jpg'];
+			var scrollImgs = ['qsfamily.jpg','mascaralp.jpg','mlrs_lp.jpg','vsnlp.jpg'];
 			// 处理图片的方法
 			var gotoDetialView = function(index){
 				switch(index){
@@ -632,14 +631,7 @@ body{
 	<div>${item.name}</div>
 	<c:forEach items="${item.subCategory}" var="subitem">
 		<li>
-			<c:choose>
-				<c:when test="${empty subitem.ids}">
-					${subitem.name}
-				</c:when>
-				<c:otherwise>
-					<a href="<%=contextPath%>/catalog/${subitem.ids}">${subitem.name}</a>
-				</c:otherwise>
-			</c:choose>
+			<a href="<%=contextPath%>/catalog/${subitem.id}">${subitem.name}</a>
 		</li>
 	</c:forEach>
 </ul>

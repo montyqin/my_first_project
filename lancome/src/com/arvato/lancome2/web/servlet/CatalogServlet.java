@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.log4j.Logger;
 
 import com.arvato.lancome2.util.ConfigUtil;
+import com.arvato.lancome2.vo.Catalog;
 import com.arvato.lancome2.vo.Product;
 
 /**
@@ -47,7 +48,10 @@ public class CatalogServlet extends HttpServlet {
 					if(log.isDebugEnabled()){
 						log.debug(pathParts[1]);
 					}
-					request.setAttribute("catalog", ConfigUtil.getCatalog(pathParts[1]));
+					Catalog catalog = ConfigUtil.getCatalog(pathParts[1]);
+					Product[] products = ConfigUtil.getProductsByCatalogId(pathParts[1]);
+					request.setAttribute("catalog", catalog);
+					request.setAttribute("products", products);
 					request.getRequestDispatcher("/catalog.jsp").forward(request, response);
 				}else if(pathParts.length==3){
 					// 二级目录

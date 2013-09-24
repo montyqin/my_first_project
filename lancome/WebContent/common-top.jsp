@@ -17,23 +17,27 @@ String contextPath = request.getContextPath();
 			<div name="buy_count" class="buy-count" style="display:none"><div name="count" class="count"></div></div>
 		</div>
 	</div>
+	<div class="menus">
+		<div class="menu-products"></div>
+		<div class="menu-counter"></div>
+		<div class="menu-star"></div>
+		<div class="menu-search"></div>
+		<div class="clear"></div>
+	</div>
 	<c:if test="${!empty catalog}">
 	<nav class="nav-content">
 		<div class="nav-border"><div class="nav-border-l"></div><div class="nav-border-r"></div></div>
 			<ul class="lancome-nav">
 				<li><a href="<%=contextPath%>/index.jsp"><div data-navid="home">首页</div></a></li>
 				<c:choose>
-				<c:when test="${catalog.level==0}">
-				<li class="li-out li-current"><div class="div-current" data-navid="${catalog.id}">${catalog.name}</div></li>
-				</c:when>
 				<c:when test="${catalog.level==1}">
-				<li class="li-out"><a href="<%=contextPath%>/catalog/${catalog.parentCatalog.id}"><div data-navid="${catalog.parentCatalog.id}">${catalog.parentCatalog.name}</div></a></li>
+				<li class="li-out"><a href="<%=contextPath%>/index.jsp"><div data-navid="${catalog.parentCatalog.id}">浏览产品</div></a></li>
 				<li class="li-out li-current"><div class="div-current" data-navid="${catalog.id}">${catalog.name}</div></li>
 				</c:when>
 				<c:when test="${catalog.level==2}">
-				<li class="li-out"><a href="<%=contextPath%>/catalog/${catalog.parentCatalog.id}"><div data-navid="${catalog.parentCatalog.id}">${catalog.parentCatalog.name}</div></a></li>
+				<li class="li-out"><a href="<%=contextPath%>/index.jsp"><div data-navid="${catalog.parentCatalog.id}">浏览产品</div></a></li>
 				<li class="li-out"><a href="<%=contextPath%>/catalog/${catalog.parentCatalog.id}/${catalog.id}"><div data-navid="${catalog.id}">${catalog.name}</div></a></li>
-				<li class="li-out li-current"><div class="div-current" data-navid="">产品详情</div></li>
+				<li class="li-out li-current"><div class="div-current" data-navid="">${catalog.name}</div></li>
 				</c:when>
 				<c:otherwise>
 				
