@@ -27,17 +27,6 @@
 	html,body{
 		height:auto;
 	}
-	.catalog-img{
-		width:100%;
-		border:0;
-	}
-	.catalog-img img{
-		width:100%;
-		vertical-align: top;
-	}
-	.catalog-list{
-		width:100%;
-	}
 	.catalog-list ul{
 		list-style:none outside none;
 		test-align:left;
@@ -78,7 +67,6 @@
 		margin-top:17px;
 		background:url(<%=contextPath%>/img/ui/arrow-r-b.png) no-repeat;
 	}
-	
 	.catalog-content {
 		border:solid 15px #e4e4e4;
 		padding:10px;
@@ -87,8 +75,13 @@
 		float:left;
 		width:50%;
 	}
-	.catalog-img {
+	.catalog-img{
 		width:100%;
+		border:0;
+	}
+	.catalog-img img{
+		width:100%;
+		vertical-align: top;
 	}
 </style>
 </head>
