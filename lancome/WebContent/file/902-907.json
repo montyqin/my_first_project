@@ -1,0 +1,32 @@
+{
+    "id": "902-907",
+    "name": "焕白双效清爽隔离乳SPF30+ PA+++",
+    "price": "",
+    "desc": "<br />● 可强效的抵御UVA,UVB，防止肌肤晒黑、晒伤及产生色斑、皱纹、松弛等光老化现象。<br />● 质地清爽，不堵塞毛孔，不引发痘痘和敏感。<br />● 配方极安全，不含色素，不含香料，不油腻，不易引发敏感。<br />● 产品同时具有长效保湿滋润功效，让肌肤全天享有滋润感受。",
+    "giftid": "",
+    "color": "",
+    "efficacy": "",
+    "commentid": "",
+    "recommend": "",
+    "offer": "",
+    "classify": "capacity",
+    "products": [
+        {
+            "color": "",
+            "rgb": "",
+            "capacity": "30ml",
+            "price": 350,
+            "id": "902",
+			"pcode":""
+        },
+        {
+            "color": "",
+            "rgb": "",
+            "capacity": "60ml",
+            "price": 540,
+            "id": "907",
+			"pcode":""
+        }
+    ],
+    "imgs": "/handy/upload/images/goods/20130917/67/201309171056350_main_S.jpg"
+}
