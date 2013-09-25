@@ -33,10 +33,12 @@ img {
 }
 .nav-top .btns{
 	position:absolute;
-	height:35px;
 	right:7px;
-	top:50%;
+	top:20%;
 	z-index:90;
+	width:49%;
+	height:100%;
+	text-align:right;
 }
 .nav-top .btns > span{
 	display:inline-block;
@@ -170,24 +172,24 @@ ul.lancome-nav .div-current {
 }
 
 .nav-menu {
-	background: url(../img/ui/nav-menu.png) no-repeat;
-	width: 66px;
-	height: 65px;
-	margin-top: -32px;
+	background:url(../img/ui/nav-menu.png) no-repeat;
+	background-size:contain;
+	width:20%;
+	height:50%;
 }
 
 .nav-phone {
 	background: url(../img/ui/nav-login.png) no-repeat;
-	width: 66px;
-	height: 65px;
-	margin-top: -32px;
+	background-size:contain;
+	width:20%;
+	height:50%;
 }
 
 .nav-bag {
 	background: url(../img/ui/nav-bag.png) no-repeat;
-	width: 66px;
-	height: 65px;
-	margin-top: -32px;
+	background-size:contain;
+	width:20%;
+	height:50%;
 }
 
 .menu-right{
@@ -224,47 +226,55 @@ ul.lancome-nav .div-current {
 }
 
 .menus {
-
+	height:71px;
 }
 
 .menu-products {
 	float:left;
 	background:url(../img/ui/nav1.png) no-repeat;
-	width:160px;
-	height:71px;
+	background-size:contain;
+	width:25%;
+	height:100%;
 }
 .menu-products:hover {
 	background:url(../img/ui/nav1_mo.png) no-repeat;
+	background-size:contain;
 }
 
 .menu-counter {
 	float:left;
 	background:url(../img/ui/nav2.png) no-repeat;
-	width:160px;
-	height:71px;
+	background-size:contain;
+	width:25%;
+	height:100%;
 }
 .menu-counter:hover {
 	background:url(../img/ui/nav2_mo.png) no-repeat;
+	background-size:contain;
 }
 
 .menu-star {
 	float:left;
 	background:url(../img/ui/nav3.png) no-repeat;
-	width:160px;
-	height:71px;
+	background-size:contain;
+	width:25%;
+	height:100%;
 }
 .menu-star:hover {
 	background:url(../img/ui/nav3_mo.png) no-repeat;
+	background-size:contain;
 }
 
 .menu-search {
 	float:left;
 	background:url(../img/ui/nav4.png) no-repeat;
-	width:160px;
-	height:71px;
+	background-size:contain;
+	width:25%;
+	height:100%;
 }
 .menu-search:hover {
 	background:url(../img/ui/nav4_mo.png) no-repeat;
+	background-size:contain;
 }
 
 .clear {
