@@ -78,30 +78,58 @@
 		margin-top:17px;
 		background:url(<%=contextPath%>/img/ui/arrow-r-b.png) no-repeat;
 	}
+	
+	.catalog-content {
+		border:solid 15px #e4e4e4;
+		padding:10px;
+	}
+	.catalog-list {
+		float:left;
+		width:50%;
+	}
+	.catalog-img {
+		width:100%;
+	}
 </style>
-
 </head>
 <body>
 	<section>
 		<jsp:include page="common-top.jsp"></jsp:include>
         <article id="main-content">
-   			<div class="catalog-img"><a href="<%=contextPath %>/${catalog.link}"><img src="${catalog.img}" /></a></div>
-   			<div class="catalog-list">
-   				<ul>
-					<c:forEach var="c" items="${catalog.subCategory}">
-						<li data-cid="${c.id}"><span class="list-name">${c.name}</span><span class="list-intro">${c.intro}</span><span class="list-arrow"></span></li>
-					</c:forEach>
-   				</ul>
-   			</div>
+        	<div class="catalog-content">
+        		<div>
+        			<div style="float:right">按价格排序</div>
+	   				<div>全部18个产品</div>
+        		</div>
+	        	<c:forEach items="${products}" var="item">
+	        		<div class="catalog-list">
+	        			<div class="catalog-img"><img src="<%=contextPath %>/${item.imgs}"/></div>
+	        			<div class="txtcenter">${item.name}</div>
+	        			<div class="txtcenter">${item.price}</div>
+	        		</div>
+	        	</c:forEach>
+	        	<div class="clear"></div>
+        	</div>
+        	
+<!--   			<div class="catalog-img"><a href="<%=contextPath %>/${catalog.link}"><img src="${catalog.img}" /></a></div>-->
+<!--   			<div class="catalog-list">-->
+<!--   				<div style="float:right">按价格排序</div>-->
+<!--   				<div>全部18个产品</div>-->
+<!--   				-->
+<!--   			-->
+<!--   				<ul>-->
+<!--					<c:forEach var="c" items="${catalog.subCategory}">-->
+<!--						<li data-cid="${c.id}"><span class="list-name">${c.name}</span><span class="list-intro">${c.intro}</span><span class="list-arrow"></span></li>-->
+<!--					</c:forEach>-->
+<!--   				</ul>-->
+<!--   			</div>-->
         </article>
 	</section>
-	
 	<script src="<%=contextPath %>/js/jquery-1.9.1.min.js"></script>
 	<script src="<%=contextPath %>/js/tool.js"></script>
 	<script type="text/javascript">
 	
 		$(function(){
-			
 			
 			var handleListClick = function(cid){
 				window.location.href = '<%=contextPath%>/catalog/${catalog.id}/'+cid;

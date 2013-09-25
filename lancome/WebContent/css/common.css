@@ -115,18 +115,18 @@ img {
 }
 
 ul.lancome-nav {
-	float: left;
-	height: 35px;
 	overflow: hidden;
-	background: url(../img/ui/bg1.png) repeat-x;
+	height: 35px;
+	background: url(../img/ui/navbg.png) repeat-x;
+	background-size: contain;
 	margin: 0;
-	margin-left:-30px;
-	width: 100%;
 	border: 0;
+	width: 100%;
+	margin-left:-35px;
 }
 ul.lancome-nav a{
 	text-decoration: none;
-	color:#a6a6a6;
+	color:#000000;
 }
 ul.lancome-nav li {
 	list-style-type: none;
@@ -134,41 +134,19 @@ ul.lancome-nav li {
 	margin: 0px;
 	float: left;
 	line-height: 35px;
-	padding-left: 21px;
-	padding-right: 21px;
-	margin-left: -11px;
+	padding:0 10px;
 	overflow: hidden;
-	color: #a6a6a6;
-	font-size:12px;
+	color: #000000;
+	font-size:13px;
+	font-weight:bold;
 }
 
-ul.lancome-nav li div {
-	height: 100%;
-	float: left;
-	display: inline;
-}
-
-ul.lancome-nav .li-out {
-	background: url(../img/ui/arrow1.png) no-repeat 0 center;
-}
-
-ul.lancome-nav .li-current {
-	cursor: hand;
-	background: url(../img/ui/arrow2.png) no-repeat 0 center;
-	color: #000;
-}
-
-ul.lancome-nav .li-next-current {
-	cursor: hand;
-	background: url(../img/ui/arrow3.png) no-repeat 0 center;
-}
-
-ul.lancome-nav .div-current {
-	background: url(../img/ui/bg2.png) repeat-x;
-	padding-left: 11px;
-	margin-left: -11px;
-	margin-right: -10px;
-	padding-right: 10px;
+.nav {
+	float:left;
+	width:6px;
+	height:35px;
+	background:url(../img/ui/arrow-r.png) no-repeat;
+	background-position:center;
 }
 
 .nav-menu {
@@ -226,7 +204,7 @@ ul.lancome-nav .div-current {
 }
 
 .menus {
-	height:71px;
+	height:65px;
 }
 
 .menu-products {
@@ -239,6 +217,8 @@ ul.lancome-nav .div-current {
 .menu-products:hover {
 	background:url(../img/ui/nav1_mo.png) no-repeat;
 	background-size:contain;
+	width:25%;
+	height:100%;
 }
 
 .menu-counter {
@@ -251,6 +231,8 @@ ul.lancome-nav .div-current {
 .menu-counter:hover {
 	background:url(../img/ui/nav2_mo.png) no-repeat;
 	background-size:contain;
+	width:25%;
+	height:100%;
 }
 
 .menu-star {
@@ -263,6 +245,8 @@ ul.lancome-nav .div-current {
 .menu-star:hover {
 	background:url(../img/ui/nav3_mo.png) no-repeat;
 	background-size:contain;
+	width:25%;
+	height:100%;
 }
 
 .menu-search {
@@ -275,8 +259,13 @@ ul.lancome-nav .div-current {
 .menu-search:hover {
 	background:url(../img/ui/nav4_mo.png) no-repeat;
 	background-size:contain;
+	width:25%;
+	height:100%;
 }
 
 .clear {
 	clear:left;
+}
+.txtcenter {
+	text-align:center;
 }

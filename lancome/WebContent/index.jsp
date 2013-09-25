@@ -228,50 +228,12 @@ body{
 <body>
 	<section>
 		<jsp:include page="common-top.jsp"></jsp:include>
-		<div style="margin:0;padding:0;">
-			<div class="nav-border"><div class="nav-border-l"></div><div class="nav-border-r"></div></div>
-			<nav id="topbar" class="topbar">
-				<!-- <div class="topbar-l"></div> -->
-				<div class="topbar-title">幸福臻礼 兰蔻新立体塑颜全系升级</div>
-				<i class="topbar-r">&nbsp;</i>
-			</nav>
-			<div class="nav-border"><div class="nav-border-l"></div><div class="nav-border-r"></div></div>
+		<div style="padding:10px;">
+			<img src="img/index/KV.png"/>
 		</div>
-        <article id="main-content">
-        	<div id="wrapper">
-		      <div id="rotating-item-wrapper">
-<!-- 			      <a href="javascript:void(0);"><img class="rotating-item swipe" alt="" src="img/index/hslanding.jpg" /></a>
-			      <a href="javascript:void(0);"><img class="rotating-item swipe" alt="" src="img/index/mar_4.jpg" /></a>
-			      <a href="javascript:void(0);"><img class="rotating-item swipe" alt="" src="img/index/0428_50ml_landingpage.jpg" /></a>
-			      <a href="javascript:void(0);"><img class="rotating-item swipe" alt="" src="img/index/mlrs_lp.jpg" /></a>
-			      <a href="javascript:void(0);"><img class="rotating-item swipe" alt="" src="img/index/xiaoheiping_5_1.jpg" /></a>
-			      <a href="javascript:void(0);"><img class="rotating-item swipe" alt="" src="img/index/mothersday.jpg" /></a> -->
-			
-			      <div id="nav"></div>
-			      <div id="next" style="opacity: 1;display:none"><a id="nextBt" href="#"></a></div>
-			      <div id="previous" style="opacity: 1;display:none"><a id="prevBt" href="#"></a></div>
- 			</div>
- 			</div>
- 			
- 			<div style="clear:both;height:0px;width:0px;"></div>
- 			<div id="main-footer" class="main-footer" style="display:none">
-				<div class="footer-row">
-					<div>
-						<img style="width:100%" data-num="1" data-cache="img1" src="" />
-					</div>
-					<div>
-						<img style="width:100%" data-num="2" data-cache="img2" src="" />
-					</div>
-					<div>
-						<img style="width:100%" data-num="3" data-cache="img3" src="" />
-					</div>
-					<div>
-						<img style="width:100%" data-num="4" data-cache="img4" src="" />
-					</div>
-				</div>
- 			</div>     
+        <article id="main-content" style="height:80%;">
+        	<!-- categories be put here -->
         </article>
-        
 	</section>
 	
 	<!-- <script src="components/bootstrap/js/bootstrap.min.js"></script> -->

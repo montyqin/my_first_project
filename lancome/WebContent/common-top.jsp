@@ -7,7 +7,7 @@ String contextPath = request.getContextPath();
 <script type="text/javascript">
 	window.contextPath = '<%=contextPath%>';
 </script>
-<header class="nav-top" id="lancome-nav-top" >
+<header class="nav-top" id="lancome-nav-top">
 	<div class="logo">
 		<img src="<%=contextPath%>/img/ui/logo.png" />
 		<div class="btns">
@@ -25,28 +25,25 @@ String contextPath = request.getContextPath();
 		<div class="clear"></div>
 	</div>
 	<c:if test="${!empty catalog}">
-	<nav class="nav-content">
-		<div class="nav-border"><div class="nav-border-l"></div><div class="nav-border-r"></div></div>
-			<ul class="lancome-nav">
-				<li><a href="<%=contextPath%>/index.jsp"><div data-navid="home">首页</div></a></li>
-				<c:choose>
-				<c:when test="${catalog.level==1}">
-				<li class="li-out"><a href="<%=contextPath%>/index.jsp"><div data-navid="${catalog.parentCatalog.id}">浏览产品</div></a></li>
-				<li class="li-out li-current"><div class="div-current" data-navid="${catalog.id}">${catalog.name}</div></li>
-				</c:when>
-				<c:when test="${catalog.level==2}">
-				<li class="li-out"><a href="<%=contextPath%>/index.jsp"><div data-navid="${catalog.parentCatalog.id}">浏览产品</div></a></li>
-				<li class="li-out"><a href="<%=contextPath%>/catalog/${catalog.parentCatalog.id}/${catalog.id}"><div data-navid="${catalog.id}">${catalog.name}</div></a></li>
-				<li class="li-out li-current"><div class="div-current" data-navid="">${catalog.name}</div></li>
-				</c:when>
-				<c:otherwise>
-				
-				</c:otherwise>
-				</c:choose>
-				<li class="li-out li-next-current"><div>&nbsp;</div></li>
-			</ul>
-		<div style="clear:both;" class="nav-border"><div class="nav-border-l"></div><div class="nav-border-r"></div></div>
-	</nav>
+	<ul class="lancome-nav">
+		<li><a href="<%=contextPath%>/index.jsp">首页</a></li>
+		<c:choose>
+			<c:when test="${catalog.level==1}">
+				<div class="nav"></div>
+				<li><a href="<%=contextPath%>/index.jsp">浏览产品</a></li>
+				<div class="nav"></div>
+				<li>${catalog.name}</li>
+			</c:when>
+			<c:when test="${catalog.level==2}">
+				<div class="nav"></div>
+				<li><a href="<%=contextPath%>/index.jsp">浏览产品</a></li>
+				<div class="nav"></div>
+				<li><a href="<%=contextPath%>/catalog/${catalog.parentCatalog.id}/${catalog.id}">${catalog.name}</a></li>
+				<div class="nav"></div>
+				<li>${catalog.name}</li>
+			</c:when>
+		</c:choose>
+	</ul>
 	</c:if>
 </header>
 <aside class="menu-right" id="lancome-menu-right">
