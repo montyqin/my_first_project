@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <%@ page isELIgnored="false"%>
 <%
 	if(request.getAttribute("catalog")==null){
@@ -24,64 +25,50 @@
 <title>${catalog["name"]}_兰蔻Lancome手机官方网站暨网上商城</title>
 <link rel="stylesheet" type="text/css" href="<%=contextPath %>/css/common.css" />
 <style type="text/css">
-	html,body{
+	html,body {
 		height:auto;
-	}
-	.catalog-list ul{
-		list-style:none outside none;
-		test-align:left;
-		width:100%;
-		padding:0;
-		margin:0;
-	}
-	.catalog-list ul li{
-		background:url(<%=contextPath%>/img/ui/catalog-list.png) repeat-x;
-		margin:0;
-		padding-left:20px;
-		width:100%;
-		height:50px;
-		line-height:50px;
-		border-bottom:1px solid #cecece;
-		float:left;
-	}
-	.catalog-list ul li.select{
-		background-image:url(<%=contextPath%>/img/ui/catalog-list-d.png);
-	}
-	.list-name{
-		color:#000;
-		font-size:16px;
-		float:left;
-		width:150px;
-	}
-	.list-intro{
-		color:#333;
-		font-size:15px;
-		float:left;
-		margin-left:0px;
-	}
-	.list-arrow{
-		width:10px;
-		height:16px;
-		float:right;
-		margin-right:30px;
-		margin-top:17px;
-		background:url(<%=contextPath%>/img/ui/arrow-r-b.png) no-repeat;
 	}
 	.catalog-content {
 		border:solid 15px #e4e4e4;
 		padding:10px;
+		text-align:justify;
 	}
 	.catalog-list {
-		float:left;
-		width:50%;
+		display:inline-block;
+		width:45%;
 	}
-	.catalog-img{
+	.catalog-img {
 		width:100%;
 		border:0;
 	}
-	.catalog-img img{
+	.catalog-img img {
 		width:100%;
 		vertical-align: top;
+	}
+	.justifyfix {
+		display:inline-block;
+		width:100%;
+		height:0;
+		overflow:hidden;
+	}
+	.product-contain {
+		text-align:center;
+		height:30px;
+		margin-top:5px;
+	}
+	.product-purchase {
+		display:inline-block;
+		background:url(../img/ui/purchase.png) no-repeat;
+		background-size:contain;
+		width:45%;
+		height:97%;
+	}
+	.product-moreinfo {
+		display:inline-block;
+		background:url(../img/ui/moreinfo.png) no-repeat;
+		background-size:contain;
+		width:45%;
+		height:97%;
 	}
 </style>
 </head>
@@ -92,30 +79,22 @@
         	<div class="catalog-content">
         		<div>
         			<div style="float:right">按价格排序</div>
-	   				<div>全部18个产品</div>
+	   				<div>全部${fn:length(products)}个产品</div>
         		</div>
 	        	<c:forEach items="${products}" var="item">
 	        		<div class="catalog-list">
 	        			<div class="catalog-img"><img src="<%=contextPath %>/${item.imgs}"/></div>
 	        			<div class="txtcenter">${item.name}</div>
-	        			<div class="txtcenter">${item.price}</div>
+	        			<div class="txtcenter">RMB ${item.price}</div>
+	        			<div class="product-contain">
+	        				<div class="product-moreinfo" onclick="showinfo('${catalog.id}',${item.id})"></div>
+	        				<div class="product-purchase"><!-- purchase: item.id --></div>
+	        			</div>
 	        		</div>
 	        	</c:forEach>
-	        	<div class="clear"></div>
+	        	<!--<div class="catalog-list"></div>-->
+				<div class="justifyfix"></div>
         	</div>
-        	
-<!--   			<div class="catalog-img"><a href="<%=contextPath %>/${catalog.link}"><img src="${catalog.img}" /></a></div>-->
-<!--   			<div class="catalog-list">-->
-<!--   				<div style="float:right">按价格排序</div>-->
-<!--   				<div>全部18个产品</div>-->
-<!--   				-->
-<!--   			-->
-<!--   				<ul>-->
-<!--					<c:forEach var="c" items="${catalog.subCategory}">-->
-<!--						<li data-cid="${c.id}"><span class="list-name">${c.name}</span><span class="list-intro">${c.intro}</span><span class="list-arrow"></span></li>-->
-<!--					</c:forEach>-->
-<!--   				</ul>-->
-<!--   			</div>-->
         </article>
 	</section>
 	<script src="<%=contextPath %>/js/jquery-1.9.1.min.js"></script>
@@ -185,7 +164,11 @@
 				$(document.body).height(fullH);
 			}
 			setTimeout(function(){ window.scrollTo(0, 1); }, 100);
-		});	
+		});
+
+		function showinfo(cid,id){
+			window.location.href = '<%=contextPath %>/info/' + cid + '/' + id;
+		}
 	</script>
 <%@include file="common-track.jsp" %>
 </body>

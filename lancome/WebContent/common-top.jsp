@@ -38,9 +38,9 @@ String contextPath = request.getContextPath();
 				<div class="nav"></div>
 				<li><a href="<%=contextPath%>/index.jsp">浏览产品</a></li>
 				<div class="nav"></div>
-				<li><a href="<%=contextPath%>/catalog/${catalog.parentCatalog.id}/${catalog.id}">${catalog.name}</a></li>
+				<li><a href="<%=contextPath%>/catalog/${catalog.id}">${catalog.name}</a></li>
 				<div class="nav"></div>
-				<li>${catalog.name}</li>
+				<li>${p.name}</li>
 			</c:when>
 		</c:choose>
 	</ul>
