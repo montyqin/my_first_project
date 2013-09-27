@@ -22,14 +22,14 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
 <meta content="black" name="apple-mobile-web-app-status-bar-style" />
-<title>${catalog["name"]}_兰蔻Lancome手机官方网站暨网上商城</title>
+<title>${catalog["name"]}_科颜氏Kiehl's手机官方网站暨网上商城</title>
 <link rel="stylesheet" type="text/css" href="<%=contextPath %>/css/common.css" />
 <style type="text/css">
 	html,body {
 		height:auto;
 	}
 	.catalog-content {
-		border:solid 15px #e4e4e4;
+		border:solid 10px #ece7e1;
 		padding:10px;
 		text-align:justify;
 	}

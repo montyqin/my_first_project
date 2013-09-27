@@ -204,19 +204,19 @@ ul.lancome-nav li {
 }
 
 .menus {
-	height:65px;
+	height:55px;
 }
 
 .menu-products {
 	float:left;
 	background:url(../img/ui/nav1.png) no-repeat;
-	background-size:contain;
+	background-size:100% 100%;
 	width:25%;
 	height:100%;
 }
 .menu-products:hover {
 	background:url(../img/ui/nav1_mo.png) no-repeat;
-	background-size:contain;
+	background-size:100% 100%;
 	width:25%;
 	height:100%;
 }
@@ -224,13 +224,13 @@ ul.lancome-nav li {
 .menu-counter {
 	float:left;
 	background:url(../img/ui/nav2.png) no-repeat;
-	background-size:contain;
+	background-size:100% 100%;
 	width:25%;
 	height:100%;
 }
 .menu-counter:hover {
 	background:url(../img/ui/nav2_mo.png) no-repeat;
-	background-size:contain;
+	background-size:100% 100%;
 	width:25%;
 	height:100%;
 }
@@ -238,13 +238,13 @@ ul.lancome-nav li {
 .menu-star {
 	float:left;
 	background:url(../img/ui/nav3.png) no-repeat;
-	background-size:contain;
+	background-size:100% 100%;
 	width:25%;
 	height:100%;
 }
 .menu-star:hover {
 	background:url(../img/ui/nav3_mo.png) no-repeat;
-	background-size:contain;
+	background-size:100% 100%;
 	width:25%;
 	height:100%;
 }
@@ -252,13 +252,13 @@ ul.lancome-nav li {
 .menu-search {
 	float:left;
 	background:url(../img/ui/nav4.png) no-repeat;
-	background-size:contain;
+	background-size:100% 100%;
 	width:25%;
 	height:100%;
 }
 .menu-search:hover {
 	background:url(../img/ui/nav4_mo.png) no-repeat;
-	background-size:contain;
+	background-size:100% 100%;
 	width:25%;
 	height:100%;
 }
@@ -268,4 +268,16 @@ ul.lancome-nav li {
 }
 .txtcenter {
 	text-align:center;
+}
+.admessage {
+	color:#ff0000;
+}
+.mainContent {
+	background-color:#ece7e1;
+}
+.inputareabg {
+	background:url(../img/ui/inputarea_bg.png) no-repeat;
+	background-size:100% 95%;
+	height:200px;
+	margin:0 10px;
 }

@@ -19,7 +19,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
 <meta content="black" name="apple-mobile-web-app-status-bar-style" />
-<title>兰蔻Lancome手机官方网站暨网上商城</title>
+<title>科颜氏Kiehl's手机官方网站暨网上商城</title>
 
 <!-- <link href="components/bootstrap/css/bootstrap.css" rel="stylesheet">
 <link href="components/bootstrap/css/bootstrap-responsive.css" rel="stylesheet"> -->
@@ -228,11 +228,28 @@ body{
 <body>
 	<section>
 		<jsp:include page="common-top.jsp"></jsp:include>
-		<div style="padding:10px;">
-			<img src="img/index/KV.png"/>
-		</div>
-        <article id="main-content" style="height:80%;">
+        <article id="main-content" class="mainContent">
+			<div style="padding:10px;">
+				<img src="img/index/KV.png"/>
+			</div>
+			<div class="admessage txtcenter">
+				手机官网购物即有机会体验科科颜氏明星四宝旅行装
+			</div>
         	<!-- categories be put here -->
+			<c:forEach items="${categories}" var="item">
+			<ul>
+				<div>${item.name}</div>
+				<c:forEach items="${item.subCategory}" var="subitem">
+					<li>
+						<a href="<%=contextPath%>/catalog/${subitem.id}">${subitem.name}</a>
+					</li>
+				</c:forEach>
+			</ul>
+			</c:forEach>
+			<div style="position:relative;">
+				<div class="inputareabg"></div>
+			</div>
+			<div class="txtcenter" style="padding-top:15px;padding-bottom:30px;">2013 Kiehl's Since 1851.</div>
         </article>
 	</section>
 	
@@ -588,15 +605,5 @@ body{
 	</script>
 	
 <%@include file="common-track.jsp" %>
-<c:forEach items="${categories}" var="item">
-<ul>
-	<div>${item.name}</div>
-	<c:forEach items="${item.subCategory}" var="subitem">
-		<li>
-			<a href="<%=contextPath%>/catalog/${subitem.id}">${subitem.name}</a>
-		</li>
-	</c:forEach>
-</ul>
-</c:forEach>
 </body>
 </html>

@@ -5,7 +5,7 @@ import java.io.Serializable;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class Product implements Serializable{
+public class Product implements Serializable, Comparable<Product> {
 	
 	private static final long serialVersionUID = 1L;
 	
@@ -129,8 +129,10 @@ public class Product implements Serializable{
 	public void setImgs(String imgs) {
 		this.imgs = imgs;
 	}
-	
-	
+	@Override
+	public int compareTo(Product o) {
+		return this.getPrice().compareTo(o.getPrice());
+	}
 	public static void main(String[] args) throws JSONException {
 		JSONObject a = new JSONObject();
 		a.put("ab", "a<br />bc");

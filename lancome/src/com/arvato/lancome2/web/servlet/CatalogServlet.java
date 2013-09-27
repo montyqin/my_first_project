@@ -1,6 +1,9 @@
 package com.arvato.lancome2.web.servlet;
 
 import java.io.IOException;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -50,8 +53,10 @@ public class CatalogServlet extends HttpServlet {
 					}
 					Catalog catalog = ConfigUtil.getCatalog(pathParts[1]);
 					Product[] products = ConfigUtil.getProductsByCatalogId(pathParts[1]);
+					List pts = Arrays.asList(products);
+					Collections.sort(pts);
 					request.setAttribute("catalog", catalog);
-					request.setAttribute("products", products);
+					request.setAttribute("products", pts);
 					request.getRequestDispatcher("/catalog.jsp").forward(request, response);
 				}else if(pathParts.length==3){
 					// 二级目录
