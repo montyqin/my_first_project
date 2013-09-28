@@ -90,7 +90,7 @@
 	        			<div class="txtcenter">${item.name}</div>
 	        			<div class="txtcenter">RMB ${item.price}</div>
 	        			<div class="product-contain">
-	        				<div class="product-moreinfo" onclick="showinfo('${catalog.id}',${item.id})"></div>
+	        				<div class="product-moreinfo" onclick="showinfo('${catalog.id}','${item.id}')"></div>
 	        				<div class="product-purchase"><!-- purchase: item.id --></div>
 	        			</div>
 	        		</div>

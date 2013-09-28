@@ -2,6 +2,7 @@ package com.arvato.lancome2.vo;
 
 import java.io.Serializable;
 
+import org.apache.commons.lang.StringUtils;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -131,6 +132,10 @@ public class Product implements Serializable, Comparable<Product> {
 	}
 	@Override
 	public int compareTo(Product o) {
+	    
+	    if (StringUtils.isEmpty(this.getPrice()) || StringUtils.isEmpty(o.getPrice()))
+	        return 0;
+	    
 		return this.getPrice().compareTo(o.getPrice());
 	}
 	public static void main(String[] args) throws JSONException {

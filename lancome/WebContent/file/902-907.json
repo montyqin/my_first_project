@@ -12,7 +12,7 @@
     "classify": "capacity",
     "products": [
         {
-            "color": "",
+            "color": "red",
             "rgb": "",
             "capacity": "30ml",
             "price": 350,
@@ -20,7 +20,7 @@
 			"pcode":""
         },
         {
-            "color": "",
+            "color": "green",
             "rgb": "",
             "capacity": "60ml",
             "price": 540,
@@ -28,5 +28,5 @@
 			"pcode":""
         }
     ],
-    "imgs": "/handy/upload/images/goods/20130917/67/201309171056350_main_S.jpg"
+    "imgs": "/img/product/218.png"
 }
