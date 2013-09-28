@@ -1,0 +1,40 @@
+{
+    "id": "182-183-184",
+    "name": "兰蔻珍爱午夜玫瑰香水",
+    "price": "",
+    "desc": "Trésor Midnight Rose<br />8月5日起，购买任意香水产品，即可获赠精美定制香球+金纯玫瑰唇膏便携装。仅限100份。<br />• 紫色瓶身宛若璀璨光耀的宝石，闪烁着无限光芒，沉浸于精致流转的颜色变化中，慢慢由粉嫩、变成粉红，再变成淡紫色。<br />•香水类型：EDP（香水）<br />•前调：新鲜黑加仑子精油，覆盆子<br />• 中调：玫瑰精油、茉莉花、牡丹、粉红胡椒。<br />• 尾调：维吉尼亚雪松精华、香草、麝香",
+    "giftid": "",
+    "color": "",
+    "efficacy": "",
+    "commentid": "",
+    "recommend": "",
+    "offer": "",
+    "classify": "capacity",
+    "products": [
+        {
+            "color": "",
+            "rgb": "",
+            "capacity": "30ml",
+            "price": 530,
+            "id": "182",
+			"pcode":"LF00009"
+        },
+        {
+            "color": "",
+            "rgb": "",
+            "capacity": "50ml",
+            "price": 750,
+            "id": "183",
+			"pcode":"LF00017"
+        },
+        {
+            "color": "",
+            "rgb": "",
+            "capacity": "75ml",
+            "price": 880,
+            "id": "184",
+			"pcode":"LF00009"
+        }
+    ],
+    "imgs": "/handy/upload/images/goods/20121221/59/201212211433180_main_S.png"
+}

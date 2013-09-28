@@ -59,6 +59,8 @@ html,body{
 .info-buy {
 	display: table-cell;
 	width: 45%;
+	padding-left:10px;
+	padding-top:10%;
 }
 
 .info-name {
@@ -76,23 +78,37 @@ html,body{
 
 .details
 {
+	position:relative;
 	background: url(<%=contextPath%>/img/ui/detailbg.png) no-repeat;
 	background-size: 100% 100%;
 	height: 44px;
+	line-height:44px;
 	margin-top: 10px;
+	padding:0 5px;
+	font-size:20px;
+}
+
+.details-content {
+	padding-bottom:10px;
+}
+
+.details-content-split {
+	background:url(<%=contextPath%>/img/ui/detailsplit.png) no-repeat;
+	background-position:center;
+	height:4px;
+	padding:10px 0;
 }
 
 .price {
 	height: 30px;
-	font-size: 20px;
 	line-height: 30px;
-	padding-left: 7px;
+	font-size: 1em;
 	margin-bottom: 5px;
 	color: #000;
 	text-align: left;
 }
 
-.button-inset {
+.button-buy {
 	display: block;
 	background: url(<%=contextPath%>/img/ui/purchase2.png) no-repeat;
 	background-size: contain;
@@ -101,11 +117,11 @@ html,body{
 }
 
 .button-weibo {
-	display: inline-block;
 	background: url(<%=contextPath%>/img/ui/weibo.png) no-repeat;
-	background-size: contain;
-	width: 36px;
+	background-position: left;
 	height: 36px;
+	line-height:36px;
+	padding-left:40px;
 }
 
 a.select {
@@ -257,10 +273,7 @@ ul.menu li.active a {
 }
 .level{
 	display:inline-block;
-	height:20px;
-	line-height:20px;
-	vertical-align: top;
-	width:90px;
+	float:right;
 }
 .level img{
 	float:left;
@@ -333,6 +346,31 @@ ul.menu li.active a {
 	border:solid 10px #ece7e1;
 	padding:10px;
 }
+
+.plus {
+	position:absolute;
+	right:5px;
+	top:50%;
+	margin-top:-16px;
+	dislplay:inline-block;
+	*display:inline;
+	*zoom:1;
+	background:url(<%=contextPath%>/img/ui/plus.png) no-repeat;
+	width:33px;
+	height:32px;
+}
+.minus {
+	position:absolute;
+	right:5px;
+	top:50%;
+	margin-top:-16px;
+	dislplay:inline-block;
+	*display:inline;
+	*zoom:1;
+	background:url(<%=contextPath%>/img/ui/minus.png) no-repeat;
+	width:33px;
+	height:32px;
+}
 </style>
 </head>
 <body>
@@ -343,10 +381,7 @@ ul.menu li.active a {
 				<div class="info-row">
 					<div class="info-img">
 						<img src="<%=contextPath %>/${p.imgs}"/>
-						<div>
-							<span class="button-weibo"></span>
-							分享到微博
-						</div>
+						<div class="button-weibo">分享到微博</div>
 					</div>
 					<div class="info-buy">
 						<div class="info-name">
@@ -356,7 +391,7 @@ ul.menu li.active a {
 							<c:when test="${!empty p.products}">
 								<c:choose>
 								<c:when test="${p.classify eq 'color' }">
-								<div class="price" style="height:auto"><span style="display:block" name="price-txt">RMB${p.products[0].price}</span>
+								<div class="price" style="height:auto"><span style="display:block" name="price-txt">RMB ${p.products[0].price}</span>
 									<a class="select" style="width:112px;" href="javascript:void(0)">
 									<select data-pid="${p.id}" name="selProductsColor" style="width:100%;">
 									<c:forEach items="${p.products}" var="subP">
@@ -368,7 +403,7 @@ ul.menu li.active a {
 								</div>
 								</c:when>
 								<c:when test="${p.classify eq 'capacity'}">
-								<div class="price"><span name="price-txt">RMB${p.products[0].price}</span>
+								<div class="price"><span name="price-txt">RMB ${p.products[0].price}</span>
 									<a class="select" href="javascript:void(0)">
 									<select data-pid="${p.id}" name="selProducts">
 									<c:forEach items="${p.products}" var="subP">
@@ -384,18 +419,104 @@ ul.menu li.active a {
 								</c:choose>
 							</c:when>
 							<c:otherwise>
-								<div class="price">RMB${p.price}</div>
+								<div class="price">RMB ${p.price}</div>
 							</c:otherwise>
 						</c:choose>
-						<span class="button-inset"></span>
+						<div>
+							<a cid="${catalog.id}" pid="<c:choose><c:when test="${!empty p.products}">${p.products[0].id}</c:when><c:otherwise>${p.id}</c:otherwise></c:choose>"
+								class="button-buy" onclick="buynow(this)" href="javascript:void(0);"></a>
+						</div>
 					</div>
 				</div>
 			</div>
-	        <div class="details"></div>
-	        <div class="details"></div>
-	        <div class="details"></div>
-	        <div class="details"></div>
-	        <div class="details"></div>
+			<div>
+	        	<div class="details">
+	        		产品详情<div class="plus"></div>
+	        	</div>
+	        	<div class="details-content" style="display:none;">
+	        		${p.desc}
+	        	</div>
+	        </div>
+			<div>
+	        	<div class="details">
+	        		顾客评论<div class="plus"></div>
+	        	</div>
+	        	<div class="details-content" style="display:none;">
+	        		<c:choose>
+						<%-- 单个产品 --%>
+						<c:when test="${!empty comments}">
+							<c:forEach items="${comments}" var="c">
+								<div class="comment-item">
+									<div>
+										<span class="comment-info">${c.name}&nbsp;${c.date}</span>
+										<span class="level">
+										<c:forEach var="i" begin="1" end="${c.score}" step="1">
+											<img src="<%=contextPath %>/img/ui/star.png">
+										</c:forEach>
+										</span>
+									</div>
+									<div class="comment-content">
+										${c.content}
+									</div>
+								</div>
+							</c:forEach>
+						</c:when>
+						<%-- 多个产品 --%>
+						<c:when test="${!empty allcomments}">
+							<c:forEach items="${allcomments}" var="comments" varStatus="i">
+							<div name="comment-${comments.key}" <c:if test="${!(!empty p.products && p.products[0].id eq comments.key)}">style="display:none"</c:if> >
+								<c:forEach items="${comments.value}" var="c">
+									<div class="comment-item">
+										<div>
+											<span class="comment-info">${c.name}&nbsp;${c.date}</span>
+											<span class="level">
+											<c:forEach var="i" begin="1" end="${c.score}" step="1">
+												<img src="<%=contextPath %>/img/ui/star2.png">
+											</c:forEach>
+										</span>
+										</div>
+										<div class="comment-content">
+											${c.content}
+										</div>
+										<c:if test="${!i.last}">
+											<div class="details-content-split"></div>
+										</c:if>
+									</div>
+								</c:forEach>
+							</div>
+							</c:forEach>
+						</c:when>
+						<c:otherwise>
+							<br/>
+							暂无顾客评论
+						</c:otherwise>
+					</c:choose>
+	        	</div>
+	        </div>
+			<div>
+	        	<div class="details">
+	        		主要成分<div class="plus"></div>
+	        	</div>
+	        	<div class="details-content" style="display:none;">
+	        		<br/>主要成分详细
+	        	</div>
+	        </div>
+			<div>
+	        	<div class="details">
+	        		使用指导<div class="plus"></div>
+	        	</div>
+	        	<div class="details-content" style="display:none;">
+	        		<br/>使用指导详细
+	        	</div>
+	        </div>
+			<div>
+	        	<div class="details">
+	        		推荐购买<div class="plus"></div>
+	        	</div>
+	        	<div class="details-content" style="display:none;">
+	        		<br/>推荐产品列表
+	        	</div>
+	        </div>
         </article>
 	</section>
 	<script src="<%=contextPath %>/js/jquery-1.9.1.min.js"></script>
@@ -421,7 +542,7 @@ ul.menu li.active a {
 				var $me = $(this);
 				if($me.attr('name')==='selProducts'){
 					var $option = $me.children('option:selected');
-					$me.parent().parent().find('span[name="price-txt"]').empty().html('RMB'+$option.data('price'));
+					$me.parent().parent().find('span[name="price-txt"]').empty().html('RMB '+$option.data('price'));
 					$me.parent().parent().parent().find('a[pid]').attr('pid',$option.val());
 					$me.parent().children('span').empty().html($option.text());
 					
@@ -430,7 +551,7 @@ ul.menu li.active a {
 					$option = null;
 				}else if($me.attr('name')==='selProductsColor'){
 					var $option = $me.children('option:selected');
-					$me.parent().parent().find('span[name="price-txt"]').empty().html('RMB'+$option.data('price'));
+					$me.parent().parent().find('span[name="price-txt"]').empty().html('RMB '+$option.data('price'));
 					$me.parent().parent().parent().find('a[pid]').attr('pid',$option.val());
 					$me.parent().children('span').empty().html('<span class="product-color" style="background-color:'+$option.data('rgb')+'}"></span>'+$option.text());
 					
@@ -566,6 +687,14 @@ ul.menu li.active a {
 			
 			//alert('${catalog.id}');
 			
+			$("div.details").each(function()
+			{
+				$(this).click(function()
+				{
+					$(this).find("div:first").toggleClass("minus");
+					$(this).nextAll("div:first").toggle();
+				});
+			});
 		});
 	
 		$(window).load(function(){

@@ -33,6 +33,9 @@
 		padding:10px;
 		text-align:justify;
 	}
+	.catalog-content-title {
+		height:25px;
+	}
 	.catalog-list {
 		display:inline-block;
 		width:45%;
@@ -59,16 +62,16 @@
 	.product-purchase {
 		display:inline-block;
 		background:url(../img/ui/purchase.png) no-repeat;
-		background-size:contain;
-		width:45%;
-		height:97%;
+		background-size:100% 100%;
+		width:40%;
+		height:80%;
 	}
 	.product-moreinfo {
 		display:inline-block;
 		background:url(../img/ui/moreinfo.png) no-repeat;
-		background-size:contain;
-		width:45%;
-		height:97%;
+		background-size:100% 100%;
+		width:40%;
+		height:80%;
 	}
 </style>
 </head>
@@ -77,8 +80,8 @@
 		<jsp:include page="common-top.jsp"></jsp:include>
         <article id="main-content">
         	<div class="catalog-content">
-        		<div>
-        			<div style="float:right">按价格排序</div>
+        		<div class="catalog-content-title">
+        			<div style="float:right">按<select style="margin:0 5px;"><option value="price">价格</option></select>排序</div>
 	   				<div>全部${fn:length(products)}个产品</div>
         		</div>
 	        	<c:forEach items="${products}" var="item">

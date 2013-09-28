@@ -1,0 +1,32 @@
+{
+    "id": "171-172",
+    "name": "兰蔻“精华肌底液”(小黑瓶)",
+    "price": "",
+    "desc": "Génifique<br />• 还原肌肤初生质感：柔软、细腻、弹润、透亮。<br />肤色均匀、透澈，肤质平滑、饱满。<br />• 全球领先的护肤科技， 一触激活年轻原动力， “年轻蛋白质Dermcidin”层层递增，肌肤与生俱来的年轻标志，一一再现。",
+    "giftid": "",
+    "color": "",
+    "efficacy": "<br /> 还原肌肤初生质感：柔软、细腻、弹润、透亮。<br /> 肤色均匀、透澈，肤质平滑、饱满。<br /> 全球领先的护肤科技， 一触激活年轻原动力， “年轻蛋白质Dermcidin”层层递增，肌肤与生俱来的年轻标志，一一再现。",
+    "commentid": "",
+    "recommend": "",
+    "offer": "",
+    "classify": "capacity",
+    "products": [
+        {
+            "color": "",
+            "rgb": "",
+            "capacity": "30ml",
+            "price": 780,
+            "id": "171",
+			"pcode":"LS00081"
+        },
+        {
+            "color": "",
+            "rgb": "",
+            "capacity": "50ml",
+            "price": 1080,
+            "id": "172",
+			"pcode":"LS00055"
+        }
+    ],
+    "imgs": "/handy/upload/images/goods/20121221/59/201212211415410_main_S.png"
+}

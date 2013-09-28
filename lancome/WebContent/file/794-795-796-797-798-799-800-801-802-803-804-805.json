@@ -1,0 +1,112 @@
+{
+    "id": "794-795-796-797-798-799-800-801-802-803-804-805",
+    "name": "兰蔻爱恋唇彩6ml",
+    "price": "",
+    "desc": "GLOSS IN LOVE<br />一“触”恋上，水感翘唇<br />盈亮 水润 立体<br />全新兰蔻爱恋“翘唇蜜”，立刻让你拥有微笑翘唇<br />创新兰蔻双面“翘唇刷”，翘唇一触开启<br />精巧凹面：绽现饱满娇唇<br />立体凸面：勾勒精致曲线<br />十二款心动色泽，总能找到你的绝配唇情<br />搭配全新爱恋指甲油与迷恋唇膏，适合每一种情绪，献给每一个女人。",
+    "giftid": "",
+    "color": "",
+    "efficacy": "",
+    "commentid": "",
+    "recommend": "",
+    "offer": "",
+    "classify": "color",
+    "products": [
+        {
+            "color": "385 6ml",
+            "rgb": "#CE1347",
+            "capacity": "",
+            "price":270,
+            "id": "794",
+			"pcode":""
+        },
+		{
+            "color": "312 6ml",
+            "rgb": "#E9837B",
+            "capacity": "",
+            "price":270,
+            "id": "795",
+			"pcode":""
+        },
+		{
+            "color": "222 6ml",
+            "rgb": "#D55E60",
+            "capacity": "",
+            "price":270,
+            "id": "796",
+			"pcode":""
+        },
+		{
+            "color": "341 6ml",
+            "rgb": "#E83366",
+            "capacity": "",
+            "price":270,
+            "id": "797",
+			"pcode":""
+        },
+		{
+            "color": "162 6ml",
+            "rgb": "#C30431",
+            "capacity": "",
+            "price":270,
+            "id": "798",
+			"pcode":""
+        },
+		{
+            "color": "200 6ml",
+            "rgb": "#DDD8D0",
+            "capacity": "",
+            "price":270,
+            "id": "799",
+			"pcode":""
+        },
+		{
+            "color": "323 6ml",
+            "rgb": "#F197B1",
+            "capacity": "",
+            "price":270,
+            "id": "800",
+			"pcode":""
+        },
+		{
+            "color": "351 6ml",
+            "rgb": "#B64C64",
+            "capacity": "",
+            "price":270,
+            "id": "801",
+			"pcode":""
+        },
+		{
+            "color": "383 6ml",
+            "rgb": "#D23A8B",
+            "capacity": "",
+            "price":270,
+            "id": "802",
+			"pcode":""
+        },
+		{
+            "color": "146 6ml",
+            "rgb": "#E72E65",
+            "capacity": "",
+            "price":270,
+            "id": "803",
+			"pcode":""
+        },
+		{
+            "color": "144 6ml",
+            "rgb": "#E8404C",
+            "capacity": "",
+            "price":270,
+            "id": "804",
+			"pcode":""
+        },
+		{
+            "color": "391 6ml",
+            "rgb": "#D9075E",
+            "capacity": "",
+            "price":270,
+            "id": "805",
+			"pcode":""
+        }
+    ],
+    "imgs": "/handy/upload/images/goods/20130820/59/201308201407140_main_M.jpg"
+}
