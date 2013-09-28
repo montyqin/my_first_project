@@ -34,6 +34,8 @@ html,body{
 }
 .main-content{
 	height:auto;
+	padding:10px;
+	border:solid 10px #ece7e1; 
 }
 .info {
 	display: table;
@@ -46,10 +48,8 @@ html,body{
 
 .info-img {
 	display: table-cell;
-	width: 50%;
-	vertical-align: middle;
-	padding-top:6px;
-	padding-bottom:6px;
+	width: 45%;
+	vertical-align: top;
 }
 
 .info-img img {
@@ -58,13 +58,28 @@ html,body{
 
 .info-buy {
 	display: table-cell;
-	vertical-align: bottom;
+	width: 45%;
 }
 
 .info-name {
 	width: 100%;
-	text-align: center;
-	font-size: 17px;
+	text-align: left;
+	font-size: 1em;
+	font-weight: bold;
+}
+
+.info-others {
+	width: 100%;
+	text-align: left;
+	font-size: 1em;
+}
+
+.details
+{
+	background: url(<%=contextPath%>/img/ui/detailbg.png) no-repeat;
+	background-size: 100% 100%;
+	height: 44px;
+	margin-top: 10px;
 }
 
 .price {
@@ -78,91 +93,19 @@ html,body{
 }
 
 .button-inset {
-	border-radius: 20px 20px 20px 20px;
-	box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 -1px 0
-		rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.1);
 	display: block;
+	background: url(<%=contextPath%>/img/ui/purchase2.png) no-repeat;
+	background-size: contain;
+	width: 60%;
 	height: 30px;
-	line-height: 30px;
-	margin-bottom: 10px;
-	padding: 3px;
-	width: 117px;
 }
 
-.button-inset a {
-	border-radius: 18px 18px 18px 18px;
-	box-shadow: 0 100px 100px transparent inset, 0 1px 2px
-		rgba(0, 0, 0, 0.8), 0 1px 0 rgba(255, 255, 255, 0.2) inset;
-	color: #FFFFFF;
-	display: block;
-	font-size: 16px;
-	height: 30px;
-	line-height: 30px;
-	text-align: center;
-	text-decoration: none;
-	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
-	width: 100%;
-}
-
-.button-inset a.button.dark-grey {
-	background-image: linear-gradient(bottom, rgb(68, 74, 83) 0%,
-		rgb(43, 50, 59) 50%, rgb(54, 62, 70) 50%, rgb(106, 112, 118) 100% );
-	background-image: -o-linear-gradient(bottom, rgb(68, 74, 83) 0%,
-		rgb(43, 50, 59) 50%, rgb(54, 62, 70) 50%, rgb(106, 112, 118) 100% );
-	background-image: -moz-linear-gradient(bottom, rgb(68, 74, 83) 0%,
-		rgb(43, 50, 59) 50%, rgb(54, 62, 70) 50%, rgb(106, 112, 118) 100% );
-	background-image: -webkit-linear-gradient(bottom, rgb(68, 74, 83) 0%,
-		rgb(43, 50, 59) 50%, rgb(54, 62, 70) 50%, rgb(106, 112, 118) 100% );
-	background-image: -ms-linear-gradient(bottom, rgb(68, 74, 83) 0%,
-		rgb(43, 50, 59) 50%, rgb(54, 62, 70) 50%, rgb(106, 112, 118) 100% );
-	background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, rgb(68, 74
-		, 83) ), color-stop(0.5, rgb(43, 50, 59) ),
-		color-stop(0.5, rgb(54, 62, 70) ), color-stop(1, rgb(106, 112, 118) )
-		);
-}
-
-.button-inset a.button.grey:active,.button-inset a.dark-grey:active {
-	/*box-shadow:0px 100px 100px rgba(0,0,0,0.2) inset,0px 1px 2px rgba(0,0,0,0.8),0px 1px 0px rgba(255,255,255,0.2) inset;*/
-	color: #fff;
-	text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.5);
-	background-image: linear-gradient(bottom, rgb(56, 115, 224) 0%,
-		rgb(27, 59, 188) 50%, rgb(60, 85, 197) 50%, rgb(142, 157, 221) 88% );
-	background-image: -o-linear-gradient(bottom, rgb(56, 115, 224) 0%,
-		rgb(27, 59, 188) 50%, rgb(60, 85, 197) 50%, rgb(142, 157, 221) 88% );
-	background-image: -moz-linear-gradient(bottom, rgb(56, 115, 224) 0%,
-		rgb(27, 59, 188) 50%, rgb(60, 85, 197) 50%, rgb(142, 157, 221) 88% );
-	background-image: -webkit-linear-gradient(bottom, rgb(56, 115, 224) 0%,
-		rgb(27, 59, 188) 50%, rgb(60, 85, 197) 50%, rgb(142, 157, 221) 88% );
-	background-image: -ms-linear-gradient(bottom, rgb(56, 115, 224) 0%,
-		rgb(27, 59, 188) 50%, rgb(60, 85, 197) 50%, rgb(142, 157, 221) 88% );
-	background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, rgb(56,
-		115, 224) ), color-stop(0.5, rgb(27, 59, 188) ),
-		color-stop(0.5, rgb(60, 85, 197) ),
-		color-stop(0.88, rgb(142, 157, 221) ) );
-}
-
-.button-inset a.button.grey {
-	background-image: linear-gradient(bottom, rgb(190, 192, 195) 0%,
-		rgb(190, 191, 194) 50%, rgb(207, 208, 210) 50%, rgb(235, 236, 236) 88%
-		);
-	background-image: -o-linear-gradient(bottom, rgb(190, 192, 195) 0%,
-		rgb(190, 191, 194) 50%, rgb(207, 208, 210) 50%, rgb(235, 236, 236) 88%
-		);
-	background-image: -moz-linear-gradient(bottom, rgb(190, 192, 195) 0%,
-		rgb(190, 191, 194) 50%, rgb(207, 208, 210) 50%, rgb(235, 236, 236) 88%
-		);
-	background-image: -webkit-linear-gradient(bottom, rgb(190, 192, 195) 0%,
-		rgb(190, 191, 194) 50%, rgb(207, 208, 210) 50%, rgb(235, 236, 236) 88%
-		);
-	background-image: -ms-linear-gradient(bottom, rgb(190, 192, 195) 0%,
-		rgb(190, 191, 194) 50%, rgb(207, 208, 210) 50%, rgb(235, 236, 236) 88%
-		);
-	background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, rgb(190,
-		192, 195) ), color-stop(0.5, rgb(190, 191, 194) ),
-		color-stop(0.5, rgb(207, 208, 210) ),
-		color-stop(0.88, rgb(235, 236, 236) ) );
-	color: #000;
-	text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.5);
+.button-weibo {
+	display: inline-block;
+	background: url(<%=contextPath%>/img/ui/weibo.png) no-repeat;
+	background-size: contain;
+	width: 36px;
+	height: 36px;
 }
 
 a.select {
@@ -395,177 +338,69 @@ ul.menu li.active a {
 <body>
 	<section>
 		<jsp:include page="common-top.jsp"></jsp:include>
-		<div class="info-content" style="height:300px;">
-		</div>
         <article id="main-content" class="main-content">
 			<div class="info">
 				<div class="info-row">
 					<div class="info-img">
-						<img src="${p.imgs}" />
+						<img src="<%=contextPath %>/${p.imgs}"/>
+						<div>
+							<span class="button-weibo"></span>
+							分享到微博
+						</div>
 					</div>
 					<div class="info-buy">
+						<div class="info-name">
+							${p.name}
+						</div>
 						<c:choose>
-						<c:when test="${!empty p.products}">
-							<c:choose>
-							<c:when test="${p.classify eq 'color' }">
-							<div class="price" style="height:auto"><span style="display:block" name="price-txt">￥${p.products[0].price}</span>
-								<a class="select" style="width:112px;" href="javascript:void(0)">
-								<select data-pid="${p.id}" name="selProductsColor" style="width:100%;">
-								<c:forEach items="${p.products}" var="subP">
-								<option data-rgb="${subP.rgb}" data-price="${subP.price}" value="${subP.id}">${subP.color}</option>
-								</c:forEach>
-							</select>
-							<span class="color"><span class="product-color" style="background-color:${p.products[0].rgb}"></span>${p.products[0].color}</span>
-							</a>
-							</div>
-							</c:when>
-							<c:when test="${p.classify eq 'capacity'}">
-							<div class="price"><span name="price-txt">￥${p.products[0].price}</span>
-								<a class="select" href="javascript:void(0)">
-								<select data-pid="${p.id}" name="selProducts">
-								<c:forEach items="${p.products}" var="subP">
-								<option data-price="${subP.price}" value="${subP.id}">${subP.capacity}</option>
-								</c:forEach>
+							<c:when test="${!empty p.products}">
+								<c:choose>
+								<c:when test="${p.classify eq 'color' }">
+								<div class="price" style="height:auto"><span style="display:block" name="price-txt">RMB${p.products[0].price}</span>
+									<a class="select" style="width:112px;" href="javascript:void(0)">
+									<select data-pid="${p.id}" name="selProductsColor" style="width:100%;">
+									<c:forEach items="${p.products}" var="subP">
+									<option data-rgb="${subP.rgb}" data-price="${subP.price}" value="${subP.id}">${subP.color}</option>
+									</c:forEach>
 								</select>
-							<span class="capacity">${p.products[0].capacity}</span>
-							</a>
-							</div>
+								<span class="color"><span class="product-color" style="background-color:${p.products[0].rgb}"></span>${p.products[0].color}</span>
+								</a>
+								</div>
+								</c:when>
+								<c:when test="${p.classify eq 'capacity'}">
+								<div class="price"><span name="price-txt">RMB${p.products[0].price}</span>
+									<a class="select" href="javascript:void(0)">
+									<select data-pid="${p.id}" name="selProducts">
+									<c:forEach items="${p.products}" var="subP">
+									<option data-price="${subP.price}" value="${subP.id}">${subP.capacity}</option>
+									</c:forEach>
+									</select>
+								<span class="capacity">${p.products[0].capacity}</span>
+								</a>
+								</div>
+								</c:when>
+								<c:otherwise>
+								</c:otherwise>
+								</c:choose>
 							</c:when>
 							<c:otherwise>
+								<div class="price">RMB${p.price}</div>
 							</c:otherwise>
-							</c:choose>
-						</c:when>
-						<c:otherwise>
-							<div class="price">￥${p.price}</div>
-						</c:otherwise>
 						</c:choose>
-						<span class="button-inset"><a cid="${catalog.id}" pid="<c:choose><c:when test="${!empty p.products}">${p.products[0].id}</c:when><c:otherwise>${p.id}</c:otherwise></c:choose>" class="button dark-grey" onclick="buynow(this)" href="javascript:void(0);">立即购买</a></span>
+						<span class="button-inset"></span>
 					</div>
 				</div>
-			</div>   			
-   			
-			<div class="info-name">
-				${p.name}
 			</div>
-			<div class="info-desc">
-			
-				<ul id="menu" class="menu">
-					<li><a href="javascript:;" data-name="efficacy">产品功效</a></li>
-					<li><a href="javascript:;" data-name="comment">用户评论</a></li>
-					<c:if test="${!empty p.recommend}">
-					<li><a href="javascript:;" data-name="recommend">相关推介</a></li>
-					</c:if>
-					<c:if test="${!empty p.offer}">
-					<li><a href="javascript:;" data-name="offer">优惠信息</a></li>
-					</c:if>
-				</ul>
-				<div class="nav-border" style="position:relative;z-index:1;top:-1px;"><div class="nav-border-l"></div><div class="nav-border-r"></div></div>
-				<div name="efficacy" class="info-content">
-					<div class="pre">${p.desc}</div>
-					<%-- <div class="pre">${p.desc}</div> --%>
-				</div>
-				<div name="comment" class="info-content">
-				
-				
-					<div name="comment-content" style="position:relative;left:0px;height:auto;margin-right:5px;">
-					<div id="preComment" class="pre-comment">我要评论</div>
-					<div style="clear:both;height:0px;"></div>
-					<c:choose>
-					<%-- 单个产品 --%>
-					<c:when test="${!empty comments}">
-						<c:forEach items="${comments}" var="c">
-						<div class="comment-item">
-						<div>
-						<span class="comment-info">${c.name}&nbsp;${c.date}</span>
-						<span class="level">
-						<c:forEach var="i" begin="1" end="${c.score}" step="1">
-							<img src="<%=contextPath %>/img/ui/star2.png">
-						</c:forEach>
-						</span>
-						</div>
-						<div class="comment-content">
-						${c.content}
-						</div>
-						</div>
-						</c:forEach>
-					</c:when>
-					<%-- 多个产品 --%>
-					<c:when test="${!empty allcomments}">
-						<c:forEach items="${allcomments}" var="comments">
-						<div name="comment-${comments.key}"  <c:if test="${!(!empty p.products && p.products[0].id eq comments.key)}">style="display:none"</c:if> >
-							<c:forEach items="${comments.value}" var="c">
-							<div class="comment-item">
-							<div>
-							<span class="comment-info">${c.name}&nbsp;${c.date}</span>
-							<span class="level">
-							<c:forEach var="i" begin="1" end="${c.score}" step="1">
-								<img src="<%=contextPath %>/img/ui/star2.png">
-							</c:forEach>
-							</span>
-							</div>
-							<div class="comment-content">
-							${c.content}
-							</div>
-							</div>
-							</c:forEach>
-						</div>
-						</c:forEach>
-					</c:when>
-					<c:otherwise>
-					</c:otherwise>
-					</c:choose>
-				</div>
-				
-				
-				<div name="comment-add" style="position:relative;left:100%;width:100%;display:none;height:auto;">
-					<div class="add-comment-btn"><div id="viewComment" class="add-comment">返回</div><div id="addComment" class="add-comment">提交</div></div>
-					<div style="clear:both;height:0px;"></div>
-					<div class="comment-row">
-						<input type="text" name="commentName" class="common-text" placeholder="这里填写您的用户名">
-						<div style="margin-top:3px;font-size:9px;color:#aaa;">
-						不填写将匿名评论
-						<br />
-						通过审核后PC官网和手机官网将会显示您的评论
-						</div>
-					</div>
-					<div class="comment-row" style="height:20px;line-height:20px;">
-						总体评价：
-						<span id="commentLevel" class="level">
-						<img data-lev="0" src="<%=contextPath %>/img/ui/star2.png">
-						<img data-lev="1" src="<%=contextPath %>/img/ui/star2.png">
-						<img data-lev="2" src="<%=contextPath %>/img/ui/star2.png">
-						<img data-lev="3" src="<%=contextPath %>/img/ui/star2.png">
-						<img data-lev="4" src="<%=contextPath %>/img/ui/star2.png">
-						</span>
-						<div style="font-size:9px;color:#aaa;">点击星进行评分</div>
-					</div>
-					<div class="comment-row">
-						<textarea name="commentContent" style="height:70px;" class="common-text" type="text" placeholder="这里填写您的评论内容"></textarea>
-					</div>					
-				</div>
-				</div>
-				
-				
-				
-				<c:if test="${!empty p.recommend}">
-				<div name="recommend" class="info-content">
-					${p.recommend}
-				</div>
-				</c:if>
-				<c:if test="${!empty p.offer}">
-					<div name="offer" class="info-content">
-						${p.offer}
-					</div>
-				</c:if>
-			</div>  			
+	        <div class="details"></div>
+	        <div class="details"></div>
+	        <div class="details"></div>
+	        <div class="details"></div>
+	        <div class="details"></div>
         </article>
 	</section>
-	
 	<script src="<%=contextPath %>/js/jquery-1.9.1.min.js"></script>
 	<script src="<%=contextPath %>/js/tool.js"></script>
-	
 	<script type="text/javascript">
-	
 		
 		function buynow(e){
 			var $me = $(e);
@@ -586,7 +421,7 @@ ul.menu li.active a {
 				var $me = $(this);
 				if($me.attr('name')==='selProducts'){
 					var $option = $me.children('option:selected');
-					$me.parent().parent().find('span[name="price-txt"]').empty().html('￥'+$option.data('price'));
+					$me.parent().parent().find('span[name="price-txt"]').empty().html('RMB'+$option.data('price'));
 					$me.parent().parent().parent().find('a[pid]').attr('pid',$option.val());
 					$me.parent().children('span').empty().html($option.text());
 					
@@ -595,7 +430,7 @@ ul.menu li.active a {
 					$option = null;
 				}else if($me.attr('name')==='selProductsColor'){
 					var $option = $me.children('option:selected');
-					$me.parent().parent().find('span[name="price-txt"]').empty().html('￥'+$option.data('price'));
+					$me.parent().parent().find('span[name="price-txt"]').empty().html('RMB'+$option.data('price'));
 					$me.parent().parent().parent().find('a[pid]').attr('pid',$option.val());
 					$me.parent().children('span').empty().html('<span class="product-color" style="background-color:'+$option.data('rgb')+'}"></span>'+$option.text());
 					
