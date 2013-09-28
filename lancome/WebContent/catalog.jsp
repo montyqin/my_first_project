@@ -73,6 +73,51 @@
 		width:40%;
 		height:80%;
 	}
+	
+	a.select {
+		border-radius: 5px;
+		border: 1px solid #c8c8c8;
+		text-align: left;
+		width: 60px;
+		height: 20px;
+		line-height: 20px;
+		display: inline-block;
+		text-decoration: none;
+		position: relative;
+		font-size: 15px;
+		color: #000;
+		margin:0 5px;
+	}
+	
+	a.select:after {
+		background: linear-gradient(to bottom, #F6F6F6, #DCDCDC) repeat scroll 0
+			0 transparent;
+		border-left: 1px solid #C8CDD1;
+		border-radius: 0 5px 5px 0;
+		color: #CDCECF;
+		text-shadow: 0 1px #FFFFFF;
+		content: "▼";
+		display: block;
+		position: absolute;
+		right: 0;
+		top: 0;
+		width: 20px;
+		text-align: center;
+	}
+	
+	a.select span {
+		padding-left: 5px;
+	}
+	a.select select {
+		text-align: center;
+		opacity: 0;
+		width:60px;
+		height:20px;
+		left: 0;
+		top: 0;
+		position: absolute;
+		z-index: 2;
+	}
 </style>
 </head>
 <body>
@@ -81,7 +126,14 @@
         <article id="main-content">
         	<div class="catalog-content">
         		<div class="catalog-content-title">
-        			<div style="float:right">按<select style="margin:0 5px;"><option value="price">价格</option></select>排序</div>
+        			<div style="float:right;">
+	        			按<a class="select" style="width:60px;" href="javascript:void(0)">
+							<select>
+								<option value="price">价格</option>
+							</select>
+							<span class="color">价格</span>
+						</a>排序
+        			</div>
 	   				<div>全部${fn:length(products)}个产品</div>
         		</div>
 	        	<c:forEach items="${products}" var="item">

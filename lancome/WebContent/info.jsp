@@ -16,8 +16,8 @@
 <html>
 <head>
 <meta charset="utf-8">
-<meta name="description" content="${p["name"]}_兰蔻Lancome手机官方网站暨网上商城" />
-<meta name="Keywords" content="${p["name"]}_兰蔻Lancome手机官方网站暨网上商城" />
+<meta name="description" content="${p["name"]}_科颜氏Kiehl's手机官方网站暨网上商城" />
+<meta name="Keywords" content="${p["name"]}_科颜氏Kiehl's手机官方网站暨网上商城" />
 <meta name="author" content="arvato">
 <meta name="HandheldFriendly" content="True">
 <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
@@ -125,7 +125,7 @@ html,body{
 }
 
 a.select {
-	border-radius: 20px 20px 20px 20px;
+	border-radius: 5px;
 	border: 1px solid #c8c8c8;
 	text-align: left;
 	width: 70px;
@@ -391,28 +391,28 @@ ul.menu li.active a {
 							<c:when test="${!empty p.products}">
 								<c:choose>
 								<c:when test="${p.classify eq 'color' }">
-								<div class="price" style="height:auto"><span style="display:block" name="price-txt">RMB ${p.products[0].price}</span>
-									<a class="select" style="width:112px;" href="javascript:void(0)">
-									<select data-pid="${p.id}" name="selProductsColor" style="width:100%;">
-									<c:forEach items="${p.products}" var="subP">
-									<option data-rgb="${subP.rgb}" data-price="${subP.price}" value="${subP.id}">${subP.color}</option>
-									</c:forEach>
-								</select>
-								<span class="color"><span class="product-color" style="background-color:${p.products[0].rgb}"></span>${p.products[0].color}</span>
-								</a>
-								</div>
+									<div class="price" style="height:auto"><span style="display:block" name="price-txt">RMB ${p.products[0].price}</span>
+										<a class="select" style="width:110px;" href="javascript:void(0)">
+											<select data-pid="${p.id}" name="selProductsColor">
+												<c:forEach items="${p.products}" var="subP">
+													<option data-rgb="${subP.rgb}" data-price="${subP.price}" value="${subP.id}">${subP.color}</option>
+												</c:forEach>
+											</select>
+											<span class="color"><span class="product-color" style="background-color:${p.products[0].rgb}"></span>${p.products[0].color}</span>
+										</a>
+									</div>
 								</c:when>
 								<c:when test="${p.classify eq 'capacity'}">
-								<div class="price"><span name="price-txt">RMB ${p.products[0].price}</span>
-									<a class="select" href="javascript:void(0)">
-									<select data-pid="${p.id}" name="selProducts">
-									<c:forEach items="${p.products}" var="subP">
-									<option data-price="${subP.price}" value="${subP.id}">${subP.capacity}</option>
-									</c:forEach>
-									</select>
-								<span class="capacity">${p.products[0].capacity}</span>
-								</a>
-								</div>
+									<div class="price"><span name="price-txt">RMB ${p.products[0].price}</span>
+										<a class="select" href="javascript:void(0)">
+											<select data-pid="${p.id}" name="selProducts">
+												<c:forEach items="${p.products}" var="subP">
+													<option data-price="${subP.price}" value="${subP.id}">${subP.capacity}</option>
+												</c:forEach>
+											</select>
+											<span class="capacity">${p.products[0].capacity}</span>
+										</a>
+									</div>
 								</c:when>
 								<c:otherwise>
 								</c:otherwise>
