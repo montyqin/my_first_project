@@ -40,6 +40,7 @@ html,body{
 .info {
 	display: table;
 	width: 100%;
+	margin-bottom:20px;
 }
 
 .info-row {
@@ -60,20 +61,19 @@ html,body{
 	display: table-cell;
 	width: 45%;
 	padding-left:10px;
-	padding-top:10%;
+	padding-top:5%;
 }
 
 .info-name {
 	width: 100%;
 	text-align: left;
-	font-size: 1em;
-	font-weight: bold;
+	font-size: 23px;
 }
 
 .info-others {
 	width: 100%;
 	text-align: left;
-	font-size: 1em;
+	font-size: 23px;
 }
 
 .details
@@ -81,11 +81,11 @@ html,body{
 	position:relative;
 	background: url(<%=contextPath%>/img/ui/detailbg.png) no-repeat;
 	background-size: 100% 100%;
-	height: 44px;
-	line-height:44px;
-	margin-top: 10px;
+	height:30px;
+	line-height:30px;
+	margin-top:10px;
 	padding:0 5px;
-	font-size:20px;
+	font-size:15px;
 }
 
 .details-content {
@@ -102,7 +102,7 @@ html,body{
 .price {
 	height: 30px;
 	line-height: 30px;
-	font-size: 1em;
+	font-size: 15px;
 	margin-bottom: 5px;
 	color: #000;
 	text-align: left;
@@ -112,16 +112,16 @@ html,body{
 	display: block;
 	background: url(<%=contextPath%>/img/ui/purchase2.png) no-repeat;
 	background-size: contain;
-	width: 60%;
-	height: 30px;
+	width: 80%;
+	height: 25px;
 }
 
 .button-weibo {
-	background: url(<%=contextPath%>/img/ui/weibo.png) no-repeat;
-	background-position: left;
-	height: 36px;
-	line-height:36px;
-	padding-left:40px;
+	background:url(<%=contextPath%>/img/ui/weibo.png) no-repeat;
+	background-size:contain;
+	height:25px;
+	line-height:25px;
+	padding-left:30px;
 }
 
 a.select {
@@ -176,7 +176,7 @@ a.select span.color{
 a.select select {
 	text-align: center;
 	opacity: 0;
-	width:70px;
+	width:110px;
 	height:30px;
 	left: 0;
 	top: 0;
@@ -336,7 +336,7 @@ ul.menu li.active a {
     border-radius: 5px 5px 5px 5px;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) inset;
     color: #999999;
-    font-family: "Helvetica Neue",Helvetica,sans-serif;
+	font-family:Microsoft YaHei,华文细黑;
     font-size:12px;
     padding: 6px;
     width: 91%;
@@ -351,25 +351,27 @@ ul.menu li.active a {
 	position:absolute;
 	right:5px;
 	top:50%;
-	margin-top:-16px;
+	margin-top:-10px;
 	dislplay:inline-block;
 	*display:inline;
 	*zoom:1;
 	background:url(<%=contextPath%>/img/ui/plus.png) no-repeat;
-	width:33px;
-	height:32px;
+	background-size:contain;
+	width:20px;
+	height:20px;
 }
 .minus {
 	position:absolute;
 	right:5px;
 	top:50%;
-	margin-top:-16px;
+	margin-top:-10px;
 	dislplay:inline-block;
 	*display:inline;
 	*zoom:1;
 	background:url(<%=contextPath%>/img/ui/minus.png) no-repeat;
-	width:33px;
-	height:32px;
+	background-size:contain;
+	width:20px;
+	height:20px;
 }
 </style>
 </head>
@@ -422,7 +424,7 @@ ul.menu li.active a {
 								<div class="price">RMB ${p.price}</div>
 							</c:otherwise>
 						</c:choose>
-						<div>
+						<div style="margin-top:15px;">
 							<a cid="${catalog.id}" pid="<c:choose><c:when test="${!empty p.products}">${p.products[0].id}</c:when><c:otherwise>${p.id}</c:otherwise></c:choose>"
 								class="button-buy" onclick="buynow(this)" href="javascript:void(0);"></a>
 						</div>

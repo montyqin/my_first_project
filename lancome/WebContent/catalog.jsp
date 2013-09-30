@@ -62,16 +62,16 @@
 	.product-purchase {
 		display:inline-block;
 		background:url(../img/ui/purchase.png) no-repeat;
-		background-size:100% 100%;
-		width:40%;
-		height:80%;
+		background-size:contain;
+		width:45%;
+		height:90%;
 	}
 	.product-moreinfo {
 		display:inline-block;
 		background:url(../img/ui/moreinfo.png) no-repeat;
-		background-size:100% 100%;
-		width:40%;
-		height:80%;
+		background-size:contain;
+		width:45%;
+		height:90%;
 	}
 	
 	a.select {
@@ -84,7 +84,6 @@
 		display: inline-block;
 		text-decoration: none;
 		position: relative;
-		font-size: 15px;
 		color: #000;
 		margin:0 5px;
 	}

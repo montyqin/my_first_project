@@ -63,7 +63,7 @@ html,body{
 .item .b_desc>.b_ch{
 	font-size:18px;
 	font-weight:bold;	
-	font-family: "幼圆";			
+	font-family:Microsoft YaHei,华文细黑;
 }
 .item>.buy{
 	float:right;
@@ -154,7 +154,7 @@ html,body{
 }
 .s_item>.s_desc>.s_ch{
 	font-size: 14px;
-	font-family: "幼圆";
+	font-family:Microsoft YaHei,华文细黑;
 }
 /* part3 */
 .part3{

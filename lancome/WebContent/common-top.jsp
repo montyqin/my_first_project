@@ -18,10 +18,14 @@ String contextPath = request.getContextPath();
 		</div>
 	</div>
 	<div class="menus">
-		<div class="menu-products"></div>
+		<%--<div class="menu-products"></div>
 		<div class="menu-counter"></div>
 		<div class="menu-star"></div>
-		<div class="menu-search"></div>
+		<div class="menu-search"></div>--%>
+		<div class="menuItem">浏览产品</div>
+		<div class="menuItem">专柜地址</div>
+		<div class="menuItem">最新活动</div>
+		<div class="menuItem">搜索产品</div>
 		<div class="clear"></div>
 	</div>
 	<c:if test="${!empty catalog}">

@@ -6,6 +6,9 @@ html,body {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
+	font-size:12px;
+	font-family:Microsoft YaHei,华文细黑;
+	min-width:320px;
 }
 html{
 	width:100%;
@@ -29,7 +32,7 @@ img {
 	position:relative;
 }
 .nav-top > div.logo img{
-	width:50%;
+	width:57%;
 }
 .nav-top .btns{
 	position:absolute;
@@ -152,21 +155,21 @@ ul.lancome-nav li {
 .nav-menu {
 	background:url(../img/ui/nav-menu.png) no-repeat;
 	background-size:contain;
-	width:20%;
+	width:25%;
 	height:50%;
 }
 
 .nav-phone {
 	background: url(../img/ui/nav-login.png) no-repeat;
 	background-size:contain;
-	width:20%;
+	width:25%;
 	height:50%;
 }
 
 .nav-bag {
 	background: url(../img/ui/nav-bag.png) no-repeat;
 	background-size:contain;
-	width:20%;
+	width:25%;
 	height:50%;
 }
 
@@ -204,7 +207,22 @@ ul.lancome-nav li {
 }
 
 .menus {
-	height:55px;
+	
+}
+
+.menuItem {
+	float:left;
+	background-color:#000;
+	color:#fff;
+	width:25%;
+	height:40px;
+	line-height:40px;
+	text-align:center;
+	font-size:18px;
+}
+.menuItem:hover {
+	background-color:#fff;
+	color:#000;
 }
 
 .menu-products {

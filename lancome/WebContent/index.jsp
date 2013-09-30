@@ -59,33 +59,33 @@
    <section>			
    <jsp:include page="common-top.jsp"></jsp:include>		
         <article id="main-content">
-		<div id="j_imgSwipe" class="swipe" style="visibility: visible;">
-			<div class="swipe-wrap" data-sudaclick="imgswipe" style="width: 1280px;">
-				<div class="swipe_pic" style="width: 320px; left: 0px; -webkit-transition: 300ms; -webkit-transform: translate(-320px, 0px) translateZ(0px);"
-				data-index="0">
-					<a href="http://www.neulion.com.cn">
-						<img src="<%=contextPath %>/img/index/KV.png" alt="">
-						<h3 class="swipe_h3">
-							手机官网购物即有机会体验科颜氏明星四宝旅行装1
-						</h3>
-					</a>
-				</div>
-				<div class="swipe_pic" style="width: 320px; left: -320px; -webkit-transition: 300ms; -webkit-transform: translate(-320px, 0px) translateZ(0px);"
-				data-index="1">
-					<a href="http://www.neulion.com.cn">
-						<img src="<%=contextPath %>/img/index/vsnlp.jpg" alt="">
-						<h3 class="swipe_h3">
-							手机官网购物即有机会体验科颜氏明星四宝旅行装2
-						</h3>
-					</a>
-				</div>
-            </div>
-            <ul class="swipe_num">
-				<li class="active"></li>
-				<li class=""></li>
-			</ul>
-        </div>
-        	<div class="clist"> 
+			<div id="j_imgSwipe" class="swipe" style="visibility: visible;">
+				<div class="swipe-wrap" data-sudaclick="imgswipe" style="width: 1280px;">
+					<div class="swipe_pic" style="width: 320px; left: 0px; -webkit-transition: 300ms; -webkit-transform: translate(-320px, 0px) translateZ(0px);"
+					data-index="0">
+						<a href="http://www.neulion.com.cn">
+							<img src="<%=contextPath %>/img/index/KV.png" alt="">
+							<h3 class="swipe_h3">
+								手机官网购物即有机会体验科颜氏明星四宝旅行装1
+							</h3>
+						</a>
+					</div>
+					<div class="swipe_pic" style="width: 320px; left: -320px; -webkit-transition: 300ms; -webkit-transform: translate(-320px, 0px) translateZ(0px);"
+					data-index="1">
+						<a href="http://www.neulion.com.cn">
+							<img src="<%=contextPath %>/img/index/vsnlp.jpg" alt="">
+							<h3 class="swipe_h3">
+								手机官网购物即有机会体验科颜氏明星四宝旅行装2
+							</h3>
+						</a>
+					</div>
+	            </div>
+	            <ul class="swipe_num">
+					<li class="active"></li>
+					<li class=""></li>
+				</ul>
+	        </div>
+	       	<div class="clist"> 
 				  <ul>	
 					<c:forEach items="${categories}" var="item">
 					<li class="crow level1">
@@ -117,7 +117,6 @@
 					</c:forEach>
 				</ul>
 			</div>
-        
 		    <div class="subscribe">
 				<div><h1 style="text-align:center;">订阅</h1></div>
 				<div style="text-align:center;margin:10px"><span>输入邮箱地址</span></div>
@@ -125,7 +124,6 @@
 				<div style="text-align:center;margin:10px;"><input type="submit" class="btn_submit" value=""></div>
 			</div>
 		</article>
-
         <footer>
 	      <p style="text-align:center;margin:15px">2013 Kiehl's Since 1851</p>
 	    </footer>		

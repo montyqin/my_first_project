@@ -4,7 +4,7 @@
 	padding:0
 }
 body {
-	font:16px/1.5 'XinGothic-SinaWeibo','Microsoft Yahei','Simsun';
+	font:16px/1.5 Microsoft YaHei,华文细黑;
 	color:#333;
 	background:#fff;
 	-webkit-text-size-adjust:none;
@@ -1024,7 +1024,7 @@ header,footer,article,section,nav,menu,hgroup {
 	display:block;
 	text-align:center;
 	font-size:10px;
-	font-family:'arial';
+	font-family:Microsoft YaHei,华文细黑;
 	color:#f29149;
 }
 .options_title {
