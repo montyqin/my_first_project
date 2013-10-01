@@ -41,6 +41,7 @@ public class InfoServlet extends HttpServlet {
 		if(pathInfo!=null){
 			String[] pathParts = pathInfo.split("/");
 			if(pathParts.length>1){ // 不计算第一个空字符串
+				request.getSession().setAttribute("menuItem", "nav1");
 				if(pathParts.length==3){
 					// 一级目录
 					if(log.isDebugEnabled()){
@@ -85,6 +86,7 @@ public class InfoServlet extends HttpServlet {
 		if(pathInfo!=null){
 			String[] pathParts = pathInfo.split("/");
 			if(pathParts.length>1){ // 不计算第一个空字符串
+				request.getSession().setAttribute("menuItem", "nav1");
 				if(pathParts.length==3){
 					if("comment".equals(pathParts[1])){
 						String pcode = pathParts[2];

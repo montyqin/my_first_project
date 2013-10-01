@@ -152,6 +152,12 @@ ul.lancome-nav li {
 	background-position:center;
 }
 
+.ellipsis {
+	overflow:hidden;
+	text-overflow:ellipsis;
+	white-space:nowrap;
+}
+
 .nav-menu {
 	background:url(../img/ui/nav-menu.png) no-repeat;
 	background-size:contain;
@@ -210,8 +216,9 @@ ul.lancome-nav li {
 	
 }
 
-.menuItem {
+a:link.menuItem, a:visited.menuItem, a:active.menuItem {
 	float:left;
+	display:inline-block;
 	background-color:#000;
 	color:#fff;
 	width:25%;
@@ -219,12 +226,17 @@ ul.lancome-nav li {
 	line-height:40px;
 	text-align:center;
 	font-size:18px;
+	cursor:default;
+	text-decoration:none;
 }
-.menuItem:hover {
+a:hover.menuItem {
 	background-color:#fff;
 	color:#000;
 }
-
+a:link.menuItemSel, a:visited.menuItemSel, a:active.menuItemSel {
+	background-color:#fff;
+	color:#000;
+}
 .menu-products {
 	float:left;
 	background:url(../img/ui/nav1.png) no-repeat;

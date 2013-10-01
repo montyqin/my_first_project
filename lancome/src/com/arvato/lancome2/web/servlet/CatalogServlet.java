@@ -46,6 +46,7 @@ public class CatalogServlet extends HttpServlet {
 		if(pathInfo!=null){
 			String[] pathParts = pathInfo.split("/");
 			if(pathParts.length>1){ // 不计算第一个空字符串
+				request.getSession().setAttribute("menuItem", "nav1");
 				if(pathParts.length==2){
 					// 一级目录
 					if(log.isDebugEnabled()){

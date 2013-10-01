@@ -329,8 +329,8 @@ $(function(){
 		
 		var _handleNavTop = function(dataClass){
 			if(dataClass==='nav-phone'){
-				_gaq.push(['_trackEvent','navigate','hotlaine','lancome',1,true]);
-				window.location.href = 'tel:4008208016';
+				//_gaq.push(['_trackEvent','navigate','hotlaine','lancome',1,true]);
+				//window.location.href = 'tel:4008208016';
 			}else if(dataClass==='nav-bag'){
 				window.location.href = arvato.orderDomain+'/mmall/cart.html?f=np&fp=1&c=1&id=132';
 			}else if(dataClass==='nav-menu'){
@@ -372,8 +372,8 @@ $(function(){
 						$eTarget.removeClass(dataClass+"-d").addClass(dataClass);
 						
 						if(dataClass==='nav-phone'){
-							_gaq.push(['_trackEvent','navigate','hotlaine','lancome',1,true]);
-							window.location.href = 'tel:4008208016';
+							//_gaq.push(['_trackEvent','navigate','hotlaine','lancome',1,true]);
+							//window.location.href = 'tel:4008208016';
 						}else if(dataClass==='nav-bag'){
 							window.location.href = arvato.orderDomain+'/mmall/cart.html?f=np&fp=1&c=1&id=132';
 						}else if(dataClass==='nav-menu'){

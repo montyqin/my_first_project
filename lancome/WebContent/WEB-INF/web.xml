@@ -43,6 +43,17 @@
     <servlet-name>InfoServlet</servlet-name>
     <url-pattern>/info/*</url-pattern>
   </servlet-mapping>
+
+  <servlet>
+    <description></description>
+    <display-name>NavigateServlet</display-name>
+    <servlet-name>NavigateServlet</servlet-name>
+    <servlet-class>com.arvato.lancome2.web.servlet.NavigateServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>NavigateServlet</servlet-name>
+    <url-pattern>/nav/*</url-pattern>
+  </servlet-mapping>
   
   <servlet-mapping>
     <servlet-name>default</servlet-name>

@@ -35,6 +35,7 @@
 	}
 	.catalog-content-title {
 		height:25px;
+		line-height:25px;
 	}
 	.catalog-list {
 		display:inline-block;
