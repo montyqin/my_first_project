@@ -58,21 +58,26 @@
 	.product-contain {
 		text-align:center;
 		height:30px;
+		line-height:30px;
 		margin-top:5px;
 	}
 	.product-purchase {
 		display:inline-block;
-		background:url(../img/ui/purchase.png) no-repeat;
-		background-size:contain;
+		background-color:#000000;
+		color:#ffffff;
 		width:45%;
-		height:90%;
+		height:100%;
+		border-radius:5px;
+		cursor:default;
 	}
 	.product-moreinfo {
 		display:inline-block;
-		background:url(../img/ui/moreinfo.png) no-repeat;
-		background-size:contain;
+		background-color:#c6c6c6;
+		color:#000000;
 		width:45%;
-		height:90%;
+		height:100%;
+		border-radius:5px;
+		cursor:default;
 	}
 	
 	a.select {
@@ -142,8 +147,8 @@
 	        			<div class="txtcenter">${item.name}</div>
 	        			<div class="txtcenter">RMB ${item.price}</div>
 	        			<div class="product-contain">
-	        				<div class="product-moreinfo" onclick="showinfo('${catalog.id}','${item.id}')"></div>
-	        				<div class="product-purchase"><!-- purchase: item.id --></div>
+	        				<div class="product-moreinfo" onclick="showinfo('${catalog.id}','${item.id}')">了解详情</div>
+	        				<div class="product-purchase">立即购买<!-- purchase: item.id --></div>
 	        			</div>
 	        		</div>
 	        	</c:forEach>
