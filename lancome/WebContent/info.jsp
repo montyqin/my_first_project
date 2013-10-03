@@ -110,10 +110,16 @@ html,body{
 
 .button-buy {
 	display: block;
-	background: url(<%=contextPath%>/img/ui/purchase2.png) no-repeat;
-	background-size: contain;
-	width: 80%;
-	height: 25px;
+	background-color:#000000;
+	color:#ffffff;
+	width: 75%;
+	height: 30px;
+	line-height:30px;
+	text-decoration:none;
+	text-align:center;
+	border-radius:5px;
+	cursor:default;
+	font-size:20px;
 }
 
 .button-weibo {
@@ -426,7 +432,7 @@ ul.menu li.active a {
 						</c:choose>
 						<div style="margin-top:15px;">
 							<a cid="${catalog.id}" pid="<c:choose><c:when test="${!empty p.products}">${p.products[0].id}</c:when><c:otherwise>${p.id}</c:otherwise></c:choose>"
-								class="button-buy" onclick="buynow(this)" href="javascript:void(0);"></a>
+								class="button-buy" onclick="buynow(this)" href="javascript:void(0);">立即购买</a>
 						</div>
 					</div>
 				</div>
