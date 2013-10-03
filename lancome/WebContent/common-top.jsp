@@ -46,6 +46,13 @@ String menuItem = (String) request.getSession().getAttribute("menuItem");
 		</c:choose>
 	</ul>
 	</c:if>
+	<c:if test="${!empty navItem}">
+	<ul class="lancome-nav" style="margin-left:0px;">
+		<li><a href="<%=contextPath%>/nav/nav1">首页</a></li>
+		<div class="nav"></div>
+		<li><a href="<%=contextPath%>/nav/nav3">最新活动</a></li>
+	</ul>
+	</c:if>
 </header>
 <aside class="menu-right" id="lancome-menu-right">
     <header>

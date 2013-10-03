@@ -33,11 +33,12 @@ public class NavigateServlet extends HttpServlet {
 					req.getRequestDispatcher("/info.jsp").forward(req, resp);
 				}
 				else if ("nav2".equalsIgnoreCase(pathParts[1])){
-					req.getSession().setAttribute("menuItem", "nav2");
-					req.getRequestDispatcher("/nav2.jsp").forward(req, resp);
+					req.getSession().removeAttribute("menuItem");
+					resp.sendRedirect("http://mg.lancome.com.cn/storeaddress/location/lancome");
 				}
 				else if ("nav3".equalsIgnoreCase(pathParts[1])){
 					req.getSession().setAttribute("menuItem", "nav3");
+					req.setAttribute("navItem", "nav3");
 					req.getRequestDispatcher("/nav3.jsp").forward(req, resp);
 				}
 				else if ("nav4".equalsIgnoreCase(pathParts[1])){

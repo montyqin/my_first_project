@@ -54,16 +54,13 @@
 	</style>
 </head>
 <body>
-   <section>			
-   <jsp:include page="common-top.jsp"></jsp:include>		
-        <article>
-        	Coming soon...
-		</article>
-        <footer>
-	      <p style="text-align:center;margin:15px">2013 Kiehl's Since 1851</p>
-	    </footer>		
-	</section>
-	<script src="js/tool.js"></script>
+<section>			
+	<jsp:include page="common-top.jsp"></jsp:include>		
+	<article>
+     	<img src="<%=contextPath %>/img/ui/ad.jpg"/>
+	</article>
+</section>
+<script src="js/tool.js"></script>
 <%@include file="common-track.jsp" %>
 </body>
 </html>
