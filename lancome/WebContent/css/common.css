@@ -229,10 +229,6 @@ a:link.menuItem, a:visited.menuItem, a:active.menuItem {
 	cursor:default;
 	text-decoration:none;
 }
-a:hover.menuItem {
-	background-color:#fff;
-	color:#000;
-}
 a:link.menuItemSel, a:visited.menuItemSel, a:active.menuItemSel {
 	background-color:#fff;
 	color:#000;
