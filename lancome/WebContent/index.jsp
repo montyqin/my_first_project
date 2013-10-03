@@ -28,7 +28,6 @@
 <script src="<%=contextPath%>/js/index-img.js"></script>
 <script src="<%=contextPath%>/js/jquery-1.9.1.min.js"></script>
 <script src="<%=contextPath%>/js/index.js"></script>
-<script src="<%=contextPath%>/js/category.js"></script>
 <script src="<%=contextPath%>/js/zepto.min.js"></script>
 <script src="<%=contextPath%>/js/channel.min.js"></script>
 <script src="<%=contextPath%>/js/swipe.sina.min.js"></script>
@@ -48,6 +47,20 @@
 			//window.location.replace('http://www.lancome.com.cn/lancome/_zh/_cn/index.aspx');
 		}
 	</script>
+	<script type="text/javascript">
+		function openSubCategory(obj){
+		   var next = $(obj).next();
+		   if(next.css("display") == "none"){
+			  next.css("display","block");
+			  $(obj).addClass("expand");
+			  $(obj).find("div.crow_arrow").addClass("arrow_up");
+		   }else{
+			  next.css("display","none");
+			  $(obj).removeClass("expand");
+			  $(obj).find("div.crow_arrow").removeClass("arrow_up");
+		   }
+		}
+    </script>
 	<style type="text/css">
 		html,body {
 			height:auto;
@@ -88,16 +101,14 @@
 	       	<div class="clist"> 
 				  <ul>	
 					<c:forEach items="${categories}" var="item">
-					<li class="crow level1">
-						<div class="crow_row">
+					<li class="crow level1" >
+						<div class="crow_row" onclick="openSubCategory(this)">
 							<div class="crow_title">
 								<span>
 									${item.name}
 								</span>
 							</div>
-							<div class="crow_arrow">
-								<img src="img/ui/down.png">
-							</div>
+							<div class="crow_arrow"></div>
 							<div>
 								&nbsp;
 							</div>

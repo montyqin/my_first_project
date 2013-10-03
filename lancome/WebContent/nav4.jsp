@@ -28,7 +28,6 @@
 <script src="<%=contextPath%>/js/index-img.js"></script>
 <script src="<%=contextPath%>/js/jquery-1.9.1.min.js"></script>
 <script src="<%=contextPath%>/js/index.js"></script>
-<script src="<%=contextPath%>/js/category.js"></script>
 <script src="<%=contextPath%>/js/zepto.min.js"></script>
 <script src="<%=contextPath%>/js/channel.min.js"></script>
 <script src="<%=contextPath%>/js/swipe.sina.min.js"></script>
@@ -46,6 +45,20 @@
 			//window.location.replace('http://www.lancome.com.cn/lancome/_zh/_cn/index.aspx');
 		}
 	</script>
+	<script type="text/javascript">
+		function openSubCategory(obj){
+		   var next = $(obj).next();
+		   if(next.css("display") == "none"){
+			  next.css("display","block");
+			  $(obj).addClass("expand");
+			  $(obj).find("div.crow_arrow").addClass("arrow_up");
+		   }else{
+			  next.css("display","none");
+			  $(obj).removeClass("expand");
+			  $(obj).find("div.crow_arrow").removeClass("arrow_up");
+		   }
+		}
+    </script>
 	<style type="text/css">
 		html,body {
 			height:auto;
@@ -57,7 +70,42 @@
    <section>			
    <jsp:include page="common-top.jsp"></jsp:include>		
         <article>
-        	Comming soon...
+        		<div class="clist"> 
+				  <ul>	
+					<c:forEach items="${categories}" var="item">
+					<li class="crow level1" >
+						<div class="crow_row" onclick="openSubCategory(this)">
+							<div class="crow_title">
+								<span>
+									${item.name}
+								</span>
+							</div>
+							<div class="crow_arrow"></div>
+							<div>
+								&nbsp;
+							</div>
+						</div>			
+						<ul class="clist clist_sub" style="opacity: 1; display: none;">
+							<li class="crow level2">				
+								<div class="crow_row_2">     
+								   <c:forEach items="${item.subCategory}" var="subitem">					
+									<div class="crow_item">
+										<a href="<%=contextPath%>/catalog/${subitem.id}">${subitem.name}</a>
+									</div>						
+								  </c:forEach>
+								</div>
+							</li>
+						</ul>
+					</li>
+					</c:forEach>
+				</ul>
+			</div>
+		    <div class="subscribe">
+				<div><h1 style="text-align:center;">订阅</h1></div>
+				<div style="text-align:center;margin:10px"><span>输入邮箱地址</span></div>
+				<div style="text-align:center;"><input type="text" style="height:70px; width:80%" name="email" id="email" value=""></div>
+				<div style="text-align:center;margin:10px;"><input type="submit" class="btn_submit" value=""></div>
+			</div>
 		</article>
         <footer>
 	      <p style="text-align:center;margin:15px">2013 Kiehl's Since 1851</p>
