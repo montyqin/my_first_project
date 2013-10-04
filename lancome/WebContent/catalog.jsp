@@ -143,7 +143,7 @@
         		</div>
 	        	<c:forEach items="${products}" var="item">
 	        		<div class="catalog-list">
-	        			<div class="catalog-img"><img src="<%=contextPath %>/${item.imgs}"/></div>
+	        			<div class="catalog-img"><img src="<%=contextPath %>/${item.imgs}" onclick="showinfo('${catalog.id}','${item.id}')"/></div>
 	        			<div class="txtcenter">${item.name}</div>
 	        			<div class="txtcenter">RMB ${item.price}</div>
 	        			<div class="product-contain">
