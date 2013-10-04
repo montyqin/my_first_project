@@ -107,7 +107,7 @@ html,body{
 	text-align: left;
 }
 
-.button-buy {
+.button-buy:link, .button-buy:visited, .button-buy:active {
 	display: block;
 	background-color:#000000;
 	color:#ffffff;

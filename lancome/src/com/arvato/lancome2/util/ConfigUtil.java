@@ -339,7 +339,7 @@ public class ConfigUtil {
 		return result;
 	}
 
-	public static Product[] getProductsByCatalogId(String cid) {
+	/*public static Product[] getProductsByCatalogId(String cid) {
 		Object resultObj = CacheUtil.getObjectCache("productObjsOfCatalog_" + cid);
 		Product[] result = null;
 		if (resultObj == null) {
@@ -359,6 +359,37 @@ public class ConfigUtil {
 						log.error(e.getMessage(), e);
 					}
 				}
+				CacheUtil.setObjectCache("productObjsOfCatalog_" + cid, result);
+			}
+		} else {
+			result = (Product[]) resultObj;
+		}
+		return result;
+	}*/
+	
+	public static Product[] getProductsByCatalogId(String cid) {
+		Object resultObj = CacheUtil.getObjectCache("productObjsOfCatalog_" + cid);
+		Product[] result = null;
+		if (resultObj == null) {
+			Catalog c = getCatalog(cid);
+			String ids = c.getIds();
+			if (ids != null) {
+				String[] idsArray = ids.split("\\|");
+				Product tmpProduct = null;
+				result = new Product[idsArray.length];
+				List list = new ArrayList();
+				for (int i = 0; i < idsArray.length; i++) {
+					try {
+						tmpProduct = getProduct(idsArray[i]);
+						tmpProduct.setCid(cid);
+						if (tmpProduct != null) {
+							list.add(tmpProduct);
+						}
+					} catch (IOException e) {
+						log.error(e.getMessage(), e);
+					}
+				}
+				result = (Product[]) list.toArray(new Product[list.size()]);
 				CacheUtil.setObjectCache("productObjsOfCatalog_" + cid, result);
 			}
 		} else {

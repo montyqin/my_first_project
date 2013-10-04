@@ -40,6 +40,7 @@
 	.catalog-list {
 		display:inline-block;
 		width:45%;
+		margin-top:15px;
 	}
 	.catalog-img {
 		width:100%;
@@ -143,16 +144,16 @@
         		</div>
 	        	<c:forEach items="${products}" var="item">
 	        		<div class="catalog-list">
-	        			<div class="catalog-img"><img src="<%=contextPath %>/${item.imgs}" onclick="showinfo('${catalog.id}','${item.id}')"/></div>
+	        			<div class="catalog-img"><img src="<%=contextPath %>/${item.imgs}" onclick="showinfo('${item.cid}','${item.id}')"/></div>
 	        			<div class="txtcenter">${item.name}</div>
 	        			<div class="txtcenter">RMB ${item.price}</div>
 	        			<div class="product-contain">
-	        				<div class="product-moreinfo" onclick="showinfo('${catalog.id}','${item.id}')">详情</div>
+	        				<div class="product-moreinfo" onclick="showinfo('${item.cid}','${item.id}')">详情</div>
 	        				<div class="product-purchase">购买<!-- purchase: item.id --></div>
 	        			</div>
 	        		</div>
 	        	</c:forEach>
-	        	<!--<div class="catalog-list"></div>-->
+	        	<div class="catalog-list"></div>
 				<div class="justifyfix"></div>
         	</div>
         </article>

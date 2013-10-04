@@ -11,6 +11,7 @@ public class Product implements Serializable, Comparable<Product> {
 	private static final long serialVersionUID = 1L;
 	
 	private String id;
+	private String cid;
 	private String fileid;
 	private String name;
 	private String pcode;
@@ -33,6 +34,12 @@ public class Product implements Serializable, Comparable<Product> {
 	}
 	public void setId(String id) {
 		this.id = id;
+	}
+	public String getCid() {
+		return cid;
+	}
+	public void setCid(String cid) {
+		this.cid = cid;
 	}
 	public String getFileid() {
 		return fileid;
