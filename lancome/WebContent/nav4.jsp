@@ -6,9 +6,8 @@
 	if(request.getAttribute("catalog")==null){
 		//response.sendRedirect(request.getContextPath()+"/index.jsp");
 		//return;
-	}
-	
-	String contextPath = request.getContextPath();
+	}	
+	String contextPath = request.getContextPath();	
 %>
 <!DOCTYPE html>
 <html>
@@ -24,112 +23,24 @@
 <meta content="black" name="apple-mobile-web-app-status-bar-style" />
 <title>${catalog["name"]}_科颜氏Kiehl's手机官方网站暨网上商城</title>
 <link rel="stylesheet" type="text/css" href="<%=contextPath %>/css/common.css" />
-<style type="text/css">
-	html,body {
-		height:auto;
+<link rel="stylesheet" type="text/css" href="<%=contextPath %>/css/category.css" />
+<script type="text/javascript">
+	window.contextPath = '<%=contextPath%>';
+	function searchProducts()
+	{
+		var txt = $.trim($("#searchKeyword").val());
+		window.location.href = '<%=contextPath%>/nav/nav4?keyword=' + (txt.length == 0 ? '' : encodeURIComponent(txt));
 	}
-	.catalog-content {
-		border:solid 10px #ece7e1;
-		padding:10px;
-		text-align:justify;
-	}
-	.catalog-content-title {
-		height:25px;
-		line-height:25px;
-	}
-	.catalog-list {
-		display:inline-block;
-		width:45%;
-		margin-top:15px;
-	}
-	.catalog-img {
-		width:100%;
-		border:0;
-	}
-	.catalog-img img {
-		width:100%;
-		vertical-align: top;
-	}
-	.justifyfix {
-		display:inline-block;
-		width:100%;
-		height:0;
-		overflow:hidden;
-	}
-	.product-contain {
-		text-align:center;
-		height:30px;
-		line-height:30px;
-		margin-top:5px;
-	}
-	.product-purchase {
-		display:inline-block;
-		background-color:#000000;
-		color:#ffffff;
-		width:45%;
-		height:100%;
-		border-radius:5px;
-		cursor:default;
-	}
-	.product-moreinfo {
-		display:inline-block;
-		background-color:#c6c6c6;
-		color:#000000;
-		width:45%;
-		height:100%;
-		border-radius:5px;
-		cursor:default;
-	}
-	
-	a.select {
-		border-radius: 5px;
-		border: 1px solid #c8c8c8;
-		text-align: left;
-		width: 60px;
-		height: 20px;
-		line-height: 20px;
-		display: inline-block;
-		text-decoration: none;
-		position: relative;
-		color: #000;
-		margin:0 5px;
-	}
-	
-	a.select:after {
-		background: linear-gradient(to bottom, #F6F6F6, #DCDCDC) repeat scroll 0
-			0 transparent;
-		border-left: 1px solid #C8CDD1;
-		border-radius: 0 5px 5px 0;
-		color: #CDCECF;
-		text-shadow: 0 1px #FFFFFF;
-		content: "▼";
-		display: block;
-		position: absolute;
-		right: 0;
-		top: 0;
-		width: 20px;
-		text-align: center;
-	}
-	
-	a.select span {
-		padding-left: 5px;
-	}
-	a.select select {
-		text-align: center;
-		opacity: 0;
-		width:60px;
-		height:20px;
-		left: 0;
-		top: 0;
-		position: absolute;
-		z-index: 2;
-	}
-</style>
+</script>
 </head>
 <body>
 	<section>
 		<jsp:include page="common-top.jsp"></jsp:include>
-        <article id="main-content">
+		<div id="search-box">
+               <input type="text" id="searchKeyword" class="search-text" value="${keyword}"/>
+               <input type="button" class="search-button" value="" onclick="searchProducts()"/>
+            </div>
+        <article id="main-content">            
         	<div class="catalog-content">
         		<div class="catalog-content-title">
         			<div style="float:right;">

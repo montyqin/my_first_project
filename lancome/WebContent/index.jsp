@@ -50,8 +50,6 @@
 <script src="<%=contextPath%>/js/channel.min.js"></script>
 <script src="<%=contextPath%>/js/swipe.js"></script>
 
-<script src="<%=contextPath%>/js/tool.js"></script>
-
 
 	<script type="text/javascript">
 		if(navigator.userAgent.indexOf('UCWEB')!=-1){
@@ -147,5 +145,7 @@
 
 	
 <%@include file="common-track.jsp" %>
+
+<script src="<%=contextPath%>/js/tool.js"></script>
 </body>
 </html>

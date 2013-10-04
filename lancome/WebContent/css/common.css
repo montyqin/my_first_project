@@ -49,7 +49,9 @@ img {
 	width:auto\9; /* ie8 */;
 }
 #main-content{
- margin: 0px 5px;
+ padding: 0px 5px;
+ background-color:#ECE7E1;
+ overflow:hidden;
 }
 .nav-top {
 	width:100%;
@@ -338,3 +340,24 @@ a:link.menuItemSel, a:visited.menuItemSel, a:active.menuItemSel {
 .relative {
 	position:relative;
 }
+
+#search-box{
+      margin: 0px;
+      padding: 5px 0px;
+      text-align: center;
+      background-color:#000000;
+	}
+#search-box .search-button{
+	  background:url(../img/ui/search.png) center no-repeat;
+	  border:0px;
+	  width: 40px;
+	  height: 24px;
+	  vertical-align:middle;
+}
+
+#search-box .search-text{
+	width: 80%;
+	height: 30px;
+	font-size: 16px;
+	}
+

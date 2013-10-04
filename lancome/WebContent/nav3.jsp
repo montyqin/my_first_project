@@ -31,7 +31,6 @@
 <script src="<%=contextPath%>/js/zepto.min.js"></script>
 <script src="<%=contextPath%>/js/channel.min.js"></script>
 <script src="<%=contextPath%>/js/swipe.js"></script>
-<script src="<%=contextPath%>/js/tool.js"></script>
 
 	<script type="text/javascript">
 		if(navigator.userAgent.indexOf('UCWEB')!=-1){
@@ -64,5 +63,6 @@
 </section>
 
 <%@include file="common-track.jsp" %>
+<script src="<%=contextPath%>/js/tool.js"></script>
 </body>
 </html>

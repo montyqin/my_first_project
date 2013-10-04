@@ -8,12 +8,6 @@ String menuItem = (String) request.getSession().getAttribute("menuItem");
 <script src="<%=contextPath%>/js/jquery-1.9.1.min.js"></script>
 <script type="text/javascript">
 	window.contextPath = '<%=contextPath%>';
-
-	function searchProducts()
-	{
-		var txt = $.trim($("#searchKeyword").val());
-		window.location.href = '<%=contextPath%>/nav/nav4?keyword=' + (txt.length == 0 ? '' : encodeURIComponent(txt));
-	}
 </script>
 <header class="nav-top" id="lancome-nav-top">
 	<div class="logo">
@@ -62,10 +56,7 @@ String menuItem = (String) request.getSession().getAttribute("menuItem");
 			</ul>
 		</c:when>
 		<c:when test="${navItem eq 'nav4'}">
-			<ul class="lancome-nav" style="margin-left:0px;">
-				<input type="text" id="searchKeyword" style="width:75%" value="${keyword}"/>
-				<input type="button" style="width:60px" value="搜索" onclick="searchProducts()"/>
-			</ul>
+			
 		</c:when>
 		<c:otherwise>
 		</c:otherwise>

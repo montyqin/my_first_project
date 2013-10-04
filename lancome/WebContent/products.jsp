@@ -23,6 +23,7 @@
 <meta content="black" name="apple-mobile-web-app-status-bar-style" />
 <title>${catalog["name"]}_科颜氏Kiehl's手机官方网站暨网上商城</title>
 <link rel="stylesheet" type="text/css" href="<%=contextPath %>/css/common.css" />
+<link rel="stylesheet" type="text/css" href="<%=contextPath %>/css/category.css" />
 <style type="text/css">
 html,body{
 	height:auto;
