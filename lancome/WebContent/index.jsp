@@ -2,13 +2,33 @@
 <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ page import="java.util.ArrayList"%>
+<%@ page import="java.util.List"%>
+<%@page import="java.util.Map"%>
+<%@page import="java.util.HashMap"%><html>
 <%
 	String contextPath = request.getContextPath();
 	//String f = request.getParameter("f");
+	
+	List list = new ArrayList();
+	String[] images = new String[] { "/img/index/KV.png", "/img/index/vsnlp.jpg", "/img/index/KV.png"};
+	String[] descs = new String[] { "手机官网购物即有机会体验科颜氏明星四宝旅行装1", "手机官网购物即有机会体验科颜氏明星四宝旅行装2", "手机官网购物即有机会体验科颜氏明星四宝旅行装3" };
+	String[] links = new String[] { "http://www.neulion.com.cn", "http://www.neulion.com.cn", "http://www.neulion.com.cn" };
+	
+	for (int i = 0; i < images.length; i++)
+	{
+		Map map = new HashMap();
+		map.put("image", images[i]);
+		map.put("desc", descs[i]);
+		map.put("link", links[i]);
+		
+		list.add(map);
+	}
+	
+	request.setAttribute("swipeList", list);
 %>
 <!DOCTYPE html>
 <%-- <html manifest="manifest/indexAppCache.manifest">  --%>
-<html>
 <head>
 <meta charset="utf-8">
 <meta name="description" content="科颜氏">
@@ -72,7 +92,16 @@
         <article id="main-content">
 			<div id="j_imgSwipe" class="swipe" style="visibility: visible;">
 				<div class="swipe-wrap" data-sudaclick="imgswipe" style="width: 1280px;">
-					<div class="swipe_pic" style="width: 320px; left: 0px; -webkit-transition: 300ms; -webkit-transform: translate(-320px, 0px) translateZ(0px);"
+					<c:forEach items="${swipeList}" var="item">
+						<div class="swipe_pic" style="width: 320px; left: 0px; -webkit-transition: 300ms; -webkit-transform: translate(-320px, 0px) translateZ(0px);"
+						data-index="0">
+							<a href="${item.link}">
+								<img src="<%=contextPath %>${item.image}" alt="">
+								<h3 class="swipe_h3">${item.desc}</h3>
+							</a>
+						</div>
+					</c:forEach>
+					<%--<div class="swipe_pic" style="width: 320px; left: 0px; -webkit-transition: 300ms; -webkit-transform: translate(-320px, 0px) translateZ(0px);"
 					data-index="0">
 						<a href="http://www.neulion.com.cn">
 							<img src="<%=contextPath %>/img/index/KV.png" alt="">
@@ -89,11 +118,12 @@
 								手机官网购物即有机会体验科颜氏明星四宝旅行装2
 							</h3>
 						</a>
-					</div>
+					</div>--%>
 	            </div>
 	            <ul class="swipe_num">
-					<li class="active"></li>
-					<li class=""></li>
+	            	<c:forEach begin="1" end="${fn:length(swipeList)}" varStatus="i">
+	            		<li class="${i.index == 1 ? 'active' : '' }"></li>
+	            	</c:forEach>
 				</ul>
 	        </div>
 	       	<div class="clist"> 

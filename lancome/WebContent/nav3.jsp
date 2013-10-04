@@ -61,7 +61,6 @@
 	<article>
      	<img src="<%=contextPath %>/img/ui/ad.jpg"/>
 	</article>
-	<jsp:include page="common-footer.jsp"></jsp:include>
 </section>
 
 <%@include file="common-track.jsp" %>
