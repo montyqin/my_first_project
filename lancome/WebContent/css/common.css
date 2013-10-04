@@ -252,7 +252,8 @@ a:link.menuItem, a:visited.menuItem, a:active.menuItem {
 	height:40px;
 	line-height:40px;
 	text-align:center;
-	font-size:18px;
+	font-size:16px;
+	font-weight:bold;
 	cursor:default;
 	text-decoration:none;
 }

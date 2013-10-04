@@ -79,12 +79,6 @@
 		   }
 		}
     </script>
-	<style type="text/css">
-		html,body {
-			height:auto;
-			overflow-x:hidden;
-		}
-	</style>
 </head>
 <body>
    <section>			
