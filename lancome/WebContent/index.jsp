@@ -22,14 +22,12 @@
 <title>科颜氏</title>
 <link href="<%=contextPath %>/css/common.css" rel="stylesheet">
 <link href="<%=contextPath %>/css/category.css" rel="stylesheet">
-<link href="<%=contextPath %>/css/blue1.css" rel="stylesheet">
 <link href="<%=contextPath %>/css/dl.css" rel="stylesheet">
 <script src="<%=contextPath%>/js/index-img.js"></script>
 <script src="<%=contextPath%>/js/jquery-1.9.1.min.js"></script>
 <script src="<%=contextPath%>/js/index.js"></script>
 <script src="<%=contextPath%>/js/zepto.min.js"></script>
 <script src="<%=contextPath%>/js/channel.min.js"></script>
-<script src="<%=contextPath%>/js/swipe.js"></script>
 <script src="<%=contextPath%>/js/swipe.js"></script>
 
 
