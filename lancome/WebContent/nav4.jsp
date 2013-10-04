@@ -31,6 +31,7 @@
 <script src="<%=contextPath%>/js/zepto.min.js"></script>
 <script src="<%=contextPath%>/js/channel.min.js"></script>
 <script src="<%=contextPath%>/js/swipe.sina.min.js"></script>
+<script src="<%=contextPath %>/js/tool.js"></script>
 	<script type="text/javascript">
 		if(navigator.userAgent.indexOf('UCWEB')!=-1){
 			alert('UC浏览器的极速模式下由于会经过UC服务器压缩处理可能会影响网站外观，关闭后可完整体验');
@@ -107,9 +108,7 @@
 				<div style="text-align:center;margin:10px;"><input type="submit" class="btn_submit" value=""></div>
 			</div>
 		</article>
-        <footer>
-	      <p style="text-align:center;margin:15px">2013 Kiehl's Since 1851</p>
-	    </footer>		
+        <jsp:include page="common-footer.jsp"></jsp:include>	
 	</section>
 	<script src="js/tool.js"></script>
 <%@include file="common-track.jsp" %>

@@ -31,7 +31,9 @@
 <script src="<%=contextPath%>/js/category.js"></script>
 <script src="<%=contextPath%>/js/zepto.min.js"></script>
 <script src="<%=contextPath%>/js/channel.min.js"></script>
-<script src="<%=contextPath%>/js/swipe.sina.min.js"></script>
+<script src="<%=contextPath%>/js/swipe.js"></script>
+<script src="js/tool.js"></script>
+
 	<script type="text/javascript">
 		if(navigator.userAgent.indexOf('UCWEB')!=-1){
 			alert('UC浏览器的极速模式下由于会经过UC服务器压缩处理可能会影响网站外观，关闭后可完整体验');
@@ -59,8 +61,9 @@
 	<article>
      	<img src="<%=contextPath %>/img/ui/ad.jpg"/>
 	</article>
+	<jsp:include page="common-footer.jsp"></jsp:include>
 </section>
-<script src="js/tool.js"></script>
+
 <%@include file="common-track.jsp" %>
 </body>
 </html>

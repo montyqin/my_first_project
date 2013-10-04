@@ -540,8 +540,9 @@ a.select select{
 					</c:otherwise>
 				</c:choose>
 			</c:forEach>
-			</div>
+			</div>			
 		</article>
+		<jsp:include page="common-footer.jsp"></jsp:include>
 	</section>
 	
 	<script src="<%=contextPath %>/js/jquery-1.9.1.min.js"></script>

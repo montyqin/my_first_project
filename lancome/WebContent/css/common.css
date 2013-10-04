@@ -9,19 +9,44 @@ html,body {
 	font-size:12px;
 	font-family:Microsoft YaHei,华文细黑;
 	min-width:320px;
-}
-html{
 	width:100%;
-	height:101%;
+	height:100%
 }
-body{
-	width:100%;
-	height:100%;
+body,nav,dl,dt,dd,p,h1,h2,h3,h4,ul,ol,li,input,button,textarea,footer {
+	margin:0;
+	padding:0
+}
+body {
+	font:16px/1.5 Microsoft YaHei,华文细黑;
+	color:#333;
+	background:#fff;
+	-webkit-text-size-adjust:none;
+	min-width:320px;
+}
+h1,h2,h3,h4,h5,h6 {
+	font-size:100%
+}
+ul,ol {
+	list-style:none
+}
+a {
+	text-decoration:none;
+	color:#333
+}
+a:hover,a:active,a:focus {
+	color:#377cce;
+	text-decoration:none;
+}
+a:active {
+	color:#aaa;
 }
 img {
-	display: block;
+	vertical-align:middle;
 	border:0;
-	max-width:100%;
+	-ms-interpolation-mode:bicubic;
+}	
+#main-content{
+ margin: 0px 5px;
 }
 .nav-top {
 	width:100%;
@@ -40,7 +65,7 @@ img {
 	top:20%;
 	z-index:90;
 	width:49%;
-	height:100%;
+	height:80%;
 	text-align:right;
 }
 .nav-top .btns > span{
@@ -125,7 +150,6 @@ ul.lancome-nav {
 	margin: 0;
 	border: 0;
 	width: 100%;
-	margin-left:-35px;
 }
 ul.lancome-nav a{
 	text-decoration: none;

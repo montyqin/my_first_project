@@ -25,8 +25,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
 <meta content="black" name="apple-mobile-web-app-status-bar-style" />
 <title>${p["name"]}_科颜氏Kiehl's手机官方网站暨网上商城</title>
-<link rel="stylesheet" type="text/css"
-	href="<%=contextPath%>/css/common.css" />
+<link rel="stylesheet" type="text/css"	href="<%=contextPath%>/css/common.css" />
 <style type="text/css">
 html,body{
 	height:auto;
@@ -526,6 +525,9 @@ ul.menu li.active a {
 	        	</div>
 	        </div>
         </article>
+        <footer>
+	      <p style="text-align:center;margin:15px">2013 Kiehl's Since 1851</p>
+	    </footer>
 	</section>
 	<script src="<%=contextPath %>/js/jquery-1.9.1.min.js"></script>
 	<script src="<%=contextPath %>/js/tool.js"></script>

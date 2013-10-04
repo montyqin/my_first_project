@@ -19,7 +19,7 @@ String menuItem = (String) request.getSession().getAttribute("menuItem");
 		</div>
 	</div>
 	<div class="menus">
-		<a class="menuItem ${'nav1' eq menuItem ? 'menuItemSel' : '' }" href="<%=contextPath%>/nav/nav1">浏览产品</a>
+		<a class="menuItem ${'nav1' eq menuItem || empty menuItem ? 'menuItemSel' : '' }" href="<%=contextPath%>/nav/nav1">浏览产品</a>
 		<a class="menuItem ${'nav2' eq menuItem ? 'menuItemSel' : '' }" href="<%=contextPath%>/nav/nav2">专柜地址</a>
 		<a class="menuItem ${'nav3' eq menuItem ? 'menuItemSel' : '' }" href="<%=contextPath%>/nav/nav3">最新活动</a>
 		<a class="menuItem ${'nav4' eq menuItem ? 'menuItemSel' : '' }" href="<%=contextPath%>/nav/nav4">搜索产品</a>

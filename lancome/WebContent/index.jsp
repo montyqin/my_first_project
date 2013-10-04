@@ -23,14 +23,14 @@
 <link href="<%=contextPath %>/css/common.css" rel="stylesheet">
 <link href="<%=contextPath %>/css/category.css" rel="stylesheet">
 <link href="<%=contextPath %>/css/blue1.css" rel="stylesheet">
-<link href="<%=contextPath %>/css/common.min.css" rel="stylesheet">
 <link href="<%=contextPath %>/css/dl.css" rel="stylesheet">
 <script src="<%=contextPath%>/js/index-img.js"></script>
 <script src="<%=contextPath%>/js/jquery-1.9.1.min.js"></script>
 <script src="<%=contextPath%>/js/index.js"></script>
 <script src="<%=contextPath%>/js/zepto.min.js"></script>
 <script src="<%=contextPath%>/js/channel.min.js"></script>
-<script src="<%=contextPath%>/js/swipe.sina.min.js"></script>
+<script src="<%=contextPath%>/js/swipe.js"></script>
+<script src="<%=contextPath%>/js/swipe.js"></script>
 
 
 	<script type="text/javascript">
@@ -135,14 +135,10 @@
 				<div style="text-align:center;margin:10px;"><input type="submit" class="btn_submit" value=""></div>
 			</div>
 		</article>
-        <footer>
-	      <p style="text-align:center;margin:15px">2013 Kiehl's Since 1851</p>
-	    </footer>		
+       <jsp:include page="common-footer.jsp"></jsp:include>		
 	</section>
 	
-	
-	<script src="js/tool.js"></script>
-	
+
 	
 <%@include file="common-track.jsp" %>
 

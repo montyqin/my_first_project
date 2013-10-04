@@ -147,8 +147,8 @@
 	        			<div class="txtcenter">${item.name}</div>
 	        			<div class="txtcenter">RMB ${item.price}</div>
 	        			<div class="product-contain">
-	        				<div class="product-moreinfo" onclick="showinfo('${catalog.id}','${item.id}')">了解详情</div>
-	        				<div class="product-purchase">立即购买<!-- purchase: item.id --></div>
+	        				<div class="product-moreinfo" onclick="showinfo('${catalog.id}','${item.id}')">详情</div>
+	        				<div class="product-purchase">购买<!-- purchase: item.id --></div>
 	        			</div>
 	        		</div>
 	        	</c:forEach>
@@ -156,6 +156,7 @@
 				<div class="justifyfix"></div>
         	</div>
         </article>
+        <jsp:include page="common-footer.jsp"></jsp:include>
 	</section>
 	<script src="<%=contextPath %>/js/jquery-1.9.1.min.js"></script>
 	<script src="<%=contextPath %>/js/tool.js"></script>
