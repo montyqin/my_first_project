@@ -41,7 +41,7 @@
                <input type="button" class="search-button" value="" onclick="searchProducts()"/>
             </div>
         <article id="main-content">            
-        	<div class="catalog-content">
+        	<div class="inner-content">
         		<div class="catalog-content-title">
         			<div style="float:right;">
 	        			按<a class="select" style="width:60px;" href="javascript:void(0)">
