@@ -23,7 +23,6 @@
 <link href="<%=contextPath %>/css/common.css" rel="stylesheet">
 <link href="<%=contextPath %>/css/category.css" rel="stylesheet">
 <link href="<%=contextPath %>/css/blue1.css" rel="stylesheet">
-<link href="<%=contextPath %>/css/common.min.css" rel="stylesheet">
 <link href="<%=contextPath %>/css/dl.css" rel="stylesheet">
 <script src="<%=contextPath%>/js/index-img.js"></script>
 <script src="<%=contextPath%>/js/jquery-1.9.1.min.js"></script>
@@ -32,7 +31,7 @@
 <script src="<%=contextPath%>/js/zepto.min.js"></script>
 <script src="<%=contextPath%>/js/channel.min.js"></script>
 <script src="<%=contextPath%>/js/swipe.js"></script>
-<script src="js/tool.js"></script>
+<script src="<%=contextPath%>/js/tool.js"></script>
 
 	<script type="text/javascript">
 		if(navigator.userAgent.indexOf('UCWEB')!=-1){
@@ -58,8 +57,9 @@
 <body>
 <section>			
 	<jsp:include page="common-top.jsp"></jsp:include>		
-	<article>
+	<article id="main-content">
      	<img src="<%=contextPath %>/img/ui/ad.jpg"/>
+     	<jsp:include page="common-footer.jsp"></jsp:include>
 	</article>
 </section>
 

@@ -50,6 +50,8 @@
 <script src="<%=contextPath%>/js/channel.min.js"></script>
 <script src="<%=contextPath%>/js/swipe.js"></script>
 
+<script src="<%=contextPath%>/js/tool.js"></script>
+
 
 	<script type="text/javascript">
 		if(navigator.userAgent.indexOf('UCWEB')!=-1){
@@ -95,24 +97,6 @@
 							</a>
 						</div>
 					</c:forEach>
-					<%--<div class="swipe_pic" style="width: 320px; left: 0px; -webkit-transition: 300ms; -webkit-transform: translate(-320px, 0px) translateZ(0px);"
-					data-index="0">
-						<a href="http://www.neulion.com.cn">
-							<img src="<%=contextPath %>/img/index/KV.png" alt="">
-							<h3 class="swipe_h3">
-								手机官网购物即有机会体验科颜氏明星四宝旅行装1
-							</h3>
-						</a>
-					</div>
-					<div class="swipe_pic" style="width: 320px; left: -320px; -webkit-transition: 300ms; -webkit-transform: translate(-320px, 0px) translateZ(0px);"
-					data-index="1">
-						<a href="http://www.neulion.com.cn">
-							<img src="<%=contextPath %>/img/index/vsnlp.jpg" alt="">
-							<h3 class="swipe_h3">
-								手机官网购物即有机会体验科颜氏明星四宝旅行装2
-							</h3>
-						</a>
-					</div>--%>
 	            </div>
 	            <ul class="swipe_num">
 	            	<c:forEach begin="1" end="${fn:length(swipeList)}" varStatus="i">
@@ -150,19 +134,18 @@
 					</c:forEach>
 				</ul>
 			</div>
-		    <div class="subscribe">
+		   <div class="subscribe">
 				<div><h1 style="text-align:center;">订阅</h1></div>
 				<div style="text-align:center;margin:10px"><span>输入邮箱地址</span></div>
 				<div style="text-align:center;"><input type="text" style="height:70px; width:80%" name="email" id="email" value=""></div>
 				<div style="text-align:center;margin:10px;"><input type="submit" class="btn_submit" value=""></div>
-			</div>
-		</article>
+		   </div>
+		</article>		
        <jsp:include page="common-footer.jsp"></jsp:include>		
 	</section>
 	
 
 	
 <%@include file="common-track.jsp" %>
-
 </body>
 </html>
