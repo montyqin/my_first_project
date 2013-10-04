@@ -8,11 +8,13 @@ import java.security.NoSuchAlgorithmException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
 import org.apache.commons.httpclient.NameValuePair;
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.lang.ArrayUtils;
 import org.apache.log4j.Logger;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -65,6 +67,7 @@ public class ConfigUtil {
 		try {
 			JSONArray catalogArray = new JSONArray(FileUtils.readFileToString(new File(jsonFolderPath + "/catalog.json"), "UTF-8"));
 			initCatalogCache(catalogArray);
+			initProductCache(catalogArray);
 			log.info("初始化目录信息成功");
 		} catch (JSONException e) {
 			log.error(e.getMessage(), e);
@@ -72,7 +75,7 @@ public class ConfigUtil {
 			log.error(e.getMessage(), e);
 		}
 	}
-
+	
 	// public static void initComment(){
 	// if(log.isInfoEnabled()){
 	// log.info("评论 json 配置文件路径："+jsonFolderPath+"/comment.json");
@@ -426,6 +429,27 @@ public class ConfigUtil {
 			CacheUtil.setObjectCache("catalog_level_1", catalog1);
 			catalog0 = null;
 			catalog1 = null;
+		}
+	}
+
+	private static void initProductCache(JSONArray catalogArray) throws JSONException {
+		if (catalogArray != null && catalogArray.length() > 0) {
+			List productsList = new ArrayList();
+			for (int i = 0; i < catalogArray.length(); i++) {
+				JSONObject tmpObj = catalogArray.getJSONObject(i);
+				
+				if (tmpObj.has("subCategory")) {
+					JSONArray subCategorys = tmpObj.getJSONArray("subCategory");
+					for (int j = 0; j < subCategorys.length(); j++) {
+						JSONObject tmpCategory = subCategorys.getJSONObject(j);
+						Product[] products = ConfigUtil.getProductsByCatalogId(tmpCategory.getString("id"));
+						if (ArrayUtils.isEmpty(products))
+							continue;
+						productsList.addAll(Arrays.asList(products));
+					}
+				}
+			}
+			CacheUtil.setObjectCache("products_list", productsList);
 		}
 	}
 
