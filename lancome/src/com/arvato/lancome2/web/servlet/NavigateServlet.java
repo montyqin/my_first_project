@@ -1,6 +1,7 @@
 package com.arvato.lancome2.web.servlet;
 
 import java.io.IOException;
+import java.net.URLDecoder;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
@@ -15,6 +16,7 @@ import org.apache.commons.lang.StringUtils;
 
 import com.arvato.lancome2.util.CacheUtil;
 import com.arvato.lancome2.vo.Product;
+import com.arvato.lancome2.vo.RecordSet;
 
 public class NavigateServlet extends HttpServlet {
 
@@ -51,30 +53,49 @@ public class NavigateServlet extends HttpServlet {
 					req.getRequestDispatcher("/nav3.jsp").forward(req, resp);
 				}
 				else if ("nav4".equalsIgnoreCase(pathParts[1])){
-					req.getSession().setAttribute("menuItem", "nav4");
-					req.setAttribute("navItem", "nav4");
-					//req.getRequestDispatcher("/nav4.jsp").forward(req, resp);
-					
+
 					String keyword = req.getParameter("keyword");
+					if (!StringUtils.isEmpty(keyword))
+						keyword = URLDecoder.decode(keyword, "UTF-8");
 					List productsList = (List) CacheUtil.getObjectCache("products_list");
-					List copyList = new ArrayList();
-					copyList.addAll(productsList);
-					
-					Collections.sort(copyList);
+					List tmpList = new ArrayList();
+					tmpList.addAll(productsList);
+					Collections.sort(tmpList);
 					
 					if (!StringUtils.isEmpty(keyword))
 					{
 						keyword = keyword.trim();
-						for (Iterator iter = copyList.iterator(); iter.hasNext();)
+						for (Iterator iter = tmpList.iterator(); iter.hasNext();)
 						{
 							Product product = (Product) iter.next();
 							if (product.getName().indexOf(keyword) == -1)
 								iter.remove();
 						}
 					}
-					req.setAttribute("products", copyList);
-					req.setAttribute("keyword", keyword);
-					req.getRequestDispatcher("/nav4.jsp").forward(req, resp);
+					String pageNum = req.getParameter("pageNum");
+					int num = 1;
+					try {
+						Integer pn = new Integer(pageNum);
+						if (pn != null)
+							num = pn.intValue();
+					} catch (Exception e) {
+						num = 1;
+					}
+					RecordSet rs = new RecordSet(tmpList, num);
+					
+					if (pathParts.length == 3 && "getproducts".equalsIgnoreCase(pathParts[2])) {
+						req.setAttribute("result", rs);
+						req.getRequestDispatcher("/result.jsp").forward(req, resp);
+					}
+					else {
+						req.getSession().setAttribute("menuItem", "nav4");
+						req.setAttribute("navItem", "nav4");
+						
+						req.setAttribute("rs", rs);
+						req.setAttribute("pageNum", "" + num);
+						req.setAttribute("keyword", keyword);
+						req.getRequestDispatcher("/nav4.jsp").forward(req, resp);
+					}
 				}
 			}
 		}

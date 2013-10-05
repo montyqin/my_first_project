@@ -24,13 +24,13 @@
 <title>${catalog["name"]}_科颜氏Kiehl's手机官方网站暨网上商城</title>
 <link rel="stylesheet" type="text/css" href="<%=contextPath %>/css/common.css" />
 <link rel="stylesheet" type="text/css" href="<%=contextPath %>/css/category.css" />
+<style type="text/css">
+html,body {
+	height:auto;
+}
+</style>
 <script type="text/javascript">
 	window.contextPath = '<%=contextPath%>';
-	function searchProducts()
-	{
-		var txt = $.trim($("#searchKeyword").val());
-		window.location.href = '<%=contextPath%>/nav/nav4?keyword=' + (txt.length == 0 ? '' : encodeURIComponent(txt));
-	}
 </script>
 </head>
 <body>
@@ -38,7 +38,7 @@
 		<jsp:include page="common-top.jsp"></jsp:include>
 		<div id="search-box">
                <input type="text" id="searchKeyword" class="search-text" value="${keyword}"/>
-               <input type="button" class="search-button" value="" onclick="searchProducts()"/>
+               <input type="button" style="color:#fff" class="search-button" value="搜索" onclick="searchProducts()"/>
             </div>
         <article id="main-content">            
         	<div class="catalog-content">
@@ -51,9 +51,9 @@
 							<span class="color">价格</span>
 						</a>排序
         			</div>
-	   				<div>全部${fn:length(products)}个产品</div>
+	   				<div>全部${rs.totalCount}个产品</div>
         		</div>
-	        	<c:forEach items="${products}" var="item">
+	        	<c:forEach items="${rs.values}" var="item">
 	        		<div class="catalog-list">
 	        			<div class="catalog-img"><img src="<%=contextPath %>/${item.imgs}" onclick="showinfo('${item.cid}','${item.id}')"/></div>
 	        			<div class="txtcenter">${item.name}</div>
@@ -64,8 +64,12 @@
 	        			</div>
 	        		</div>
 	        	</c:forEach>
-	        	<div class="catalog-list"></div>
 				<div class="justifyfix"></div>
+				<div>
+		        	<input type="hidden" id="pageNum" value="1"/>
+		        	<input type="hidden" id="allPageNum" value="${rs.pageNum}"/>
+		        	<input type="button" id="btnShowMore" value="显示更多" onclick="showMore()" style="display:${rs.pageNum == pageNum ? 'none' : ''}"/>
+	        	</div>
         	</div>
         </article>
         <jsp:include page="common-footer.jsp"></jsp:include>
@@ -141,6 +145,51 @@
 
 		function showinfo(cid,id){
 			window.location.href = '<%=contextPath %>/info/' + cid + '/' + id;
+		}
+
+		function searchProducts()
+		{
+			var txt = $.trim($("#searchKeyword").val());
+			if (txt.length > 0)
+				txt = encodeURIComponent(txt);
+			window.location.href = '<%=contextPath%>/nav/nav4?keyword=' + txt;
+		}
+		function showMore()
+		{
+			var pageNum = $("#pageNum").val();
+			if (isNaN(pageNum))
+				pageNum = 1;
+			else
+				pageNum = parseInt(pageNum) + 1;
+			
+			$("#pageNum").val(pageNum);
+			var allPageNum = parseInt($("#allPageNum").val());
+			if (pageNum == allPageNum)
+				$("#btnShowMore").hide();
+
+			var txt = $.trim($("#searchKeyword").val());
+			if (txt.length > 0)
+				txt = encodeURIComponent(txt);
+			
+			$.post(window.contextPath + '/nav/nav4/getproducts', { "keyword":txt, "pageNum":pageNum }, function(result)
+			{
+				var jsonArr = eval("(" + result + ")");
+				var html = "";
+				for (var i = 0; i < jsonArr.length; i++)
+				{
+					var p = jsonArr[i];
+					html += '<div class="catalog-list" style="margin-left:5%;">';
+					html += '<div class="catalog-img"><img src="' + window.contextPath + '/' + p.imgs + '" onclick="showinfo(\"' + p.cid + '\",\"' + p.id + '\")"/></div>';
+					html += '<div class="txtcenter">' + p.name + '</div>';
+	    			html += '<div class="txtcenter">RMB ' + p.price + '</div>';
+	    			html += '<div class="product-contain">';
+	   				html += '<div class="product-moreinfo" onclick="showinfo(\"' + p.cid + '\",\"' + p.id + '\")">详情</div>';
+	   				html += '<div class="product-purchase" style="margin-left:5%;">购买</div>';
+		    		html += '</div>';
+		    		html += '</div>';
+				}
+				$("#main-content").find("div.catalog-list:last").after(html);
+			});
 		}
 	</script>
 <%@include file="common-track.jsp" %>
