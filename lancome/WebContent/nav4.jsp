@@ -38,7 +38,7 @@ html,body {
 		<jsp:include page="common-top.jsp"></jsp:include>
 		<div id="search-box">
                <input type="text" id="searchKeyword" class="search-text" value="${keyword}"/>
-               <input type="button" style="color:#fff" class="search-button" value="搜索" onclick="searchProducts()"/>
+               <input type="button" class="search-button" value="" onclick="searchProducts()"/>
             </div>
         <article id="main-content">            
         	<div class="inner-content">
