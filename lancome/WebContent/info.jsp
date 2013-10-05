@@ -31,7 +31,8 @@
 <body>
 	<section>
 		<jsp:include page="common-top.jsp"></jsp:include>
-        <article id="main-content" class="main-content">
+        <article id="main-content">
+          <div class="inner-content">
 			<div class="info">
 				<div class="info-row">
 					<div class="info-img">
@@ -172,6 +173,7 @@
 	        		<br/>推荐产品列表
 	        	</div>
 	        </div>
+           </div>
         </article>
         <footer>
 	      <p style="text-align:center;margin:15px">2013 Kiehl's Since 1851</p>
