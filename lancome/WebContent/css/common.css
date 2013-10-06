@@ -361,3 +361,18 @@ a:link.menuItemSel, a:visited.menuItemSel, a:active.menuItemSel {
 	font-size: 16px;
 	}
 
+ .ui-refresh {
+	height: 36px;
+	line-height: 36px;
+	background-color: #eef0f2;
+	text-align: center;
+	font-size: 0;
+	margin: 14px 20px;
+	border: 1px solid #d2d9e0;
+	}
+		
+.ui-refresh-pullup-label {
+	font-size: 14px;
+	color: #545454;
+	vertical-align: middle;
+}

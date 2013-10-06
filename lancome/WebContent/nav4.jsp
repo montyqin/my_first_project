@@ -65,11 +65,11 @@ html,body {
 	        		</div>
 	        	</c:forEach>
 				<div class="justifyfix"></div>
-				<div>
-		        	<input type="hidden" id="pageNum" value="1"/>
+				<div class="ui-refresh">
+				    <input type="hidden" id="pageNum" value="1"/>
 		        	<input type="hidden" id="allPageNum" value="${rs.pageNum}"/>
-		        	<input type="button" id="btnShowMore" value="显示更多" onclick="showMore()" style="display:${rs.pageNum == pageNum ? 'none' : ''}"/>
-	        	</div>
+					<span id="btnShowMore" class="ui-refresh-pullup-label" onclick="showMore()" style="display:${rs.pageNum == pageNum ? 'none' : ''}">点击加载更多</span>
+				</div>
         	</div>
         </article>
         <jsp:include page="common-footer.jsp"></jsp:include>
@@ -165,7 +165,7 @@ html,body {
 			$("#pageNum").val(pageNum);
 			var allPageNum = parseInt($("#allPageNum").val());
 			if (pageNum == allPageNum)
-				$("#btnShowMore").hide();
+				$("#btnShowMore").parent().hide();
 
 			var txt = $.trim($("#searchKeyword").val());
 			if (txt.length > 0)
