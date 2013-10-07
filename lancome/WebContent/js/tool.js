@@ -137,9 +137,7 @@ var arvato = {
 			}
 		}
 	},
-	buyItem:function(id){
-
-		
+	buyItem:function(id){		
 		$.ajax({
 			url:arvato.orderDomain+'/mmall/itemedit.html',
 			type:'post',
@@ -296,7 +294,7 @@ var arvato = {
 	weiboShare:function(){
 		_gaq.push(['_trackEvent','share','weibo','lancome',1,true]);
 
-		var shareTitle = "我正在用手机浏览兰蔻手机官网。快捷的购物方式还能随时了解品牌活动";
+		var shareTitle = "我正在用手机浏科颜氏手机官网。快捷的购物方式还能随时了解品牌活动";
 		var contextPath = window.contextPath || '/lancome';
 		var picUrl = encodeURIComponent(window.location.protocol+'//'+window.location.host+contextPath+'/img/info/lancome-info.png');
 		window.location.href = 'http://v.t.sina.com.cn/share/share.php?url='+encodeURIComponent(window.location.href)+'&appkey=2530574100&title='+shareTitle+'&pic='+picUrl;
@@ -328,9 +326,9 @@ $(function(){
 		$(document.body).children('section,div').css({'position':'relative','left':'0px'});
 		
 		var _handleNavTop = function(dataClass){
-			if(dataClass==='nav-phone'){
-				//_gaq.push(['_trackEvent','navigate','hotlaine','lancome',1,true]);
-				//window.location.href = 'tel:4008208016';
+			if(dataClass==='nav-login'){
+				_gaq.push(['_trackEvent','navigate','hotlaine','lancome',1,true]);
+				window.location.href = 'login.jsp';
 			}else if(dataClass==='nav-bag'){
 				window.location.href = arvato.orderDomain+'/mmall/cart.html?f=np&fp=1&c=1&id=132';
 			}else if(dataClass==='nav-menu'){
@@ -371,9 +369,9 @@ $(function(){
 					window.setTimeout(function(){
 						$eTarget.removeClass(dataClass+"-d").addClass(dataClass);
 						
-						if(dataClass==='nav-phone'){
-							//_gaq.push(['_trackEvent','navigate','hotlaine','lancome',1,true]);
-							//window.location.href = 'tel:4008208016';
+						if(dataClass==='nav-login'){
+							_gaq.push(['_trackEvent','navigate','hotlaine','lancome',1,true]);
+							window.location.href = 'login.jsp';
 						}else if(dataClass==='nav-bag'){
 							window.location.href = arvato.orderDomain+'/mmall/cart.html?f=np&fp=1&c=1&id=132';
 						}else if(dataClass==='nav-menu'){
@@ -417,8 +415,8 @@ $(function(){
 			eTarget = null;
 			return false;
 		})
-		
-/*		.on('click',function(e){
+		/*
+		.on('click',function(e){
 			var eTarget = e.target;
 			if(eTarget.nodeName === 'SPAN'){
 				var $eTarget = $(eTarget);
@@ -427,8 +425,8 @@ $(function(){
 					_handleNavTop(dataClass);
 				}
 			}
-		});*/
-		
+		});
+		*/
 		arvato.showBuyCount('server');
 	}
 });
