@@ -62,7 +62,7 @@
 		if(!!navigator.userAgent.match(/AppleWebKit.*Mobile.*/)||!!navigator.userAgent.match(/AppleWebKit/)||navigator.userAgent.indexOf('Linux')>-1){
 			
 		}else{
-			window.location.replace('http://www.lancome.com.cn/lancome/_zh/_cn/index.aspx');
+			//window.location.replace('http://www.lancome.com.cn/lancome/_zh/_cn/index.aspx');
 		}
 	</script>
 	<script type="text/javascript">
@@ -81,6 +81,15 @@
 		function subscribe()
 		{
 			var email = $.trim($('#email').val());
+			if (email.length == 0)
+			{
+				alert("请输入邮箱地址。")
+				return;
+			}
+
+			if (!checkEmail())
+				return;
+			
 			$.post('<%=contextPath%>/user/subscribe', { 'email':email }, function(result)
 			{
 				var json = eval("(" + result + ")");
@@ -94,6 +103,18 @@
 				}
 				$('#email').val("");
 			});
+		}
+		function checkEmail()
+		{
+			var email = $.trim($('#email').val());
+			var reg = new RegExp("[a-zA-Z0-9]+\@[a-zA-Z0-9]+.com");
+
+			if (email.length > 0 && !reg.test(email))
+			{
+				alert("请输入合法的邮箱。");
+				return false;
+			}
+			return true;
 		}
     </script>
 </head>
@@ -152,7 +173,7 @@
 		   <div class="subscribe">
 				<div><h1 style="text-align:center;">订阅</h1></div>
 				<div style="text-align:center;margin:10px"><span>输入邮箱地址</span></div>
-				<div style="text-align:center;"><input type="text" style="height:70px; width:80%" name="email" id="email" value=""></div>
+				<div style="text-align:center;"><input type="text" style="height:70px; width:80%" name="email" id="email" value="" onblur="checkEmail()"></div>
 				<div style="text-align:center;margin:10px;"><input type="submit" class="btn_submit" value="" onclick="subscribe()"></div>
 		   </div>
 		</article>		

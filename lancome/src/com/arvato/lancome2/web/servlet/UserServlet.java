@@ -7,6 +7,9 @@ import java.io.RandomAccessFile;
 import java.io.UnsupportedEncodingException;
 import java.nio.channels.FileChannel;
 import java.nio.channels.FileLock;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -15,6 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
+import org.json.JSONObject;
 
 /**
  * Servlet implementation class UserServlet
@@ -61,6 +65,7 @@ public class UserServlet extends HttpServlet {
 					else if ("subscribe".equalsIgnoreCase(pathParts[1]))
 					{
 						boolean result = false;
+						String message = "";
 						String email = request.getParameter("email");
 						if (!StringUtils.isEmpty(email))
 						{
@@ -77,11 +82,14 @@ public class UserServlet extends HttpServlet {
 							{
 								File file = new File(filePath, fileName);
 								StringBuffer sb = new StringBuffer();
+								List list = new ArrayList();
 								boolean fileExist = false;
 								if (file.exists())
 								{
 									String content = readFileContent(file);
 									sb = new StringBuffer(content);
+									String[] str = content.split("\r\n");
+									list = Arrays.asList(str);
 									fileExist = true;
 								}
 								else {
@@ -93,13 +101,31 @@ public class UserServlet extends HttpServlet {
 								
 								if (fileExist)
 								{
-									sb.append(email + "\r\n");
-									writeFileContent(file, sb.toString());
-									result = true;
+									if (list.contains(email))
+									{
+										result = false;
+										message = "您已订阅。";
+									}
+									else
+									{
+										sb.append(email + "\r\n");
+										writeFileContent(file, sb.toString());
+										result = true;
+										message = "订阅成功。";
+									}
 								}
 							}
 						}
-						request.setAttribute("result", "" + result);
+						
+						JSONObject json = new JSONObject();
+						try
+						{
+							json.put("result", result);
+							json.put("detail", message);
+						} catch (Exception e) {
+							// TODO: handle exception
+						}
+						request.setAttribute("result", json);
 						request.getRequestDispatcher("/resultinfo.jsp").forward(request, response);
 					}
 				}else{
