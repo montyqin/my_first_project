@@ -16,6 +16,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.httpclient.HttpClient;
+import org.apache.commons.httpclient.NameValuePair;
+import org.apache.commons.httpclient.methods.PostMethod;
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 import org.json.JSONObject;
@@ -193,5 +196,22 @@ public class UserServlet extends HttpServlet {
         flout.release();
         fcout.close();
         out.close();
+	}
+	
+	private JSONObject postUrl(String url, NameValuePair[] datas)
+	{
+		HttpClient client = new HttpClient();
+		PostMethod method = new PostMethod(url);
+		
+		NameValuePair[] data = {
+				new NameValuePair("email", ""),
+				new NameValuePair("pwd", ""),
+				new NameValuePair("birthday", ""),
+				new NameValuePair("uname", ""),
+				new NameValuePair("mobile", ""),
+				new NameValuePair("gender", ""),
+				new NameValuePair("subscription", "")};
+		
+		return null;
 	}
 }
