@@ -1,8 +1,11 @@
 package com.arvato.lancome2.web.servlet;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.RandomAccessFile;
 import java.io.UnsupportedEncodingException;
 import java.nio.channels.FileChannel;
@@ -17,11 +20,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.httpclient.HttpClient;
+import org.apache.commons.httpclient.HttpStatus;
 import org.apache.commons.httpclient.NameValuePair;
 import org.apache.commons.httpclient.methods.PostMethod;
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 import org.json.JSONObject;
+
+import com.arvato.lancome2.util.MD5;
 
 /**
  * Servlet implementation class UserServlet
@@ -59,11 +65,48 @@ public class UserServlet extends HttpServlet {
 						log.debug(pathParts[1]);
 					}
 					
-					if ("regist".equalsIgnoreCase(pathParts[1])) {
+					if ("register".equalsIgnoreCase(pathParts[1])) {
+						String email = "xg3216@tom.com";
+						String pwd = "oneday";
+						String birthday = "19841212";
+						String uname = "xg3216";
+						String mobile = "13657667744";
+						String gender = "1";
+						String subscription = "1";
+						String sign = "email=" + email + "&pwd=" + pwd + "&birthday=" + birthday
+							+ "&uname=" + uname + "&mobile=" + mobile + "&gender=" + gender + "&subscription="
+							+ subscription + "2505307234334bb08fa0c855a8933ab0";
 						
+						NameValuePair nvp1 = new NameValuePair("email", email);
+						NameValuePair nvp2 = new NameValuePair("pwd", pwd);
+						NameValuePair nvp3 = new NameValuePair("birthday", birthday);
+						NameValuePair nvp4 = new NameValuePair("uname", uname);
+						NameValuePair nvp5 = new NameValuePair("mobile", mobile);
+						NameValuePair nvp6 = new NameValuePair("gender", gender);
+						NameValuePair nvp7 = new NameValuePair("subscription", subscription);
+						NameValuePair nvp8 = new NameValuePair("sign", MD5.getHashString(sign, "UTF-8"));
+						
+						String result = postUrl("http://user.kiehls.com.cn/EcProfileMobile.aspx/Register", 
+								new NameValuePair[] { nvp1, nvp2, nvp3, nvp4, nvp5, nvp6, nvp7, nvp8 });
+						
+						request.setAttribute("result", result);
+						request.getRequestDispatcher("/resultinfo.jsp").forward(request, response);
 					}
 					else if ("login".equalsIgnoreCase(pathParts[1])) {
+						String email = "xg3216@tom.com";
+						String pwd = "oneday";
+						String sign = "email=" + email + "&pwd=" + pwd
+							+ "2505307234334bb08fa0c855a8933ab0";
 						
+						NameValuePair nvp1 = new NameValuePair("email", email);
+						NameValuePair nvp2 = new NameValuePair("pwd", pwd);
+						NameValuePair nvp3 = new NameValuePair("sign", MD5.getHashString(sign, "UTF-8"));
+						
+						String result = postUrl("http://user.kiehls.com.cn/EcProfileMobile.aspx/SignIn",
+								new NameValuePair[] { nvp1, nvp2, nvp3 });
+
+						request.setAttribute("result", result);
+						request.getRequestDispatcher("/resultinfo.jsp").forward(request, response);
 					}
 					else if ("subscribe".equalsIgnoreCase(pathParts[1]))
 					{
@@ -198,20 +241,40 @@ public class UserServlet extends HttpServlet {
         out.close();
 	}
 	
-	private JSONObject postUrl(String url, NameValuePair[] datas)
+	private String postUrl(String url, NameValuePair[] data)
 	{
-		HttpClient client = new HttpClient();
-		PostMethod method = new PostMethod(url);
+		String result = null;
+		HttpClient httpClient = new HttpClient();
+		PostMethod postMethod = new PostMethod(url);
+		postMethod.setRequestBody(data);
 		
-		NameValuePair[] data = {
-				new NameValuePair("email", ""),
-				new NameValuePair("pwd", ""),
-				new NameValuePair("birthday", ""),
-				new NameValuePair("uname", ""),
-				new NameValuePair("mobile", ""),
-				new NameValuePair("gender", ""),
-				new NameValuePair("subscription", "")};
+		try
+		{
+			int statusCode = httpClient.executeMethod(postMethod);
+			if (statusCode != HttpStatus.SC_OK)
+				log.error("Method failed: " + postMethod.getStatusLine());
+			
+			InputStream is = postMethod.getResponseBodyAsStream();
+			result = inputStream2String(is);
+		}
+		catch (Exception e) {
+			// TODO: handle exception
+		}
 		
-		return null;
+		return result;
+	}
+
+	private String inputStream2String(InputStream is) throws IOException {
+		BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+		StringBuffer buffer = new StringBuffer();
+		String line = null;
+		
+		while ((line = reader.readLine()) != null)
+			buffer.append(line);
+		
+		reader.close();
+		is.close();
+		
+		return buffer.toString();
 	}
 }
