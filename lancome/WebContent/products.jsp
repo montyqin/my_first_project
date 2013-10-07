@@ -13,15 +13,15 @@
 <html>
 <head>
 <meta charset="utf-8">
-<meta name="description" content="${catalog["name"]}_兰蔻Lancome手机官方网站暨网上商城">
-<meta name="Keywords" content="${catalog["name"]}_兰蔻Lancome手机官方网站暨网上商城" />
+<meta name="description" content="${catalog["name"]}_KIEHL'S科颜氏手机官方网站暨网上商城">
+<meta name="Keywords" content="${catalog["name"]}_KIEHL'S科颜氏手机官方网站暨网上商城" />
 <meta name="author" content="arvato">
 <meta name="HandheldFriendly" content="True">
 <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
 <meta content="black" name="apple-mobile-web-app-status-bar-style" />
-<title>${catalog["name"]}_科颜氏Kiehl's手机官方网站暨网上商城</title>
+<title>${catalog["name"]}_KIEHL'S科颜氏手机官方网站暨网上商城</title>
 <link rel="stylesheet" type="text/css" href="<%=contextPath %>/css/common.css" />
 <link rel="stylesheet" type="text/css" href="<%=contextPath %>/css/category.css" />
 <style type="text/css">

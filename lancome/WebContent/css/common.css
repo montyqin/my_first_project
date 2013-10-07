@@ -16,6 +16,9 @@ body,nav,dl,dt,dd,p,h1,h2,h3,h4,ul,ol,li,input,button,textarea,footer {
 	margin:0;
 	padding:0
 }
+footer{
+	clear:both;
+}
 body {
 	font:16px/1.5 Microsoft YaHei,华文细黑;
 	color:#333;

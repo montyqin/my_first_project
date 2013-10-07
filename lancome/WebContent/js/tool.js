@@ -295,8 +295,8 @@ var arvato = {
 		_gaq.push(['_trackEvent','share','weibo','lancome',1,true]);
 
 		var shareTitle = "我正在用手机浏科颜氏手机官网。快捷的购物方式还能随时了解品牌活动";
-		var contextPath = window.contextPath || '/lancome';
-		var picUrl = encodeURIComponent(window.location.protocol+'//'+window.location.host+contextPath+'/img/info/lancome-info.png');
+		var contextPath = window.contextPath || '/kiehls';
+		var picUrl = encodeURIComponent(window.location.protocol+'//'+window.location.host+contextPath+'/img/info/kiehls-info.jpg');
 		window.location.href = 'http://v.t.sina.com.cn/share/share.php?url='+encodeURIComponent(window.location.href)+'&appkey=2530574100&title='+shareTitle+'&pic='+picUrl;
 	},
 	closeAsideMenu:function(){
@@ -328,7 +328,7 @@ $(function(){
 		var _handleNavTop = function(dataClass){
 			if(dataClass==='nav-login'){
 				_gaq.push(['_trackEvent','navigate','hotlaine','lancome',1,true]);
-				window.location.href = 'login.jsp';
+				window.location.href = '/kiehls/login.jsp';
 			}else if(dataClass==='nav-bag'){
 				window.location.href = arvato.orderDomain+'/mmall/cart.html?f=np&fp=1&c=1&id=132';
 			}else if(dataClass==='nav-menu'){
@@ -371,7 +371,7 @@ $(function(){
 						
 						if(dataClass==='nav-login'){
 							_gaq.push(['_trackEvent','navigate','hotlaine','lancome',1,true]);
-							window.location.href = 'login.jsp';
+							window.location.href = '/kiehls/login.jsp';
 						}else if(dataClass==='nav-bag'){
 							window.location.href = arvato.orderDomain+'/mmall/cart.html?f=np&fp=1&c=1&id=132';
 						}else if(dataClass==='nav-menu'){

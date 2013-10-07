@@ -8,15 +8,15 @@
 <html>
 <head>
 <meta charset="utf-8">
-<meta name="description" content="兰蔻Lancome手机官方网站暨网上商城">
-<meta name="Keywords" content="兰蔻Lancome手机官方网站暨网上商城" />
+<meta name="description" content="KIEHL'S科颜氏手机官方网站暨网上商城">
+<meta name="Keywords" content="KIEHL'S科颜氏手机官方网站暨网上商城" />
 <meta name="author" content="arvato">
 <meta name="HandheldFriendly" content="True">
 <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
 <meta content="black" name="apple-mobile-web-app-status-bar-style" />
-<title>兰蔻Lancome手机官方网站暨网上商城</title>
+<title>KIEHL'S科颜氏手机官方网站暨网上商城</title>
 
 <!-- <link href="components/bootstrap/css/bootstrap.css" rel="stylesheet">
 <link href="components/bootstrap/css/bootstrap-responsive.css" rel="stylesheet"> -->
@@ -237,6 +237,8 @@ body{
 		  <div id="userhello">您好,</div>
 <!-- 		  <div class="exitbtn">退出登录</div>
  -->	    </div>
+ 
+      <jsp:include page="common-footer.jsp"></jsp:include>
 	</section>
 	
 	<!-- <script src="components/bootstrap/js/bootstrap.min.js"></script> -->

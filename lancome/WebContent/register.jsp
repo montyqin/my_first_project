@@ -8,211 +8,24 @@
 <html>
 <head>
 <meta charset="utf-8">
-<meta name="description" content="兰蔻Lancome手机官方网站暨网上商城">
-<meta name="Keywords" content="兰蔻Lancome手机官方网站暨网上商城" />
+<meta name="description" content="KIEHL'S科颜氏手机官方网站暨网上商城">
+<meta name="Keywords" content="KIEHL'S科颜氏手机官方网站暨网上商城" />
 <meta name="author" content="arvato">
 <meta name="HandheldFriendly" content="True">
-<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
 <meta content="black" name="apple-mobile-web-app-status-bar-style" />
-<title>兰蔻Lancome手机官方网站暨网上商城</title>
-
-<!-- <link href="components/bootstrap/css/bootstrap.css" rel="stylesheet">
-<link href="components/bootstrap/css/bootstrap-responsive.css" rel="stylesheet"> -->
-
+<title>KIEHL'S科颜氏手机官方网站暨网上商城</title>
 <link href="<%=contextPath %>/css/common.css" rel="stylesheet">
 <link href="<%=contextPath %>/css/login.css" rel="stylesheet">
-
-<style type="text/css">
-html,body{
-	height:auto;
-}
-body{
-	background-color:#fcfcfc;
-}
-@keyframes topbar-r{
-		50%{
-			margin-right:5px;
-		}
-		100%{
-			margin-right:10px;
-		}
-}
-@-webkit-keyframes topbar-r{
-		50%{
-			margin-right:5px;
-		}
-		100%{
-			margin-right:10px;
-		}
-}
-@-moz-keyframes topbar-r{
-		50%{
-			margin-right:5px;
-		}
-		100%{
-			margin-right:10px;
-		}
-}
-@-o-keyframes topbar-r{
-		50%{
-			margin-right:5px;
-		}
-		100%{
-			margin-right:10px;
-		}
-}
-@-ms-keyframes topbar-r{
-		50%{
-			margin-right:5px;
-		}
-		100%{
-			margin-right:10px;
-		}
-}
-.topbar-l{
-	background: url("<%=contextPath%>/img/ui/index-topbar-l.jpg") no-repeat scroll 0 0 transparent;
-	height:35px;
-	width:28px;
-	float:left;
-	border:none;
-	
-}
-.topbar-r{
-	float:right;
-	width:6px;
-	height:11px;
-	background:url("<%=contextPath%>/img/ui/arrow-r.png") no-repeat scroll;
-	margin-right:10px;
-	margin-top:12px;
- 	animation: topbar-r 1s linear 0s infinite normal;
-	-webkit-animation: topbar-r 1s linear 0s infinite normal;
-	-moz-animation: topbar-r 1s linear 0s infinite normal;
-	-o-animation: topbar-r 1s linear 0s infinite normal;
-	-ms-animation: topbar-r 1s linear 0s infinite normal;
-}
-.topbar{
-	float:left;
-	height:35px;
-	width:100%;
-	background: url("<%=contextPath%>/img/ui/index-topbar.jpg") repeat-x scroll 0 0 transparent;
-	text-align:center;
-	position:relative;
-}
-.topbar-title{
-	position:absolute;
-	width:100%;
-	color:#000;
-	font-size:12px;
-	height:35px;
-	line-height:35px;
-}
-.topbar-title a{
-	color:#fff;
-	text-decoration: none;
-}
-
-.wrapper {
-	width:100%;
-	/* width: 320px;*/
-	background: #ffffff;
-	/*padding-top: 43px;*/
-	overflow: hidden;
-	/*min-height: 480px;*/
-	margin:0;
-}
-
-#rotating-item-wrapper {
-	float: left;
-	width: 100%;
-}
-#rotating-item-wrapper a img {
-	height: auto;
-	width: 100%;
-}
-
-#rotating-item-wrapper #nav {
-	width: 100%;
-	text-align: center;
-	top:290px;
-	margin-left:50%;
-	position:absolute;
-	z-index:9;
-}
-
-#rotating-item-wrapper #nav a {
-	height: 8px;
-	width: 8px;
- 	background: none repeat scroll 0 0 #DDDDDD;
-	margin-right: 4px;
-	border-radius: 4px 4px 4px 4px;
-    text-indent: -100000px;
-	display: block;
-	float: left;
-	overflow:hidden;
-}
-#rotating-item-wrapper #nav  a.activeSlide {
-	background: none repeat scroll 0 0 #888888;
-}
-#rotating-item-wrapper #previous {
-	position: absolute;
-	top:0px;
-	left:0px;
-	width: 20px;
-	background: #000000;
-	opacity: 0.7;
-	z-index: 100;
-	height: 84%;
-}
-
-#rotating-item-wrapper #next {
-	position: absolute;
-	top:0px;
-	right:0px;
-	width: 20px;
-	background: #000000;
-	opacity: 0.7;
-	z-index: 100;
-	height: 84%;
-}
-
-#rotating-item-wrapper #next  a {
-	/* background: url("<%=contextPath%>/img/ui/right-w-arrow.png") no-repeat  3px 50%; */
-	display: block;
-	height: 100%;
-}
-
-#rotating-item-wrapper #previous  a {
-	/* background: url("<%=contextPath%>/img/ui/left-w-arrow.png") no-repeat 3px 50%; */
-	display: block;
-	height: 100%;
-}
-.main-footer{
-	width:100%;
-	display:table;
-	margin:0;
-	padding:0;
-}
-/* @-moz-document url-prefix()
-{.main-footer { top:-1px; }} */
-
-.footer-row{
-	display:table-row;
-}
-.footer-row > div{
-	display:table-cell;
-	width:25%;
-	vertical-align: top;
-}
-</style>
-	<script src="<%=contextPath%>/js/index-img.js"></script>
-	<script src="<%=contextPath%>/js/jquery-1.9.1.min.js"></script>
-	<script src="<%=contextPath%>/js/index.js"></script>
-	<script src="<%=contextPath%>/js/md5.js"></script>
-	<script src="<%=contextPath%>/js/tool.js"></script>
-	<script src="<%=contextPath%>/ext/js/ZHUIKit.js"></script>
-	<script type="text/javascript">
+<script src="<%=contextPath%>/js/index-img.js"></script>
+<script src="<%=contextPath%>/js/jquery-1.9.1.min.js"></script>
+<script src="<%=contextPath%>/js/index.js"></script>
+<script src="<%=contextPath%>/js/md5.js"></script>
+<script src="<%=contextPath%>/js/tool.js"></script>
+<script src="<%=contextPath%>/ext/js/ZHUIKit.js"></script>
+<script type="text/javascript">
 		if(navigator.userAgent.indexOf('UCWEB')!=-1){
 			alert('UC浏览器的极速模式下由于会经过UC服务器压缩处理可能会影响网站外观，关闭后可完整体验');
 		}
@@ -224,14 +37,14 @@ body{
 		}else{
 			//window.location.replace('http://www.lancome.com.cn/lancome/_zh/_cn/index.aspx');
 		}
-	</script>
+</script>
 </head>
 <body>
 	<section>
 		<jsp:include page="common-top.jsp"></jsp:include>
 		
        <div class="navbar" style="border-bottom:0px">
-		     <img id="backbtn" src="img/reg/btn_back.png"/>
+		     <img id="backbtn" src="img/ui/btn_back.png"/>
 		   </div>
 		   <div style="width:90%;margin-left:7%;">请填写以下信息成为我们的注册会员,注册邮箱成为您的登陆信息。<br>请正确填写邮箱地址,以确保您能及时登陆</div>
 		   <div id="content" style="margin-top:30px">
@@ -243,6 +56,8 @@ body{
 		  <div style="margin-left:7%;font-size:10px;">*为必填项</div>
 		   <img class="registerbtn" src="img/ui/btn_confirm_reg.png" style="width:50%;margin-left:25%"/>
 		  </div>
+		  
+		  <jsp:include page="common-footer.jsp"></jsp:include>
 	</section>
 	
 	<!-- <script src="components/bootstrap/js/bootstrap.min.js"></script> -->
