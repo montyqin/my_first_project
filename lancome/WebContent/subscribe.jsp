@@ -32,8 +32,7 @@ function checkEmail()
 		return false;
 	}
 	
-	var reg = new RegExp("[a-zA-Z0-9]+\@[a-zA-Z0-9]+.com");
-
+	var reg = /^(\w)+(\.\w+)*@(\w)+((\.\w+)+)$/;
 	if (email.length > 0 && !reg.test(email))
 	{
 		alert("请输入正确的邮箱地址");
