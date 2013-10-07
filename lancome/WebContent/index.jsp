@@ -62,7 +62,7 @@
 		if(!!navigator.userAgent.match(/AppleWebKit.*Mobile.*/)||!!navigator.userAgent.match(/AppleWebKit/)||navigator.userAgent.indexOf('Linux')>-1){
 			
 		}else{
-			//window.location.replace('http://www.lancome.com.cn/lancome/_zh/_cn/index.aspx');
+			window.location.replace('http://www.lancome.com.cn/lancome/_zh/_cn/index.aspx');
 		}
 	</script>
 	<script type="text/javascript">
@@ -83,7 +83,16 @@
 			var email = $.trim($('#email').val());
 			$.post('<%=contextPath%>/user/subscribe', { 'email':email }, function(result)
 			{
-				alert(result);
+				var json = eval("(" + result + ")");
+				if (json.result == true)
+				{
+					alert(json.detail);
+				}
+				else
+				{
+					alert(json.detail);
+				}
+				$('#email').val("");
 			});
 		}
     </script>
