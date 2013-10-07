@@ -16,9 +16,8 @@ function subscribe()
 	if (!checkEmail())
 		return;
 	
-	$.post('<%=contextPath%>/user/subscribe', { 'email':email }, function(result)
+	$.post('<%=contextPath%>/user/subscribe', { 'email':email }, function(json)
 	{
-		var json = eval("(" + result + ")");
 		if (json.result == true)
 		{
 			alert(json.detail);
@@ -28,7 +27,7 @@ function subscribe()
 			alert(json.detail);
 		}
 		$('#email').val("");
-	});
+	}, "json");
 }
 function checkEmail()
 {
