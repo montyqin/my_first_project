@@ -78,6 +78,14 @@
 			  $(obj).find("div.crow_arrow").removeClass("arrow_up");
 		   }
 		}
+		function subscribe()
+		{
+			var email = $.trim($('#email').val());
+			$.post('<%=contextPath%>/user/subscribe', { 'email':email }, function(result)
+			{
+				alert(result);
+			});
+		}
     </script>
 </head>
 <body>
@@ -136,7 +144,7 @@
 				<div><h1 style="text-align:center;">订阅</h1></div>
 				<div style="text-align:center;margin:10px"><span>输入邮箱地址</span></div>
 				<div style="text-align:center;"><input type="text" style="height:70px; width:80%" name="email" id="email" value=""></div>
-				<div style="text-align:center;margin:10px;"><input type="submit" class="btn_submit" value=""></div>
+				<div style="text-align:center;margin:10px;"><input type="submit" class="btn_submit" value="" onclick="subscribe()"></div>
 		   </div>
 		</article>		
        <jsp:include page="common-footer.jsp"></jsp:include>		
