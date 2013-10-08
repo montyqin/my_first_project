@@ -44,11 +44,12 @@ html,body {
         	<div class="inner-content">
         		<div class="catalog-content-title">
         			<div style="float:right;">
-	        			按<a class="select" style="width:60px;" href="javascript:void(0)">
-							<select>
-								<option value="price">价格</option>
+	        			按价格<a class="select" style="width:60px;" href="javascript:void(0)">
+							<select id="sortBySel" onchange="sortBy(this)">
+								<option value="1" ${sortValue eq '1' ? 'selected' : ''}>升序</option>
+								<option value="0" ${sortValue eq '0' ? 'selected' : ''}>降序</option>
 							</select>
-							<span class="color">价格</span>
+							<span class="color"></span>
 						</a>排序
         			</div>
 	   				<div>全部${rs.totalCount}个产品</div>
@@ -131,7 +132,6 @@ html,body {
 				}
 				eTarget = null;
 			})
-			
 		});	
 	
 		$(window).load(function(){
@@ -141,6 +141,7 @@ html,body {
 				$(document.body).height(fullH);
 			}
 			setTimeout(function(){ window.scrollTo(0, 1); }, 100);
+			$("span.color").html($("#sortBySel").find("option:selected").html());
 		});
 
 		function showinfo(cid,id){
@@ -152,7 +153,7 @@ html,body {
 			var txt = $.trim($("#searchKeyword").val());
 			if (txt.length > 0)
 				txt = encodeURIComponent(txt);
-			window.location.href = '<%=contextPath%>/nav/nav4?keyword=' + txt;
+			window.location.href = '<%=contextPath%>/nav/nav4?sortValue=' + $("#sortBySel").val() + '&keyword=' + txt;
 		}
 		function showMore()
 		{
@@ -171,7 +172,7 @@ html,body {
 			if (txt.length > 0)
 				txt = encodeURIComponent(txt);
 			
-			$.post(window.contextPath + '/nav/nav4/getproducts', { "keyword":txt, "pageNum":pageNum }, function(result)
+			$.post(window.contextPath + '/nav/nav4/getproducts', { "keyword":txt, "pageNum":pageNum, "sortValue":$("#sortBySel").val() }, function(result)
 			{
 				var jsonArr = eval("(" + result + ")");
 				var html = "";
@@ -190,6 +191,12 @@ html,body {
 				}
 				$("#main-content").find("div.catalog-list:last").after(html);
 			});
+		}
+
+		function sortBy(obj)
+		{
+			$("span.color").html($(obj).find("option:selected").html());
+			window.location.href = "<%=contextPath %>/nav/nav4?sortValue=" + $(obj).val();
 		}
 	</script>
 <%@include file="common-track.jsp" %>

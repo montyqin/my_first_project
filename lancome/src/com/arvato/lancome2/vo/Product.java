@@ -6,7 +6,7 @@ import org.apache.commons.lang.StringUtils;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class Product implements Serializable, Comparable<Product> {
+public class Product implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	
@@ -136,14 +136,6 @@ public class Product implements Serializable, Comparable<Product> {
 	}
 	public void setImgs(String imgs) {
 		this.imgs = imgs;
-	}
-	@Override
-	public int compareTo(Product o) {
-	    
-	    if (StringUtils.isEmpty(this.getPrice()) || StringUtils.isEmpty(o.getPrice()))
-	        return 0;
-	    
-		return this.getPrice().compareTo(o.getPrice());
 	}
 	public static void main(String[] args) throws JSONException {
 		JSONObject a = new JSONObject();

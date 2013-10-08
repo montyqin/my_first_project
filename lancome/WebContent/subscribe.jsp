@@ -32,8 +32,7 @@ function checkEmail()
 		return false;
 	}
 	
-	var reg = /^(\w)+(\.\w+)*@(\w)+((\.\w+)+)$/;
-	if (email.length > 0 && !reg.test(email))
+	if (email.length > 0 && !arvato.isEmail(email))
 	{
 		alert("请输入正确的邮箱地址");
 		return false;

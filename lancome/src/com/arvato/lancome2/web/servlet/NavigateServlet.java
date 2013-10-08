@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.URLDecoder;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 
@@ -59,8 +60,41 @@ public class NavigateServlet extends HttpServlet {
 						keyword = URLDecoder.decode(keyword, "UTF-8");
 					List productsList = (List) CacheUtil.getObjectCache("products_list");
 					List tmpList = new ArrayList();
-					tmpList.addAll(productsList);
-					Collections.sort(tmpList);
+					String sortValue = req.getParameter("sortValue");
+					sortValue = StringUtils.isEmpty(sortValue) ? "1" : sortValue;
+					req.setAttribute("sortValue", sortValue);
+					if (productsList != null)
+					{
+						tmpList.addAll(productsList);
+						if ("1".equals(sortValue))
+						{
+							Collections.sort(tmpList, new Comparator<Product>()
+							{
+								@Override
+								public int compare(Product o1, Product o2)
+								{
+									if (StringUtils.isEmpty(o1.getPrice()) || StringUtils.isEmpty(o2.getPrice()))
+								        return 0;
+								    
+									return new Integer(o1.getPrice()).compareTo(new Integer(o2.getPrice()));
+								}
+							});
+						}
+						else
+						{
+							Collections.sort(tmpList, new Comparator<Product>()
+							{
+								@Override
+								public int compare(Product o1, Product o2)
+								{
+									if (StringUtils.isEmpty(o1.getPrice()) || StringUtils.isEmpty(o2.getPrice()))
+								        return 0;
+								    
+									return -(new Integer(o1.getPrice()).compareTo(new Integer(o2.getPrice())));
+								}
+							});
+						}
+					}
 					
 					if (!StringUtils.isEmpty(keyword))
 					{

@@ -33,11 +33,12 @@
         	<div class="inner-content">
         		<div class="catalog-content-title">
         			<div style="float:right;">
-	        			按<a class="select" style="width:60px;" href="javascript:void(0)">
-							<select>
-								<option value="price">价格</option>
+	        			按价格<a class="select" style="width:60px;" href="javascript:void(0)">
+							<select id="sortBySel" onchange="sortBy(this)">
+								<option value="1" ${sortValue eq '1' ? 'selected' : ''}>升序</option>
+								<option value="0" ${sortValue eq '0' ? 'selected' : ''}>降序</option>
 							</select>
-							<span class="color">价格</span>
+							<span class="color"></span>
 						</a>排序
         			</div>
 	   				<div>全部${fn:length(products)}个产品</div>
@@ -126,10 +127,17 @@
 				$(document.body).height(fullH);
 			}
 			setTimeout(function(){ window.scrollTo(0, 1); }, 100);
+			$("span.color").html($("#sortBySel").find("option:selected").html());
 		});
 
 		function showinfo(cid,id){
 			window.location.href = '<%=contextPath %>/info/' + cid + '/' + id;
+		}
+
+		function sortBy(obj)
+		{
+			$("span.color").html($(obj).find("option:selected").html());
+			window.location.href = "<%=contextPath %>/catalog/${catalog.id}?sortValue=" + $(obj).val();
 		}
 	</script>
 <%@include file="common-track.jsp" %>
