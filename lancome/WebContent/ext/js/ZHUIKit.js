@@ -59,7 +59,6 @@ ZHViewController.prototype.setUpView = function(parent){
 		if(parent){
 			parent.append(this.view);
 		}
-		
 }
 
 ZHViewController.prototype.viewDidLoad = function(){
@@ -187,40 +186,40 @@ function ZHScrollViewController(rootview){
 		this.scrollView.css('overflow','hidden');
 		this.scrollView.css("width","100%");
 		this.scrollView.css("height","100%");
-		this.scrollView.css("background","transparent");
+		this.scrollView.css("background-color","transparent");
 		
 		this.contentView = $('<div></div>');
 		this.contentView.attr('class','ZHView');
-		this.contentView.attr('id','contnet');
-		this.contentView.css("background","transparent");
+		this.contentView.attr('id','scrollcontnet');
+		this.contentView.css("background-color","transparent");
 		this.contentView.css("width","100%");
 
 		
 		this.scrollView.append(this.contentView);
-		if(this.rootview){
-			this.rootview.append(this.scrollView);
-		}
+		this.rootview.append(this.scrollView);
 			
 		this.scrollView.bind('touchmove', function(e){
-			e.preventDefault();					
+			  e.preventDefault();
 		});	
 		
 		this.scrollView.bind('touchstart', function(e){
-			startX = endX = e.originalEvent.touches[0].pageX;
-			startY = endY = e.originalEvent.touches[0].pageY;
+			startX = e.originalEvent.touches[0].pageX;
+			endX = e.originalEvent.touches[0].pageX;
 			touchScroll = true;
 			if(autoScroll){
 				scrollViewController.stopAutoScroll();
 			}
 	    }).bind('touchmove', function(e){
 			endX = e.originalEvent.touches[0].pageX;
-			endY = e.originalEvent.touches[0].pageY;
-	    }).bind('touchend', function(e){
-			if(startX+20<endX){
-				scrollRight();
-			}else if(startX>endX+20){
-				scrollLeft();
-			}
+	    }).bind('touchend', function(e){	
+			
+	    	if(views.length>1){
+	    		if(startX<endX-20){
+					scrollRight();
+				}else if(startX>endX+20){
+					scrollLeft();
+				}
+	    	}
 	    }); 
 	}
 	
@@ -261,8 +260,8 @@ function ZHScrollViewController(rootview){
 	
 	var indicatorChange = function(currentNum,preNum){
 		if(indicatorShow){
+		    $('#indicator').find('li').attr('class','');
 			$('#indicator').find('li:eq('+currentNum+')').attr('class','active');	
-		    $('#indicator').find('li:eq('+preNum+')').attr('class','');
 		}
 	}
 	
@@ -287,7 +286,7 @@ function ZHScrollViewController(rootview){
 			currendIndex = 0;
 		}
 		
-		indicatorChange(currendIndex,tempIndex);
+		indicatorChange(currendIndex);
 		
 		views[currendIndex].css("left",window.innerWidth+"px");
 		scrollViewController.contentView.append(views[currendIndex]);
@@ -309,7 +308,7 @@ function ZHScrollViewController(rootview){
 			currendIndex = views.length-1;
 		}
 			
-		indicatorChange(currendIndex,tempIndex);
+		indicatorChange(currendIndex);
 		views[currendIndex].css("left",-window.innerWidth+"px");
 		scrollViewController.contentView.append(views[currendIndex]);
 			
@@ -336,6 +335,7 @@ function ZHScrollViewController(rootview){
 		window.clearInterval(timer);
 		timer = null;
 	}
+	
 }
 
 
@@ -432,69 +432,6 @@ function ZHImg(){
 			method(zhimg.tag);
 	    }); 
 	}
-}
-
-/*********************
-* imgview
-**********************/
-
-function ZHImgView(_src,_parent){
-	var zhimg = this;
-	var src = _src;
-	var parent = _parent;
-	
-	this.autoCenter = false;
-	
-	this.init = function(){
-		this.tag = 0;
-		this.img=$('<img></img>');
-	    this.img.attr('class','ZHImg'); 
-		if(src){
-			this.img.attr("src",src);
-		}
-		this.img.hide();
-		this.img.load(function(e){
-			$(this).show();
-			if(zhimg.autoCenter){
-				$(this).css('top',(window.innerHeight/2-$(this).height()/2)+'px');
-				$(this).css('left',(window.innerWidth/2-$(this).width()/2)+'px');
-			}
-		});
-		
-		if(parent){
-			parent.append(this.img);
-		}
-	}
-	
-	this.setWidth = function(width){
-		this.img.css("width",width);
-	}
-	
-	this.setHeight = function(height){
-		this.img.css("height",height);
-	}
-	
-	this.addClickeEvent = function(method){
-		zhimg.img.bind('click', function(e){
-			method(zhimg.tag);
-	    }); 
-	}
-	
-	this.setPosition = function(x,y){
-		this.img.css('position','absolute');
-		this.img.css('left',x);
-		this.img.css('top',y);
-	}
-	
-	this.setId = function(imgid){
-		this.img.attr('id',imgid);
-	}
-	
-	this.setClass = function(imgclass){
-		this.img.attr('class',imgclass);
-	}
-	
-	this.init();
 }
 
 /*********************
@@ -632,9 +569,27 @@ ExpireDate.setTime(ExpireDate.getTime() + (expiredays * 24 * 3600 * 1000));
 // 注意日期通过toGMTstring()函数被转换成了GMT时间。   
   
 document.cookie = NameOfCookie + "=" + escape(value) +   
-  ((expiredays == null) ? "" : "; expires=" + ExpireDate.toGMTString());   
+  ((expiredays == null) ? "" : "; expires=" + ExpireDate.toGMTString())+";path=/";
 }   
+
+//setCookie encode
+function setCookieEncode(NameOfCookie, value, expiredays)   
+{   
+//@参数:三个变量用来设置新的cookie:   
+//cookie的名称,存储的Cookie值,   
+// 以及Cookie过期的时间.   
+// 这几行是把天数转换为合法的日期   
   
+var ExpireDate = new Date ();   
+ExpireDate.setTime(ExpireDate.getTime() + (expiredays * 24 * 3600 * 1000));   
+  
+// 下面这行是用来存储cookie的,只需简单的为"document.cookie"赋值即可.   
+// 注意日期通过toGMTstring()函数被转换成了GMT时间。   
+  
+document.cookie = NameOfCookie + "=" + encodeURIComponent(value) +   
+  ((expiredays == null) ? "" : "; expires=" + ExpireDate.toGMTString())+";path=/";
+}
+
 ///获取cookie值   
 function getCookie(NameOfCookie)   
 {   
@@ -660,7 +615,7 @@ if (begin != -1)
 begin += NameOfCookie.length+1;//cookie值的初始位置   
 end = document.cookie.indexOf(";", begin);//结束位置   
 if (end == -1) end = document.cookie.length;//没有;则end为字符串结束位置   
-return unescape(document.cookie.substring(begin, end)); }   
+return decodeURIComponent(document.cookie.substring(begin, end)); }   
 }   
   
 return null;   
@@ -676,6 +631,88 @@ function delCookie (NameOfCookie)
   
 if (getCookie(NameOfCookie)) {   
 document.cookie = NameOfCookie + "=" +   
-"; expires=Thu, 01-Jan-70 00:00:01 GMT";   
+"; expires=Thu, 01-Jan-70 00:00:01 GMT;path=/";  
 }   
 }  
+
+function EncodeUtf8(s1) {
+    var stringArray = new Array();
+    for(var j=0; j<s1.length;j++){
+          stringArray[j] = escape(s1.charAt(j)).replace("%",""); 
+      }
+
+   var sa = stringArray;
+   
+   var retV = "";
+   
+   for (var i = 0; i < sa.length; i++) {
+       
+       if (sa[i].length > 1 && sa[i].substring(0, 1) == "u") {
+           retV += Hex2Utf8(Str2Hex(sa[i].substring(1, 5)));
+       }else if(sa[i].length == 2){
+           //转义字符和标点符号
+           retV += "%" + sa[i];
+       } else {
+           retV += sa[i];                
+       }
+   }
+   return retV;
+}
+
+function Str2Hex(s) {
+var c = "";
+var n;
+var ss = "0123456789ABCDEF";
+var digS = "";
+for (var i = 0; i < s.length; i++) {
+   c = s.charAt(i);
+   n = ss.indexOf(c);
+   digS += Dec2Dig(eval(n));
+}
+//return value;
+return digS;
+}
+function Dec2Dig(n1) {
+var s = "";
+var n2 = 0;
+for (var i = 0; i < 4; i++) {
+   n2 = Math.pow(2, 3 - i);
+   if (n1 >= n2) {
+       s += "1";
+       n1 = n1 - n2;
+   } else {
+       s += "0";
+   }
+}
+return s;
+}
+function Dig2Dec(s) {
+var retV = 0;
+if (s.length == 4) {
+   for (var i = 0; i < 4; i++) {
+       retV += eval(s.charAt(i)) * Math.pow(2, 3 - i);
+   }
+   return retV;
+}
+return -1;
+}
+function Hex2Utf8(s) {
+var retS = "";
+var tempS = "";
+var ss = "";
+
+if (s.length == 16) {
+   tempS = "1110" + s.substring(0, 4);
+   tempS += "10" + s.substring(4, 10);
+   tempS += "10" + s.substring(10, 16);
+   var sss = "0123456789ABCDEF";
+   for (var i = 0; i < 3; i++) {
+       retS += "%";
+       ss = tempS.substring(i * 8, (eval(i) + 1) * 8);
+       retS += sss.charAt(Dig2Dec(ss.substring(0, 4)));
+       retS += sss.charAt(Dig2Dec(ss.substring(4, 8)));
+   }
+   return retS;
+}
+return "";
+}

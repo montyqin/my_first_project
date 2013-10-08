@@ -1,5 +1,6 @@
 var arvato = {
 	orderDomain:'/handy',
+	webDomain:'kiehls',
 	$ : function(objName) {
 		if (document.getElementById) {
 			return eval('document.getElementById("' + objName + '")')
@@ -8,6 +9,42 @@ var arvato = {
 		}
 	},
 	isIE : navigator.appVersion.indexOf("MSIE") != -1 ? true : false,
+			isEmail:function(email){
+		    	invalidChars = " /;,:{}[]|*%$#!()`<>?";
+		        if (email == "")
+		        {
+		        return false;
+		        }
+		        for (i=0; i< invalidChars.length; i++)
+		        {
+		        badChar = invalidChars.charAt(i)
+		        if (email.indexOf(badChar,0) > -1) {
+		        return false;
+		        }
+		        }
+		        atPos = email.indexOf("@",1)
+		        if (atPos == -1) {   return false; }
+		        if (email.indexOf("@", atPos+1) != -1) {   return false; }
+		        periodPos = email.indexOf(".",atPos)
+		        if(periodPos == -1) {
+		        return false; // and at least one "." after the "@"
+		        }
+		        if ( atPos +2 > periodPos) {
+		        return false; // and at least one character between "@" and "."
+		        }
+		        if ( periodPos +3 > email.length) {   return false; }
+		        return true;
+		    },
+
+		    isTel:function(str){
+		    	var regu =/^[1][3,5,8][0-9]{9}$/;
+		    	var re = new RegExp(regu);
+		    	if (re.test(str)) {
+		    	return true;
+		    	}else{
+		    	return false;
+		    	}
+		    },
 	addEvent : function(l, i, I) {
 		if (l.attachEvent) {
 			l.attachEvent("on" + i, I)
@@ -95,6 +132,11 @@ var arvato = {
 			arvato.doShowBuyCount();
 		}
 	},
+	gotoCart:function(){
+		window.location.href = window.location.href = window.location.protocol + "//"
+		+ window.location.host
+		+ arvato.orderDomain +"/mmall/cart.html?fp=1&c=1&f=checklogin&id=974";
+	},
 	addToCart:function(_product_id,_sample_id,_color_id){
 		//赠品
 		if(typeof _sample_id === 'undefined'){
@@ -137,7 +179,9 @@ var arvato = {
 			}
 		}
 	},
-	buyItem:function(id){		
+	buyItem:function(id){
+
+		
 		$.ajax({
 			url:arvato.orderDomain+'/mmall/itemedit.html',
 			type:'post',
@@ -153,7 +197,7 @@ var arvato = {
 					arvato.showBuyCount('server',function(){
 						window.location.href = window.location.protocol + "//"
 						+ window.location.host
-						+ arvato.orderDomain +"/mmall/cart.html?f=np&fp=1&c=1&id="+id;
+						+ arvato.orderDomain +"/mmall/cart.html?f=checklogin&fp=1&c=1&id="+id;
 					});
 				}else{
 					alert('添加购物车失败，请稍后再试');
@@ -294,9 +338,9 @@ var arvato = {
 	weiboShare:function(){
 		_gaq.push(['_trackEvent','share','weibo','lancome',1,true]);
 
-		var shareTitle = "我正在用手机浏科颜氏手机官网。快捷的购物方式还能随时了解品牌活动";
-		var contextPath = window.contextPath || '/kiehls';
-		var picUrl = encodeURIComponent(window.location.protocol+'//'+window.location.host+contextPath+'/img/info/kiehls-info.jpg');
+		var shareTitle = "我正在用手机浏览兰蔻手机官网。快捷的购物方式还能随时了解品牌活动";
+		var contextPath = window.contextPath || '/lancome';
+		var picUrl = encodeURIComponent(window.location.protocol+'//'+window.location.host+contextPath+'/img/info/lancome-info.png');
 		window.location.href = 'http://v.t.sina.com.cn/share/share.php?url='+encodeURIComponent(window.location.href)+'&appkey=2530574100&title='+shareTitle+'&pic='+picUrl;
 	},
 	closeAsideMenu:function(){
@@ -327,13 +371,27 @@ $(function(){
 		
 		var _handleNavTop = function(dataClass){
 			if(dataClass==='nav-login'){
-				_gaq.push(['_trackEvent','navigate','hotlaine','lancome',1,true]);
-				window.location.href = '/kiehls/login.jsp';
+//				_gaq.push(['_trackEvent','navigate','hotlaine','lancome',1,true]);
+//				window.location.href = 'tel:4008208016';
+				var username = arvato.getCookie("username");
+				
+				if (username) {
+					
+					if(confirm("尊敬的"+username+" 您已登陆,是否要切换其他账号?")){
+						window.location.href = window.location.protocol + "//"
+						+ window.location.host
+						+ "/"+arvato.webDomain 
+						+ '/login.jsp';
+					}
+		} else {
+			window.location.href = window.location.protocol + "//"
+			+ window.location.host
+			+ "/"+arvato.webDomain 
+			+ '/login.jsp';
+		}
 			}else if(dataClass==='nav-bag'){
-				window.location.href = arvato.orderDomain+'/mmall/cart.html?f=np&fp=1&c=1&id=132';
+				window.location.href = arvato.orderDomain+'/mmall/cart.html?f=checklogin&fp=1&c=1&id=132';
 			}else if(dataClass==='nav-menu'){
-				_gaq.push(['_trackEvent','navigate','openmenu','lancome',1,true]);
-
 				var $viewport = $(document.body).children('section,div');
 				if($viewport.data('menu_opened')){
 					$viewport.animate({'left':'0px'},370,function(){
@@ -370,11 +428,30 @@ $(function(){
 						$eTarget.removeClass(dataClass+"-d").addClass(dataClass);
 						
 						if(dataClass==='nav-login'){
-							_gaq.push(['_trackEvent','navigate','hotlaine','lancome',1,true]);
-							window.location.href = '/kiehls/login.jsp';
+							//_gaq.push(['_trackEvent','navigate','hotlaine','lancome',1,true]);
+							//window.location.href = 'tel:4008208016';
+							
+							var username = arvato.getCookie("username");
+							
+							if (username) {
+								
+								if(confirm("尊敬的"+username+" 您已登陆,是否要切换其他账号?")){
+									window.location.href = window.location.protocol + "//"
+									+ window.location.host
+									+ "/"+arvato.webDomain 
+									+ '/login.jsp';
+								}
+					} else {
+						window.location.href = window.location.protocol + "//"
+						+ window.location.host
+						+ "/"+arvato.webDomain 
+						+ '/login.jsp';
+					}
+							
 						}else if(dataClass==='nav-bag'){
-							window.location.href = arvato.orderDomain+'/mmall/cart.html?f=np&fp=1&c=1&id=132';
+							window.location.href = arvato.orderDomain+'/mmall/cart.html?f=checklogin&fp=1&c=1&id=132';
 						}else if(dataClass==='nav-menu'){
+							
 							var $viewport = $(document.body).children('section,div');
 							if($viewport.data('menu_opened')){
 								$viewport.animate({'left':'0px'},370,function(){
@@ -387,6 +464,9 @@ $(function(){
 								$viewport.data('menu_opened',1);
 							}
 							$viewport = null;
+							
+							_gaq.push(['_trackEvent','navigate','openmenu','lancome',1,true]);
+
 						}
 						
 						
@@ -404,7 +484,7 @@ $(function(){
 					return true;
 				}else if($eTarget.attr('name')){
 					if($eTarget.attr('name')==='count'){
-						window.location.href = arvato.orderDomain+'/mmall/cart.html?f=np&fp=1&c=1&id=132';
+						window.location.href = arvato.orderDomain+'/mmall/cart.html?f=checklogin&fp=1&c=1&id=132';
 					}
 				}else{
 				}
@@ -415,8 +495,8 @@ $(function(){
 			eTarget = null;
 			return false;
 		})
-		/*
-		.on('click',function(e){
+		
+/*		.on('click',function(e){
 			var eTarget = e.target;
 			if(eTarget.nodeName === 'SPAN'){
 				var $eTarget = $(eTarget);
@@ -425,8 +505,8 @@ $(function(){
 					_handleNavTop(dataClass);
 				}
 			}
-		});
-		*/
+		});*/
+		
 		arvato.showBuyCount('server');
 	}
 });

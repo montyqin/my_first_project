@@ -66,17 +66,16 @@ public class UserServlet extends HttpServlet {
 					}
 					
 					if ("register".equalsIgnoreCase(pathParts[1])) {
-						String email = "xg3216@tom.com";
-						String pwd = "oneday";
-						String birthday = "19841212";
-						String uname = "xg3216";
-						String mobile = "13657667744";
-						String gender = "1";
-						String subscription = "1";
-						String sign = "email=" + email + "&pwd=" + pwd + "&birthday=" + birthday
-							+ "&uname=" + uname + "&mobile=" + mobile + "&gender=" + gender + "&subscription="
-							+ subscription + "2505307234334bb08fa0c855a8933ab0";
-						
+						String email = request.getParameter("email");
+						String pwd = request.getParameter("pwd");
+						String birthday = request.getParameter("birthday");
+						String uname = request.getParameter("uname");
+						String mobile = request.getParameter("mobile");
+						String gender = request.getParameter("gender");
+						String subscription = request.getParameter("subscription");
+						String sign = "email=" + email + "&pwd=" + pwd+ "&uname=" + uname
+							+ "&mobile=" + mobile + "2505307234334bb08fa0c855a8933ab0";
+
 						NameValuePair nvp1 = new NameValuePair("email", email);
 						NameValuePair nvp2 = new NameValuePair("pwd", pwd);
 						NameValuePair nvp3 = new NameValuePair("birthday", birthday);
@@ -86,15 +85,16 @@ public class UserServlet extends HttpServlet {
 						NameValuePair nvp7 = new NameValuePair("subscription", subscription);
 						NameValuePair nvp8 = new NameValuePair("sign", MD5.getHashString(sign, "UTF-8"));
 						
-						String result = postUrl("http://user.kiehls.com.cn/EcProfileMobile.aspx/Register", 
-								new NameValuePair[] { nvp1, nvp2, nvp3, nvp4, nvp5, nvp6, nvp7, nvp8 });
+						String url = "http://user.kiehls.com.cn/EcProfileMobile.aspx/Register";
+						//String url = "http://user.lancome.com.cn/EcProfileMobile.aspx/Register";
+						String result = postUrl(url, new NameValuePair[] { nvp1, nvp2, nvp3, nvp4, nvp5, nvp6, nvp7, nvp8 });
 						
 						request.setAttribute("result", result);
 						request.getRequestDispatcher("/resultinfo.jsp").forward(request, response);
 					}
-					else if ("login".equalsIgnoreCase(pathParts[1])) {
-						String email = "xg3216@tom.com";
-						String pwd = "oneday";
+					else if ("signin".equalsIgnoreCase(pathParts[1])) {
+						String email = request.getParameter("email");
+						String pwd = request.getParameter("pwd");
 						String sign = "email=" + email + "&pwd=" + pwd
 							+ "2505307234334bb08fa0c855a8933ab0";
 						
@@ -102,8 +102,9 @@ public class UserServlet extends HttpServlet {
 						NameValuePair nvp2 = new NameValuePair("pwd", pwd);
 						NameValuePair nvp3 = new NameValuePair("sign", MD5.getHashString(sign, "UTF-8"));
 						
-						String result = postUrl("http://user.kiehls.com.cn/EcProfileMobile.aspx/SignIn",
-								new NameValuePair[] { nvp1, nvp2, nvp3 });
+						String url = "http://user.kiehls.com.cn/EcProfileMobile.aspx/SignIn";
+						//String url = "http://user.lancome.com.cn/EcProfileMobile.aspx/SignIn";
+						String result = postUrl(url, new NameValuePair[] { nvp1, nvp2, nvp3 });
 
 						request.setAttribute("result", result);
 						request.getRequestDispatcher("/resultinfo.jsp").forward(request, response);

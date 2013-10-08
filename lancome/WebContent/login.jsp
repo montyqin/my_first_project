@@ -107,12 +107,14 @@
 			
 			$('.loginbtn').bind('click', function(){
 				if(!submitting){
-					if($('#mailfield').val().length>3 && $('#passwordfield').val().length>3 && arvato.isEmail($('#mailfield').val())){
-						var sign = "email="+$('#mailfield').val()+"&pwd="+$('#passwordfield').val()+"2505307234334bb08fa0c855a8933ab0";
-						var data = "email="+$('#mailfield').val()+"&pwd="+$('#passwordfield').val()+"&sign="+hex_md5(sign);
+					if($('#mailfield').val().length>3
+						&& $('#passwordfield').val().length>3
+						&& arvato.isEmail($('#mailfield').val()))
+					{
+						var data = "email="+$('#mailfield').val()+"&pwd="+$('#passwordfield').val();
 						
 						$.ajax({
-							"url":"/httpProxy/ajaxproxy/?url="+window.encodeURIComponent('http://user.lancome.com.cn/EcProfileMobile.aspx/SignIn'),
+							"url":"<%=contextPath %>/user/signin",
 							"data":data,
 							"dataType":"json",
 							"type":"post",

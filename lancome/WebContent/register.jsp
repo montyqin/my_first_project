@@ -102,14 +102,13 @@
 					   }else if(!arvato.isEmail($('#mailfield').val())){
 						   alert("请输入正确的邮箱地址");
 					   }else{
-						   var username = $('#namefield').val();
-							var sign = "email="+$('#mailfield').val()+"&pwd="+$('#passwordfield').val()+"&uname="+username+"&mobile="+$('#tel').val()+"2505307234334bb08fa0c855a8933ab0";
-							var data = "email="+$('#mailfield').val()+"&pwd="+$('#passwordfield').val()+"&uname="+username+"&mobile="+$('#tel').val()+"&birthday=19840101&gender=1&subscription=1&sign="+hex_md5(sign);
+							var username = $('#namefield').val();
+							var data = "email="+$('#mailfield').val()+"&pwd="+$('#passwordfield').val()+"&uname="+username+"&mobile="+$('#tel').val()+"&birthday=19840101&gender=1&subscription=1";
 							
 							console.log("debug");
 							 submitting = true;
 							$.ajax({
-								"url":"/httpProxy/ajaxproxy/?url="+window.encodeURIComponent('http://user.lancome.com.cn/EcProfileMobile.aspx/Register'),
+								"url":"<%=contextPath %>/user/register",
                                 "data":data,
 								"dataType":"json",
 								"type":"post",
@@ -123,10 +122,9 @@
 										break;
 									case 1:
 										
-										var sign = "email="+$('#mailfield').val()+"&pwd="+$('#passwordfield').val()+"2505307234334bb08fa0c855a8933ab0";
-										var data = "email="+$('#mailfield').val()+"&pwd="+$('#passwordfield').val()+"&sign="+hex_md5(sign);
+										var data = "email="+$('#mailfield').val()+"&pwd="+$('#passwordfield').val();
 										$.ajax({
-											"url":"/httpProxy/ajaxproxy/?url="+window.encodeURIComponent('http://user.lancome.com.cn/EcProfileMobile.aspx/SignIn'),
+											"url":"<%=contextPath %>/user/signin",
 											"data":data,
 											"dataType":"json",
 											"type":"post",
