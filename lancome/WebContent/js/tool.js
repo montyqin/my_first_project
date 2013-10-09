@@ -135,7 +135,9 @@ var arvato = {
 	gotoCart:function(){
 		window.location.href = window.location.href = window.location.protocol + "//"
 		+ window.location.host
-		+ arvato.orderDomain +"/mmall/cart.html?fp=1&c=1&f=checklogin&id=974";
+		//+ arvato.orderDomain +"/mmall/cart.html?fp=1&c=1&f=checklogin&id=974";
+		+ arvato.orderDomain +"/mmall/cart.html?fp=1&c=1&f=np&pre=checklogin&id=974";
+		
 	},
 	addToCart:function(_product_id,_sample_id,_color_id){
 		//赠品
@@ -197,7 +199,8 @@ var arvato = {
 					arvato.showBuyCount('server',function(){
 						window.location.href = window.location.protocol + "//"
 						+ window.location.host
-						+ arvato.orderDomain +"/mmall/cart.html?f=checklogin&fp=1&c=1&id="+id;
+						//+ arvato.orderDomain +"/mmall/cart.html?f=checklogin&fp=1&c=1&id="+id;
+						+ arvato.orderDomain +"/mmall/cart.html?f=np&pre=checklogin&fp=1&c=1&id="+id;
 					});
 				}else{
 					alert('添加购物车失败，请稍后再试');
@@ -390,7 +393,8 @@ $(function(){
 			+ '/login.jsp';
 		}
 			}else if(dataClass==='nav-bag'){
-				window.location.href = arvato.orderDomain+'/mmall/cart.html?f=checklogin&fp=1&c=1&id=132';
+				//window.location.href = arvato.orderDomain+'/mmall/cart.html?f=checklogin&fp=1&c=1&id=132';
+				window.location.href = arvato.orderDomain+'/mmall/cart.html?f=np&pre=checklogin&fp=1&c=1&id=132';
 			}else if(dataClass==='nav-menu'){
 				var $viewport = $(document.body).children('section,div');
 				if($viewport.data('menu_opened')){
@@ -449,7 +453,8 @@ $(function(){
 					}
 							
 						}else if(dataClass==='nav-bag'){
-							window.location.href = arvato.orderDomain+'/mmall/cart.html?f=checklogin&fp=1&c=1&id=132';
+							//window.location.href = arvato.orderDomain+'/mmall/cart.html?f=checklogin&fp=1&c=1&id=132';
+							window.location.href = arvato.orderDomain+'/mmall/cart.html?f=np&pre=checklogin&fp=1&c=1&id=132';
 						}else if(dataClass==='nav-menu'){
 							
 							var $viewport = $(document.body).children('section,div');
@@ -484,7 +489,8 @@ $(function(){
 					return true;
 				}else if($eTarget.attr('name')){
 					if($eTarget.attr('name')==='count'){
-						window.location.href = arvato.orderDomain+'/mmall/cart.html?f=checklogin&fp=1&c=1&id=132';
+						//window.location.href = arvato.orderDomain+'/mmall/cart.html?f=checklogin&fp=1&c=1&id=132';
+						window.location.href = arvato.orderDomain+'/mmall/cart.html?f=np&pre=checklogin&fp=1&c=1&id=132';
 					}
 				}else{
 				}
