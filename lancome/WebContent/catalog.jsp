@@ -50,7 +50,7 @@
 	        			<div class="txtcenter">RMB ${item.price}</div>
 	        			<div class="product-contain">
 	        				<div class="product-moreinfo" onclick="showinfo('${item.cid}','${item.id}')">详情</div>
-	        				<div class="product-purchase">购买<!-- purchase: item.id --></div>
+	        				<div class="product-purchase" pid="${item.id}" onclick="buynow(this)">购买</div>
 	        			</div>
 	        		</div>
 	        	</c:forEach>
@@ -63,6 +63,14 @@
 	<script src="<%=contextPath %>/js/jquery-1.9.1.min.js"></script>
 	<script src="<%=contextPath %>/js/tool.js"></script>
 	<script type="text/javascript">
+		
+		function buynow(e){
+			var $me = $(e);
+			var pid = $me.attr('pid');
+			arvato.buyItem(pid);
+			$me = null;
+			e = null;
+		}
 	
 		$(function(){
 			
