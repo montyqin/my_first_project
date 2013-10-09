@@ -43,7 +43,7 @@ function checkEmail()
 </script>
 <div class="subscribe">
 	<div><h1 style="text-align:center;">订阅</h1></div>
-	<div style="text-align:center;margin:10px"><span>输入邮箱地址</span></div>
-	<div style="text-align:center;"><input type="text" style="height:70px; width:80%" name="email" id="email" value=""></div>
+	<div style="text-align:center;margin:5px"><span>输入邮箱地址</span></div>
+	<div style="text-align:center;"><input type="text" style="height:50px; width:80%; font-size:18px" name="email" id="email" value=""></div>
 	<div style="text-align:center;margin:10px;"><input type="submit" class="btn_submit" value="" onclick="subscribe()"></div>
 </div>

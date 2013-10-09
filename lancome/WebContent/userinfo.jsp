@@ -231,7 +231,7 @@ body{
 		<jsp:include page="common-top.jsp"></jsp:include>
 		
        <div class="navbar" style="border-bottom:0px">
-		     <img id="backbtn" src="img/reg/btn_back.png"/>
+		     <img id="backbtn" src="img/ui/btn_back.png"/>
 		   </div>
 		<div id="content">
 		  <div id="userhello">您好,</div>
