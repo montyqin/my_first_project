@@ -381,9 +381,12 @@ public class ConfigUtil {
 				for (int i = 0; i < idsArray.length; i++) {
 					try {
 						tmpProduct = getProduct(idsArray[i]);
-						tmpProduct.setCid(cid);
 						if (tmpProduct != null) {
+	                        tmpProduct.setCid(cid);
 							list.add(tmpProduct);
+						}
+						else {
+						    log.info("invalid file: " + idsArray[i] + ".json");
 						}
 					} catch (IOException e) {
 						log.error(e.getMessage(), e);
