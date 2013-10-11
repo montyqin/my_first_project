@@ -93,7 +93,7 @@
 	        		${p.desc}
 	        	</div>
 	        </div>
-			<div>
+			<div style="display:none;">
 	        	<div class="details">
 	        		顾客评论<div class="plus"></div>
 	        	</div>
@@ -154,7 +154,7 @@
 	        		主要成分<div class="plus"></div>
 	        	</div>
 	        	<div class="details-content" style="display:none;">
-	        		<br/>主要成分详细
+	        		${p.ingredient}
 	        	</div>
 	        </div>
 			<div>
@@ -162,7 +162,7 @@
 	        		使用指导<div class="plus"></div>
 	        	</div>
 	        	<div class="details-content" style="display:none;">
-	        		<br/>使用指导详细
+	        		${p.guide}
 	        	</div>
 	        </div>
 			<div>

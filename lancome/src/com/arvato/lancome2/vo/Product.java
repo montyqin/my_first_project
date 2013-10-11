@@ -1,8 +1,6 @@
 package com.arvato.lancome2.vo;
 
 import java.io.Serializable;
-
-import org.apache.commons.lang.StringUtils;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -28,6 +26,8 @@ public class Product implements Serializable {
 	private String offer;
 	private Product[] products;
 	private String imgs;
+	private String ingredient;
+	private String guide;
 	
 	public String getId() {
 		return id;
@@ -141,5 +141,17 @@ public class Product implements Serializable {
 		JSONObject a = new JSONObject();
 		a.put("ab", "a<br />bc");
 		System.out.println(a.toString());
+	}
+	public String getIngredient() {
+		return ingredient;
+	}
+	public void setIngredient(String ingredient) {
+		this.ingredient = ingredient;
+	}
+	public String getGuide() {
+		return guide;
+	}
+	public void setGuide(String guide) {
+		this.guide = guide;
 	}
 }

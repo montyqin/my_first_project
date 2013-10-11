@@ -286,6 +286,8 @@ public class ConfigUtil {
 					p.setDesc(jsonObj.getString("desc"));
 					p.setGiftid(jsonObj.getString("giftid"));
 					p.setPrice(jsonObj.getString("price"));
+					p.setIngredient(jsonObj.getString("ingredient"));
+					p.setGuide(jsonObj.getString("guide"));
 					String tmpImgs = jsonObj.getString("imgs");
 					if (tmpImgs != null) {
 						if (tmpImgs.substring(0, 1).equals("/") || tmpImgs.indexOf("http") != -1) {
