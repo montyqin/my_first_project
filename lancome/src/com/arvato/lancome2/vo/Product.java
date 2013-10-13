@@ -154,4 +154,12 @@ public class Product implements Serializable {
 	public void setGuide(String guide) {
 		this.guide = guide;
 	}
+	@Override
+	public boolean equals(Object obj) {
+		return this.getId().equalsIgnoreCase(((Product)obj).getId());
+	}
+	@Override
+	public int hashCode() {
+		return this.getId().hashCode();
+	}
 }

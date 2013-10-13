@@ -369,7 +369,8 @@ public class ConfigUtil {
 		return result;
 	}*/
 	
-	public static Product[] getProductsByCatalogId(String cid) {
+	public static Product[] getProductsByCatalogId(String cid)
+	{
 		Object resultObj = CacheUtil.getObjectCache("productObjsOfCatalog_" + cid);
 		Product[] result = null;
 		if (resultObj == null) {
@@ -385,8 +386,16 @@ public class ConfigUtil {
 						if (tmpProduct != null) {
 	                        tmpProduct.setCid(cid);
 							list.add(tmpProduct);
+							
+							List productsList = (List) CacheUtil.getObjectCache("products_list");
+							if (productsList != null && !productsList.contains(tmpProduct))
+							{
+								productsList.add(tmpProduct);
+								CacheUtil.setObjectCache("products_list", productsList);
+							}
 						}
-						else {
+						else
+						{
 						    log.info("invalid file: " + idsArray[i] + ".json");
 						}
 					} catch (IOException e) {
@@ -402,7 +411,7 @@ public class ConfigUtil {
 		}
 		return result;
 	}
-
+	
 	public static void setJsonFolderPath(String folderPath) {
 		jsonFolderPath = folderPath;
 	}
