@@ -68,6 +68,10 @@ public class ConfigUtil {
 			JSONArray catalogArray = new JSONArray(FileUtils.readFileToString(new File(jsonFolderPath + "/catalog.json"), "UTF-8"));
 			initCatalogCache(catalogArray);
 			initProductCache(catalogArray);
+			
+			Date date = new Date();
+			CacheUtil.setObjectCache("loadedProductsTime", date);
+			
 			log.info("初始化目录信息成功");
 		} catch (JSONException e) {
 			log.error(e.getMessage(), e);

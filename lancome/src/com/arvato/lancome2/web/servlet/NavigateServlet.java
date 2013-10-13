@@ -5,6 +5,7 @@ import java.net.URLDecoder;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 
@@ -16,6 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.commons.lang.StringUtils;
 
 import com.arvato.lancome2.util.CacheUtil;
+import com.arvato.lancome2.util.ConfigUtil;
 import com.arvato.lancome2.vo.Product;
 import com.arvato.lancome2.vo.RecordSet;
 
@@ -54,6 +56,16 @@ public class NavigateServlet extends HttpServlet {
 					req.getRequestDispatcher("/nav3.jsp").forward(req, resp);
 				}
 				else if ("nav4".equalsIgnoreCase(pathParts[1])){
+					
+					Date searchTime = new Date();
+					Date loadedProductsTime = (Date) CacheUtil.getObjectCache("loadedProductsTime");
+					
+					if (loadedProductsTime != null)
+					{
+						long diff = (searchTime.getTime() - loadedProductsTime.getTime()) / 1000;
+						if (diff > 60 * 30) //diff in seconds
+							ConfigUtil.initCatalog();
+					}
 
 					String keyword = req.getParameter("keyword");
 					if (!StringUtils.isEmpty(keyword))
