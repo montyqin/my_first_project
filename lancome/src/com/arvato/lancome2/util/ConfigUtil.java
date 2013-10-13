@@ -378,7 +378,6 @@ public class ConfigUtil {
 			if (ids != null) {
 				String[] idsArray = ids.split("\\|");
 				Product tmpProduct = null;
-				result = new Product[idsArray.length];
 				List list = new ArrayList();
 				for (int i = 0; i < idsArray.length; i++) {
 					try {
@@ -394,7 +393,8 @@ public class ConfigUtil {
 						log.error(e.getMessage(), e);
 					}
 				}
-				result = (Product[]) list.toArray(new Product[list.size()]);
+				if (list.size() > 0)
+					result = (Product[]) list.toArray(new Product[list.size()]);
 				CacheUtil.setObjectCache("productObjsOfCatalog_" + cid, result);
 			}
 		} else {
