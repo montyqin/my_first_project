@@ -191,45 +191,45 @@ ul.lancome-nav li {
 }
 
 .nav-menu {
-	background: url(../img/ui/nav-btns.png) no-repeat 0px 0px;
-	height: 35px;
-	padding-left: 37px;
-	background-size:35px 210px;
+	background:url(../img/ui/nav-menu.png) no-repeat;
+	background-size:contain;
+	width:25%;
+	height:50%;
 }
 
-.nav-menu-d {
-	background: url(../img/ui/nav-btns.png) no-repeat 0px -35px;
-	height: 35px;
-	padding-left: 37px;
-	background-size:35px 210px;
+.nav-menu-d{
+	background:url(../img/ui/nav-menu.png) no-repeat;
+	background-size:contain;
+	width:25%;
+	height:50%;
 }
 
 .nav-login {
-	background: url(../img/ui/nav-btns.png) no-repeat 0px -70px;
-	height: 35px;
-	padding-left: 37px;
-	background-size:35px 210px;
+	background: url(../img/ui/nav-login.png) no-repeat;
+	background-size:contain;
+	width:25%;
+	height:50%;
 }
 
 .nav-login-d {
-	background: url(../img/ui/nav-btns.png) no-repeat 0px -105px;
-	height: 35px;
-	padding-left: 37px;
-	background-size:35px 210px;
+	background: url(../img/ui/nav-login.png) no-repeat;
+	background-size:contain;
+	width:25%;
+	height:50%;
 }
 
 .nav-bag {
-	background: url(../img/ui/nav-btns.png) no-repeat 0px -140px;
-	height: 35px;
-	padding-left: 37px;
-	background-size:35px 210px;
+	background: url(../img/ui/nav-bag.png) no-repeat;
+	background-size:contain;
+	width:25%;
+	height:50%;
 }
 
 .nav-bag-d {
-	background: url(../img/ui/nav-btns.png) no-repeat 0px -175px;
-	height: 35px;
-	padding-left: 37px;
-	background-size:35px 210px;
+	background: url(../img/ui/nav-bag.png) no-repeat;
+	background-size:contain;
+	width:25%;
+	height:50%;
 }
 
 .menu-right{

@@ -29,14 +29,14 @@
 <link rel="stylesheet" type="text/css" href="<%=contextPath %>/css/category.css" />
 </head>
 <body>
-	<section>
+	<section id="content_body">
 		<jsp:include page="common-top.jsp"></jsp:include>
         <article id="main-content">
           <div class="inner-content">
 			<div class="info">
 				<div class="info-row">
 					<div class="info-img">
-						<img src="<%=contextPath %>/${p.imgs}"/>
+						<img src="${p.imgs}"/>
 						<div class="button-weibo">分享到微博</div>
 					</div>
 					<div class="info-buy">
@@ -89,7 +89,7 @@
 	        	<div class="details">
 	        		产品详情<div class="plus"></div>
 	        	</div>
-	        	<div class="details-content" style="display:none;">
+	        	<div class="details-content" style="display:block;">
 	        		${p.desc}
 	        	</div>
 	        </div>
@@ -153,7 +153,7 @@
 	        	<div class="details">
 	        		主要成分<div class="plus"></div>
 	        	</div>
-	        	<div class="details-content" style="display:none;">
+	        	<div class="details-content" style="display:block;">
 	        		${p.ingredient}
 	        	</div>
 	        </div>
@@ -161,11 +161,11 @@
 	        	<div class="details">
 	        		使用指导<div class="plus"></div>
 	        	</div>
-	        	<div class="details-content" style="display:none;">
+	        	<div class="details-content" style="display:block;">
 	        		${p.guide}
 	        	</div>
 	        </div>
-			<div>
+			<div style="display:none;">
 	        	<div class="details">
 	        		推荐购买<div class="plus"></div>
 	        	</div>
@@ -355,25 +355,30 @@
 					$(this).nextAll("div:first").toggle();
 				});
 			});
-		});
-	
-		$(window).load(function(){
-/* 			var $win = $(this);
-			var winH = $win.height();
-			var fullH = winH+60;
-			var h = fullH-$(document.body).height();
-			if(h>0){
-				$(document.body).height(fullH);
-			}
- 			var $menu = $('#menu');
-			var maxH = $win.height() - $menu.offset().top-$menu.height()+50;
-			if(maxH>0){
-				$('div.info-content').css('height',maxH+'px');
-			}
-			$win = null; */
-			setTimeout(function(){ window.scrollTo(0, 1); }, 100);
 		});	
 	</script>
+	<script type="text/javascript">
+	function resizeOnLoad(){
+			if(arvato && !arvato.imgload){
+				var fullH = $(window).height()+60;
+				var h = fullH-$(document.body).height();
+				if(h>0){
+					$(document.body).height(fullH);
+				}
+				setTimeout(function(){ window.scrollTo(0, 1); }, 100);
+				arvato.imgload = 1;
+			}
+		}
+		
+		$(window).load(function(){
+			var fullH = $("#content_body").height();
+			var body_hight = $(document.body).height();
+			if(fullH > body_hight){
+				$(document.body).height(fullH);
+			}
+			setTimeout(function(){ window.scrollTo(0, 1); }, 100);
+		});		
+    </script>
 <%@include file="common-track.jsp" %>
 </body>
 </html>

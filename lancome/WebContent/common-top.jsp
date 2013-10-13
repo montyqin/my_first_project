@@ -11,7 +11,9 @@ String menuItem = (String) request.getSession().getAttribute("menuItem");
 </script>
 <header class="nav-top" id="lancome-nav-top">
 	<div class="logo">
-		<img src="<%=contextPath%>/img/ui/logo.png" />
+		<a href="<%=contextPath%>">
+		   <img src="<%=contextPath%>/img/ui/logo.png" />
+		</a>
 		<div class="btns">
 			<span data-class="nav-login" class="nav-login"></span>
 			<span data-class="nav-bag" class="nav-bag"></span>

@@ -11,9 +11,9 @@
 	//String f = request.getParameter("f");
 	
 	List list = new ArrayList();
-	String[] images = new String[] { "/img/index/KV.png", "/img/index/vsnlp.jpg", "/img/index/KV.png"};
-	String[] descs = new String[] { "手机官网购物即有机会体验科颜氏明星四宝旅行装1", "手机官网购物即有机会体验科颜氏明星四宝旅行装2", "手机官网购物即有机会体验科颜氏明星四宝旅行装3" };
-	String[] links = new String[] { "http://www.neulion.com.cn", "http://www.neulion.com.cn", "http://www.neulion.com.cn" };
+	String[] images = new String[] { "/img/index/KV.png", "/img/index/KV.png"};
+	String[] descs = new String[] { "手机官网购物即有机会体验科颜氏明星四宝旅行装1", "手机官网购物即有机会体验科颜氏明星四宝旅行装2"};
+	String[] links = new String[] { "http://www.kiehls.com", "http://www.kiehls.com"};
 	
 	for (int i = 0; i < images.length; i++)
 	{
@@ -77,11 +77,12 @@
 			  $(obj).removeClass("expand");
 			  $(obj).find("div.crow_arrow").removeClass("arrow_up");
 		   }
+		   resizeOnLoad2();
 		}
     </script>
 </head>
 <body>
-   <section>			
+   <section id="content_body">			
    <jsp:include page="common-top.jsp"></jsp:include>		
         <article id="main-content">
 			<div id="j_imgSwipe" class="swipe" style="visibility: visible;">
@@ -137,10 +138,39 @@
        <jsp:include page="common-footer.jsp"></jsp:include>		
 	</section>
 	
-
+<script src="<%=contextPath%>/js/tool.js"></script>
+<script type="text/javascript">
+	function resizeOnLoad(){
+			if(arvato && !arvato.imgload){
+				var fullH = $(window).height()+60;
+				var h = fullH-$(document.body).height();
+				if(h>0){
+					$(document.body).height(fullH);
+				}
+				setTimeout(function(){ window.scrollTo(0, 1); }, 100);
+				arvato.imgload = 1;
+			}
+		}
 	
+	function resizeOnLoad2() {
+		var fullH = $("#content_body").height();
+		var body_hight = $(document.body).height();
+		if(fullH > body_hight){
+			$(document.body).height(fullH);
+		}		
+	}
+		
+	$(window).load(function(){
+		var fullH = $("#content_body").height();
+		var body_hight = $(document.body).height();
+		if(fullH > body_hight){
+			$(document.body).height(fullH);
+		}
+		setTimeout(function(){ window.scrollTo(0, 1); }, 100);
+	});		
+</script>
+
 <%@include file="common-track.jsp" %>
 
-<script src="<%=contextPath%>/js/tool.js"></script>
 </body>
 </html>

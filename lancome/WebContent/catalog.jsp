@@ -27,7 +27,7 @@
 <link rel="stylesheet" type="text/css" href="<%=contextPath %>/css/category.css" />
 </head>
 <body>
-	<section>
+	<section id="content_body">
 		<jsp:include page="common-top.jsp"></jsp:include>
         <article id="main-content">
         	<div class="inner-content">
@@ -45,7 +45,7 @@
         		</div>
 	        	<c:forEach items="${products}" var="item">
 	        		<div class="catalog-list">
-	        			<div class="catalog-img"><img src="<%=contextPath %>/${item.imgs}" onclick="showinfo('${item.cid}','${item.id}')"/></div>
+	        			<div class="catalog-img"><img src="${item.imgs}" onclick="showinfo('${item.cid}','${item.id}')"/></div>
 	        			<div class="txtcenter">${item.name}</div>
 	        			<div class="txtcenter">RMB ${item.price}</div>
 	        			<div class="product-contain">
@@ -148,6 +148,28 @@
 			window.location.href = "<%=contextPath %>/catalog/${catalog.id}?sortValue=" + $(obj).val();
 		}
 	</script>
+	<script type="text/javascript">
+	function resizeOnLoad(){
+			if(arvato && !arvato.imgload){
+				var fullH = $(window).height()+60;
+				var h = fullH-$(document.body).height();
+				if(h>0){
+					$(document.body).height(fullH);
+				}
+				setTimeout(function(){ window.scrollTo(0, 1); }, 100);
+				arvato.imgload = 1;
+			}
+		}
+		
+		$(window).load(function(){
+			var fullH = $("#content_body").height();
+			var body_hight = $(document.body).height();
+			if(fullH > body_hight){
+				$(document.body).height(fullH);
+			}
+			setTimeout(function(){ window.scrollTo(0, 1); }, 100);
+		});		
+    </script>
 <%@include file="common-track.jsp" %>
 </body>
 </html>
