@@ -59,7 +59,7 @@
 									</div>
 								</c:when>
 								<c:when test="${p.classify eq 'capacity'}">
-									<div class="price"><span name="price-txt">RMB ${p.products[0].price}</span>
+									<div class="price" style="height:auto"><span style="display:block" name="price-txt">RMB ${p.products[0].price}</span>
 										<a class="select" href="javascript:void(0)">
 											<select data-pid="${p.id}" name="selProducts">
 												<c:forEach items="${p.products}" var="subP">
