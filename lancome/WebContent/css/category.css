@@ -222,6 +222,8 @@ a:visited { text-decoration: none;;color:#585858}
 		display:inline-block;
 		width:45%;
 		margin-top:15px;
+		vertical-align:top;
+		
 	}
 	.catalog-img {
 		width:100%;
