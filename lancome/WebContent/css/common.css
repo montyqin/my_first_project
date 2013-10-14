@@ -70,7 +70,7 @@ img {
 .nav-top .btns{
 	position:absolute;
 	right:7px;
-	top:20%;
+	top:28%;
 	z-index:90;
 	width:49%;
 	height:80%;
@@ -193,43 +193,43 @@ ul.lancome-nav li {
 .nav-menu {
 	background:url(../img/ui/nav-menu.png) no-repeat;
 	background-size:contain;
-	width:25%;
-	height:50%;
+	width:37px;
+	height:35px;
 }
 
 .nav-menu-d{
 	background:url(../img/ui/nav-menu.png) no-repeat;
 	background-size:contain;
-	width:25%;
-	height:50%;
+	width:37px;
+	height:35px;
 }
 
 .nav-login {
 	background: url(../img/ui/nav-login.png) no-repeat;
 	background-size:contain;
-	width:25%;
-	height:50%;
+	width:37px;
+	height:35px;
 }
 
 .nav-login-d {
 	background: url(../img/ui/nav-login.png) no-repeat;
 	background-size:contain;
-	width:25%;
-	height:50%;
+	width:37px;
+	height:35px;
 }
 
 .nav-bag {
 	background: url(../img/ui/nav-bag.png) no-repeat;
 	background-size:contain;
-	width:25%;
-	height:50%;
+	width:37px;
+	height:35px;
 }
 
 .nav-bag-d {
 	background: url(../img/ui/nav-bag.png) no-repeat;
 	background-size:contain;
-	width:25%;
-	height:50%;
+	width:37px;
+	height:35px;
 }
 
 .menu-right{

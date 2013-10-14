@@ -221,6 +221,8 @@ a:visited { text-decoration: none;;color:#585858}
 		display:inline-block;
 		width:45%;
 		margin-top:15px;
+		vertical-align:top;
+		
 	}
 	.catalog-img {
 		width:100%;
@@ -272,7 +274,7 @@ a:visited { text-decoration: none;;color:#585858}
 		text-decoration: none;
 		position: relative;
 		color: #000;
-		margin:0 5px;
+		/*margin:0 5px;*/
 	}
 	
 	a.select:after {
@@ -292,7 +294,7 @@ a:visited { text-decoration: none;;color:#585858}
 	}
 	
 	a.select span {
-		padding-left: 5px;
+		padding-left: 3px;
 	}
 	a.select select {
 		text-align: center;
