@@ -179,15 +179,15 @@
 }
 
 .subscribe {
-	height: 180px;
+	height: 150px;
 	background: #ffffff;
 	border: 6px solid #a09f9d;
 	margin: 5px 0px;
 }
 
 .btn_submit {
-  width: 133px;
-  height: 46px;
+  width: 100px;
+  height: 35px;
   background: url("../img/ui/btn_submit.png") no-repeat scroll 0 0 transparent;
   border:0px;
   padding:0px;

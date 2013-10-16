@@ -10,12 +10,19 @@
 	String contextPath = request.getContextPath();
 	
     String adText ="手机官网购物既有机会体验科颜氏明星四宝旅行装";
-    String adUrl = "http://v.0nk.cn/kiehls/info/c102/895";
+    String adUrl = "http://v.0nk.cn/kiehls/ext/fourb.html";
    
 	List list = new ArrayList();
-	String[] images = new String[] { "/img/index/kv1.jpg", "/img/index/kv2.jpg","/img/index/kv3.jpg"};
-	String[] descs = new String[] { "科颜氏集焕白系列 超越净白 水润立现", "夜间修护精华液", "焕白双效 清爽隔离"};
-	String[] links = new String[] { "http://v.0nk.cn/kiehls/info/c102/895","http://v.0nk.cn/kiehls/info/c110/908", "http://v.0nk.cn/kiehls/info/c108/902-907"};
+	
+	//String[] images = new String[] { "/img/index/kv1.jpg", "/img/index/kv2.jpg","/img/index/kv3.jpg"};
+	//String[] descs = new String[] { "科颜氏集焕白系列 超越净白 水润立现", "夜间修护精华液", "焕白双效 清爽隔离"};
+	//String[] links = new String[] { "http://v.0nk.cn/kiehls/info/c102/895","http://v.0nk.cn/kiehls/info/c110/908", "http://v.0nk.cn/kiehls/info/c108/902-907"};
+	
+	
+ 	String[] images = new String[] { "/img/index/kv1.jpg"};
+	String[] descs = new String[] { "科颜氏集焕白系列 超越净白 水润立现"};
+	String[] links = new String[] { "http://v.0nk.cn/kiehls/ext/jh.html"};
+
 	
 	for (int i = 0; i < images.length; i++)
 	{
@@ -107,7 +114,7 @@
 	            	</c:forEach>
 				</ul>
 	        </div>
-	       	<a href="${adUrl}"><h3 style="text-align:center;color:red;">${adText}</h3></a>
+	       	<a href="${adUrl}"><h3 style="text-align:center;color:red;font-size:13px;">${adText}</h3></a>
 	       	<div class="clist"> 
 				  <ul>	
 					<c:forEach items="${categories}" var="item">
@@ -139,7 +146,8 @@
 				</ul>
 			</div>
 			<%@include file="subscribe.jsp" %>
-		</article>		
+		</article>	
+		<img src="<%=contextPath%>/img/ui/bottom.jpg" style="width:100%" />	
        <jsp:include page="common-footer.jsp"></jsp:include>		
 	</section>
 <script type="text/javascript">

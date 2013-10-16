@@ -1,13 +1,13 @@
 var arvato = {
 	//'globalPath':'/giorgioarmanibeauty',	
-	'globalPath':'/lancome',
+	'globalPath':'/kiehls',
 	'domain':'/handy',
 	'domain2': window.location.protocol + "//"
 				+ window.location.host
 				+ "/handy",
 				
 	gotoCart:function(){
-		window.location.href = arvato.domain2+"/mmall/cart.html?fp=1&f=m&id=214";
+		window.location.href = arvato.domain2+"/mmall/cart.html?fp=1&f=m&id=1045&pre=checklogin";
 	},
 	
 	weiboShare:function(_url,_desc,_img){
@@ -82,7 +82,7 @@ var arvato = {
 							+ arvato.domain);
 					window.location.href = window.location.protocol + "//"
 					+ window.location.host
-					+ "/handy" +"/mmall/cart.html?f="+event+"&fp=1&c=1&id="+id;
+					+ "/handy" +"/mmall/cart.html?pre=checklogin&f="+event+"&fp=1&c=1&id="+id;
 				}else{
 					alert('添加购物车失败，请稍后再试');
 				}
@@ -114,7 +114,7 @@ var arvato = {
 								+ arvato.domain);
 						window.location.href = window.location.protocol + "//"
 						+ window.location.host
-						+ "/handy/mmall/cart.html?f="+event+"&fp=1&c=1&id="+ids[0];
+						+ "/handy/mmall/cart.html?pre=checklogin&f="+event+"&fp=1&c=1&id="+ids[0];
 					}
 				}else{
 					alert('添加购物车失败，请稍后再试');

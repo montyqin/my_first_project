@@ -180,7 +180,7 @@ html,body {
 				{
 					var p = jsonArr[i];
 					html += '<div class="catalog-list" style="margin-left:5%;">';
-					html += '<div class="catalog-img"><img src="' + window.contextPath + '/' + p.imgs + '" onclick="showinfo(\"' + p.cid + '\",\"' + p.id + '\")"/></div>';
+					html += '<div class="catalog-img"><img src="' + p.imgs + '" onclick="showinfo(\"' + p.cid + '\",\"' + p.id + '\")"/></div>';
 					html += '<div class="txtcenter">' + p.name + '</div>';
 	    			html += '<div class="txtcenter">RMB ' + p.price + '</div>';
 	    			html += '<div class="product-contain">';

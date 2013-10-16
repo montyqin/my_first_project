@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="description" content="科颜氏集焕系列">
+<meta name="Keywords" content="科颜氏集焕系列" />
+<meta name="author" content="arvato">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+<title>科颜氏集焕系列</title>
+<style type="text/css">
+html,body{
+	padding:0;
+	margin:0;
+	width:100%;
+	background-color:#fff;
+}
+div{
+	width:100%;
+}
+img{
+	display:block;
+	border:0 none;
+	width:100%;
+	float:left;
+}
+</style>
+</head>
+<body>
+
+<div id="content">
+<div><img name="product" data-id="895" src="imgs/jh/kvd1.jpg" /></div>
+<div><img name="product" data-id="895" src="imgs/jh/kvd2.jpg" /></div>
+<div><img src="imgs/jh/kvd3.jpg" /></div>
+</div>
+<script src="js/jquery-1.7.2.min.js"></script>
+<script src="js/tool.js"></script>
+<script type="text/javascript">
+$(function(){
+	$('#content img[name="product"]').click(function(){
+		arvato.buyItem($(this).data('id'),'kiehls');
+	});
+	
+	
+	
+});
+
+document.write(unescape('%3Cscript type="text/javascript" src="http://m.icybercode.com/tracking/track.js"%3E%3C/script%3E'));
+</script>	
+	
+
+</body>
+</html>

@@ -135,7 +135,7 @@ var arvato = {
 		window.location.href = window.location.href = window.location.protocol + "//"
 		+ window.location.host
 		//+ arvato.orderDomain +"/mmall/cart.html?fp=1&c=1&f=checklogin&id=974";
-		+ arvato.orderDomain +"/mmall/cart.html?fp=1&c=1&f=np&pre=checklogin&id=974";
+		+ arvato.orderDomain +"/mmall/cart.html?fp=1&c=1&f=kiehls&pre=checklogin&id=974";
 		
 	},
 	addToCart:function(_product_id,_sample_id,_color_id){
@@ -199,7 +199,7 @@ var arvato = {
 						window.location.href = window.location.protocol + "//"
 						+ window.location.host
 						//+ arvato.orderDomain +"/mmall/cart.html?f=checklogin&fp=1&c=1&id="+id;
-						+ arvato.orderDomain +"/mmall/cart.html?f=np&pre=checklogin&fp=1&c=1&id="+id;
+						+ arvato.orderDomain +"/mmall/cart.html?f=kiehls&pre=checklogin&fp=1&c=1&id="+id;
 					});
 				}else{
 					alert('添加购物车失败，请稍后再试');
@@ -393,7 +393,7 @@ $(function(){
 		}
 			}else if(dataClass==='nav-bag'){
 				//window.location.href = arvato.orderDomain+'/mmall/cart.html?f=checklogin&fp=1&c=1&id=132';
-				window.location.href = arvato.orderDomain+'/mmall/cart.html?f=np&pre=checklogin&fp=1&c=1&id=132';
+				window.location.href = arvato.orderDomain+'/mmall/cart.html?f=kiehls&pre=checklogin&fp=1&c=1&id=132';
 			}else if(dataClass==='nav-menu'){
 				var $viewport = $(document.body).children('section,div');
 				if($viewport.data('menu_opened')){
@@ -453,7 +453,7 @@ $(function(){
 							
 						}else if(dataClass==='nav-bag'){
 							//window.location.href = arvato.orderDomain+'/mmall/cart.html?f=checklogin&fp=1&c=1&id=132';
-							window.location.href = arvato.orderDomain+'/mmall/cart.html?f=np&pre=checklogin&fp=1&c=1&id=132';
+							window.location.href = arvato.orderDomain+'/mmall/cart.html?f=kiehls&pre=checklogin&fp=1&c=1&id=132';
 						}else if(dataClass==='nav-menu'){
 							
 							var $viewport = $(document.body).children('section,div');
@@ -489,7 +489,7 @@ $(function(){
 				}else if($eTarget.attr('name')){
 					if($eTarget.attr('name')==='count'){
 						//window.location.href = arvato.orderDomain+'/mmall/cart.html?f=checklogin&fp=1&c=1&id=132';
-						window.location.href = arvato.orderDomain+'/mmall/cart.html?f=np&pre=checklogin&fp=1&c=1&id=132';
+						window.location.href = arvato.orderDomain+'/mmall/cart.html?f=kiehls&pre=checklogin&fp=1&c=1&id=132';
 					}
 				}else{
 				}

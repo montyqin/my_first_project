@@ -30,6 +30,7 @@
 <script src="<%=contextPath%>/js/category.js"></script>
 <script src="<%=contextPath%>/js/zepto.min.js"></script>
 <script src="<%=contextPath%>/js/channel.min.js"></script>
+<script src="<%=contextPath%>/js/tool.js"></script>
 <script src="<%=contextPath%>/js/swipe.js"></script>
 
 	<script type="text/javascript">
@@ -57,11 +58,26 @@
 <section>			
 	<jsp:include page="common-top.jsp"></jsp:include>		
 	<article id="main-content">
-     	<img src="<%=contextPath %>/img/ui/ad.jpg"/>
+     	<img src="<%=contextPath %>/ext/imgs/new/10_01.jpg" name="product" data-id="900"/>
+     	<img src="<%=contextPath %>/ext/imgs/new/10_02.jpg"/>
+     	<img src="<%=contextPath %>/ext/imgs/new/10_03.jpg"/>
+     	<img src="<%=contextPath %>/ext/imgs/new/10_04.jpg" name="product" data-id="895" style="width:50%;float:left;"/>
+     	<img src="<%=contextPath %>/ext/imgs/new/10_05.jpg" name="product" data-id="900" style="width:50%;float:left;"/>
+     	<img src="<%=contextPath %>/ext/imgs/new/10_06.jpg" name="product" data-id="908" style="width:50%;float:left;"/>
+     	<img src="<%=contextPath %>/ext/imgs/new/10_07.jpg" name="product" data-id="900" style="width:50%;float:left;"/>
      	<jsp:include page="common-footer.jsp"></jsp:include>
 	</article>
 </section>
+<script type="text/javascript">
+$(function(){
+	$('img[name="product"]').click(function(){
+		arvato.buyItem($(this).data('id'));
+	});
+	
+});
 
+document.write(unescape('%3Cscript type="text/javascript" src="http://m.icybercode.com/tracking/track.js"%3E%3C/script%3E'));
+</script>
 <%@include file="common-track.jsp" %>
 <script src="<%=contextPath%>/js/tool.js"></script>
 </body>
