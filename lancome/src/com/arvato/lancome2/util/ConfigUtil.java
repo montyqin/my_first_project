@@ -8,13 +8,13 @@ import java.security.NoSuchAlgorithmException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
 import org.apache.commons.httpclient.NameValuePair;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang.ArrayUtils;
+import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -289,7 +289,20 @@ public class ConfigUtil {
 					p.setName(jsonObj.getString("name"));
 					p.setDesc(jsonObj.getString("desc"));
 					p.setGiftid(jsonObj.getString("giftid"));
-					p.setPrice(jsonObj.getString("price"));
+					String price = jsonObj.getString("price");
+					if (StringUtils.isEmpty(price))
+					{
+						JSONArray jsonArr = jsonObj.getJSONArray("products");
+						if (jsonArr != null && jsonArr.length() > 0)
+						{
+							JSONObject product = jsonArr.getJSONObject(0);
+							if (product != null)
+							{
+								price = product.getString("price");
+							}
+						}
+					}
+					p.setPrice(price);
 					p.setIngredient(jsonObj.getString("ingredient"));
 					p.setGuide(jsonObj.getString("guide"));
 					String tmpImgs = jsonObj.getString("imgs");
@@ -494,7 +507,13 @@ public class ConfigUtil {
 						Product[] products = ConfigUtil.getProductsByCatalogId(tmpCategory.getString("id"));
 						if (ArrayUtils.isEmpty(products))
 							continue;
-						productsList.addAll(Arrays.asList(products));
+
+						//productsList.addAll(Arrays.asList(products));
+						for (int z = 0; z < products.length; z++)
+						{
+							if (!productsList.contains(products[z]))
+								productsList.add(products[z]);
+						}
 					}
 				}
 			}
