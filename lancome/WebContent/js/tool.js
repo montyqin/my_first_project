@@ -35,7 +35,6 @@ var arvato = {
 		        if ( periodPos +3 > email.length) {   return false; }
 		        return true;
 		    },
-
 		    isTel:function(str){
 		    	var regu =/^[1][3,5,8][0-9]{9}$/;
 		    	var re = new RegExp(regu);
@@ -341,7 +340,7 @@ var arvato = {
 	weiboShare:function(){
 		_gaq.push(['_trackEvent','share','weibo','lancome',1,true]);
 
-		var shareTitle = "我正在用手机浏览兰蔻手机官网。快捷的购物方式还能随时了解品牌活动";
+		var shareTitle = "我正在用手机浏览科颜氏手机官网。快捷的购物方式还能随时了解品牌活动";
 		var contextPath = window.contextPath || '/lancome';
 		var picUrl = encodeURIComponent(window.location.protocol+'//'+window.location.host+contextPath+'/img/info/lancome-info.png');
 		window.location.href = 'http://v.t.sina.com.cn/share/share.php?url='+encodeURIComponent(window.location.href)+'&appkey=2530574100&title='+shareTitle+'&pic='+picUrl;
@@ -369,9 +368,9 @@ $(function(){
 	}
 	
 	if($('#lancome-nav-top').length){
-		
+
 		$(document.body).children('section,div').css({'position':'relative','left':'0px'});
-		
+
 		var _handleNavTop = function(dataClass){
 			if(dataClass==='nav-login'){
 //				_gaq.push(['_trackEvent','navigate','hotlaine','lancome',1,true]);
@@ -502,16 +501,16 @@ $(function(){
 			return false;
 		})
 		
-/*		.on('click',function(e){
-			var eTarget = e.target;
-			if(eTarget.nodeName === 'SPAN'){
-				var $eTarget = $(eTarget);
-				var dataClass = $eTarget.data('class');
-				if(dataClass){
-					_handleNavTop(dataClass);
-				}
-			}
-		});*/
+//		.on('click',function(e){
+//			var eTarget = e.target;
+//			if(eTarget.nodeName === 'SPAN'){
+//				var $eTarget = $(eTarget);
+//				var dataClass = $eTarget.data('class');
+//				if(dataClass){
+//					_handleNavTop(dataClass);
+//				}
+//			}
+//		});
 		
 		arvato.showBuyCount('server');
 	}

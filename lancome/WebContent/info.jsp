@@ -87,7 +87,7 @@
 			</div>
 			<div>
 	        	<div class="details">
-	        		产品详情<div class="plus"></div>
+	        		产品详情<div class="plus minus"></div>
 	        	</div>
 	        	<div class="details-content" style="display:block;">
 	        		${p.desc}
@@ -153,7 +153,7 @@
 	        	<div class="details">
 	        		主要成分<div class="plus"></div>
 	        	</div>
-	        	<div class="details-content" style="display:block;">
+	        	<div class="details-content" style="display:none;">
 	        		${p.ingredient}
 	        	</div>
 	        </div>
@@ -161,7 +161,7 @@
 	        	<div class="details">
 	        		使用指导<div class="plus"></div>
 	        	</div>
-	        	<div class="details-content" style="display:block;">
+	        	<div class="details-content" style="display:none;">
 	        		${p.guide}
 	        	</div>
 	        </div>
@@ -353,6 +353,7 @@
 				{
 					$(this).find("div:first").toggleClass("minus");
 					$(this).nextAll("div:first").toggle();
+					resizeOnLoad2();
 				});
 			});
 		});	
@@ -369,6 +370,13 @@
 				arvato.imgload = 1;
 			}
 		}
+	function resizeOnLoad2() {
+		var fullH = $("#content_body").height();
+		var body_hight = $(document.body).height();
+		if(fullH >= body_hight){
+			$(document.body).height(fullH);
+		}		
+	}
 		
 		$(window).load(function(){
 			var fullH = $("#content_body").height();

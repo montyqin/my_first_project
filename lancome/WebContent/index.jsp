@@ -8,12 +8,14 @@
 <%@page import="java.util.HashMap"%><html>
 <%
 	String contextPath = request.getContextPath();
-	//String f = request.getParameter("f");
 	
+    String adText ="手机官网购物既有机会体验科颜氏明星四宝旅行装";
+    String adUrl = "http://v.0nk.cn/kiehls/info/c102/895";
+   
 	List list = new ArrayList();
-	String[] images = new String[] { "/img/index/KV.png", "/img/index/KV.png"};
-	String[] descs = new String[] { "手机官网购物即有机会体验科颜氏明星四宝旅行装1", "手机官网购物即有机会体验科颜氏明星四宝旅行装2"};
-	String[] links = new String[] { "http://www.kiehls.com", "http://www.kiehls.com"};
+	String[] images = new String[] { "/img/index/kv1.jpg", "/img/index/kv2.jpg","/img/index/kv3.jpg"};
+	String[] descs = new String[] { "科颜氏集焕白系列 超越净白 水润立现", "夜间修护精华液", "焕白双效 清爽隔离"};
+	String[] links = new String[] { "http://v.0nk.cn/kiehls/info/c102/895","http://v.0nk.cn/kiehls/info/c110/908", "http://v.0nk.cn/kiehls/info/c108/902-907"};
 	
 	for (int i = 0; i < images.length; i++)
 	{
@@ -23,9 +25,11 @@
 		map.put("link", links[i]);
 		
 		list.add(map);
-	}
+	}	
 	
 	request.setAttribute("swipeList", list);
+	request.setAttribute("adText", adText);
+	request.setAttribute("adUrl", adUrl);
 %>
 <!DOCTYPE html>
 <%-- <html manifest="manifest/indexAppCache.manifest">  --%>
@@ -92,7 +96,7 @@
 						data-index="0">
 							<a href="${item.link}">
 								<img src="<%=contextPath %>${item.image}" alt="">
-								<h3 class="swipe_h3">${item.desc}</h3>
+								<h3 class="swipe_h3" style="display:none">${item.desc}</h3>
 							</a>
 						</div>
 					</c:forEach>
@@ -103,6 +107,7 @@
 	            	</c:forEach>
 				</ul>
 	        </div>
+	       	<a href="${adUrl}"><h3 style="text-align:center;color:red;">${adText}</h3></a>
 	       	<div class="clist"> 
 				  <ul>	
 					<c:forEach items="${categories}" var="item">
@@ -137,8 +142,6 @@
 		</article>		
        <jsp:include page="common-footer.jsp"></jsp:include>		
 	</section>
-	
-<script src="<%=contextPath%>/js/tool.js"></script>
 <script type="text/javascript">
 	function resizeOnLoad(){
 			if(arvato && !arvato.imgload){
@@ -155,7 +158,7 @@
 	function resizeOnLoad2() {
 		var fullH = $("#content_body").height();
 		var body_hight = $(document.body).height();
-		if(fullH > body_hight){
+		if(fullH >= body_hight){
 			$(document.body).height(fullH);
 		}		
 	}
@@ -169,6 +172,8 @@
 		setTimeout(function(){ window.scrollTo(0, 1); }, 100);
 	});		
 </script>
+<script src="<%=contextPath%>/js/tool.js"></script>
+
 
 <%@include file="common-track.jsp" %>
 

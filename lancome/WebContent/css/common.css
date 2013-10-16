@@ -32,17 +32,13 @@ h1,h2,h3,h4,h5,h6 {
 ul,ol {
 	list-style:none
 }
-a {
-	text-decoration:none;
-	color:#333
-}
-a:hover,a:active,a:focus {
-	color:#377cce;
-	text-decoration:none;
-}
-a:active {
-	color:#aaa;
-}
+
+a{text-decoration: none;}
+a:link { text-decoration: none;color:#585858}
+a:active { text-decoration:none;color:#585858}
+a:hover { text-decoration:none;color:#585858} 
+a:visited { text-decoration:none;color:#585858}
+
 img {
 	vertical-align:middle;
 	border:0;

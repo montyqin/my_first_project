@@ -13,7 +13,7 @@
 }
 .swipe {
 	overflow:hidden;
-	height:210px;
+	/*height:210px;*/
 	position:relative;
 	max-width:320px;
 	margin:10px auto;
@@ -32,7 +32,8 @@
 	position:relative;
 	overflow:hidden;
 	width:320px;
-	height:210px;
+	/*height:210px;*/
+	height:160px;
 }
 .swipe_pic img {
 	width:320px;

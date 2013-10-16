@@ -1,15 +1,4 @@
 @CHARSET "UTF-8";
-body{
-	margin: 0;
-	padding: 0;
-}
-a{
-	text-decoration: none;
-}
-a:link { text-decoration: none;color:#585858}
-a:active { text-decoration:blink;color:#585858}
-a:hover { text-decoration:underline;;color:#585858} 
-a:visited { text-decoration: none;;color:#585858}
 .ccontainer{
 	min-width: 320px;
 	height:100%;

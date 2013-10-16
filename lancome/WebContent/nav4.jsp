@@ -56,7 +56,7 @@ html,body {
         		</div>
 	        	<c:forEach items="${rs.values}" var="item">
 	        		<div class="catalog-list">
-	        			<div class="catalog-img"><img src="<%=contextPath %>/${item.imgs}" onclick="showinfo('${item.cid}','${item.id}')"/></div>
+	        			<div class="catalog-img"><img src="${item.imgs}" onclick="showinfo('${item.cid}','${item.id}')"/></div>
 	        			<div class="txtcenter">${item.name}</div>
 	        			<div class="txtcenter">RMB ${item.price}</div>
 	        			<div class="product-contain">

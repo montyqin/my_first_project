@@ -45,7 +45,7 @@
         		</div>
 	        	<c:forEach items="${products}" var="item">
 	        		<div class="catalog-list">
-	        			<div class="catalog-img"><img src="${item.imgs}" onclick="showinfo('${item.cid}','${item.id}')"/></div>
+	        			<div class="catalog-img"><img src="http://v.0nk.cn${item.imgs}" onclick="showinfo('${item.cid}','${item.id}')"/></div>
 	        			<div class="txtcenter">${item.name}</div>
 	        			<div class="txtcenter">RMB ${item.price}</div>
 	        			<div class="product-contain">
