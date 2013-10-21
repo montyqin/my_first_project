@@ -419,6 +419,8 @@ $(function(){
 					$eTarget.removeClass(dataClass).addClass(dataClass+'-d');
 				}
 				$eTarget = null;
+			}else if(eTarget.nodeName==="A"){
+				window.location.href = eTarget.href;
 			}
 			eTarget = null;
 		}).on(arvato.eventNameObj['clickup'],function(e){

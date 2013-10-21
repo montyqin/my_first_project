@@ -22,16 +22,9 @@
 <title>科颜氏</title>
 <link href="<%=contextPath %>/css/common.css" rel="stylesheet">
 <link href="<%=contextPath %>/css/category.css" rel="stylesheet">
-<link href="<%=contextPath %>/css/blue1.css" rel="stylesheet">
 <link href="<%=contextPath %>/css/dl.css" rel="stylesheet">
 <script src="<%=contextPath%>/js/index-img.js"></script>
 <script src="<%=contextPath%>/js/jquery-1.9.1.min.js"></script>
-<script src="<%=contextPath%>/js/index.js"></script>
-<script src="<%=contextPath%>/js/category.js"></script>
-<script src="<%=contextPath%>/js/zepto.min.js"></script>
-<script src="<%=contextPath%>/js/channel.min.js"></script>
-<script src="<%=contextPath%>/js/tool.js"></script>
-<script src="<%=contextPath%>/js/swipe.js"></script>
 
 	<script type="text/javascript">
 		if(navigator.userAgent.indexOf('UCWEB')!=-1){
@@ -68,6 +61,7 @@
      	<jsp:include page="common-footer.jsp"></jsp:include>
 	</article>
 </section>
+<script src="<%=contextPath%>/js/tool.js"></script>
 <script type="text/javascript">
 $(function(){
 	$('img[name="product"]').click(function(){
@@ -79,6 +73,5 @@ $(function(){
 document.write(unescape('%3Cscript type="text/javascript" src="http://m.icybercode.com/tracking/track.js"%3E%3C/script%3E'));
 </script>
 <%@include file="common-track.jsp" %>
-<script src="<%=contextPath%>/js/tool.js"></script>
 </body>
 </html>

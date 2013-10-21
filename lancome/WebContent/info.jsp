@@ -385,7 +385,8 @@
 				$(document.body).height(fullH);
 			}
 			setTimeout(function(){ window.scrollTo(0, 1); }, 100);
-		});		
+		});
+		$("#lancome-menu-right").css("display","none");
     </script>
 <%@include file="common-track.jsp" %>
 </body>

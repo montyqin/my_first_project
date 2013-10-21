@@ -34,7 +34,7 @@ html,body {
 </script>
 </head>
 <body>
-	<section>
+	<section id="content_body">
 		<jsp:include page="common-top.jsp"></jsp:include>
 		<div id="search-box">
                <input type="text" id="searchKeyword" class="search-text" value="${keyword}"/>
