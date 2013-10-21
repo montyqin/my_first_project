@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ page isELIgnored="false"%>
 <%@ page import="java.util.ArrayList"%>
 <%@ page import="java.util.List"%>
 <%@page import="java.util.Map"%>
@@ -46,7 +46,7 @@
 <meta name="Keywords" content="科颜氏" />
 <meta name="author" content="arvato">
 <meta name="HandheldFriendly" content="True">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
 <meta content="black" name="apple-mobile-web-app-status-bar-style" />
@@ -55,14 +55,10 @@
 <link href="<%=contextPath %>/css/category.css" rel="stylesheet">
 <link href="<%=contextPath %>/css/dl.css" rel="stylesheet">
 <script src="<%=contextPath%>/js/index-img.js"></script>
-<script src="<%=contextPath%>/js/jquery-1.9.1.min.js"></script>
-<script src="<%=contextPath%>/js/index.js"></script>
 <script src="<%=contextPath%>/js/zepto.min.js"></script>
 <script src="<%=contextPath%>/js/channel.min.js"></script>
 <script src="<%=contextPath%>/js/swipe.js"></script>
-
-
-	<script type="text/javascript">
+<script type="text/javascript">
 		if(navigator.userAgent.indexOf('UCWEB')!=-1){
 			alert('UC浏览器的极速模式下由于会经过UC服务器压缩处理可能会影响网站外观，关闭后可完整体验');
 		}
@@ -75,22 +71,22 @@
 		}else{
 			//window.location.replace('http://www.lancome.com.cn/lancome/_zh/_cn/index.aspx');
 		}
-	</script>
-	<script type="text/javascript">
-		function openSubCategory(obj){
-		   var next = $(obj).next();
-		   if(next.css("display") == "none"){
-			  next.css("display","block");
-			  $(obj).addClass("expand");
-			  $(obj).find("div.crow_arrow").addClass("arrow_up");
-		   }else{
-			  next.css("display","none");
-			  $(obj).removeClass("expand");
-			  $(obj).find("div.crow_arrow").removeClass("arrow_up");
-		   }
-		   resizeOnLoad2();
-		}
-    </script>
+</script>
+<script type="text/javascript">
+	function openSubCategory(obj){
+	   var next = $(obj).next();
+	   if(next.css("display") == "none"){
+		  next.css("display","block");
+		  $(obj).addClass("expand");
+		  $(obj).find("div.crow_arrow").addClass("arrow_up");		  
+	   }else{
+		  next.css("display","none");
+		  $(obj).removeClass("expand");
+		  $(obj).find("div.crow_arrow").removeClass("arrow_up");		  
+	   }
+	   resizeOnLoad2();
+	}
+</script>
 </head>
 <body>
    <section id="content_body">			
@@ -119,7 +115,7 @@
 				  <ul>	
 					<c:forEach items="${categories}" var="item">
 					<li class="crow level1" >
-						<div class="crow_row" onclick="openSubCategory(this)">
+						<div id="first_item" class="crow_row" onclick="openSubCategory(this)">
 							<div class="crow_title">
 								<span>
 									${item.name}
@@ -150,6 +146,9 @@
 		<img src="<%=contextPath%>/img/ui/bottom.jpg" style="width:100%" />	
        <jsp:include page="common-footer.jsp"></jsp:include>		
 	</section>
+<script src="<%=contextPath%>/js/jquery-1.9.1.min.js"></script>
+<script src="<%=contextPath%>/js/tool.js"></script>
+	
 <script type="text/javascript">
 	function resizeOnLoad(){
 			if(arvato && !arvato.imgload){
@@ -179,9 +178,10 @@
 		}
 		setTimeout(function(){ window.scrollTo(0, 1); }, 100);
 	});		
-</script>
-<script src="<%=contextPath%>/js/tool.js"></script>
 
+	$("#lancome-menu-right").css("display","none");
+	
+</script>
 
 <%@include file="common-track.jsp" %>
 
