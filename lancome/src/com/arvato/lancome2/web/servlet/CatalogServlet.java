@@ -81,7 +81,7 @@ public class CatalogServlet extends HttpServlet {
 								}
 							});
 						}
-						else
+						else if ("0".equals(sortValue))
 						{
 							Collections.sort(pts, new Comparator<Product>()
 							{

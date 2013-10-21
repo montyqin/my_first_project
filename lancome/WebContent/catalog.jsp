@@ -33,10 +33,11 @@
         	<div class="inner-content">
         		<div class="catalog-content-title">
         			<div style="float:right;">
-	        			按价格<a class="select" style="width:60px;" href="javascript:void(0)">
+	        			按<a class="select" href="javascript:void(0)">
 							<select id="sortBySel" onchange="sortBy(this)">
-								<option value="1" ${sortValue eq '1' ? 'selected' : ''}>升序</option>
-								<option value="0" ${sortValue eq '0' ? 'selected' : ''}>降序</option>
+								<option value="-1" ${sortValue eq '-1' ? 'selected' : ''}>默认</option>
+								<option value="1" ${sortValue eq '1' ? 'selected' : ''}>价格升序</option>
+								<option value="0" ${sortValue eq '0' ? 'selected' : ''}>价格降序</option>
 							</select>
 							<span class="color"></span>
 						</a>排序

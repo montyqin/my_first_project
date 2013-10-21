@@ -73,7 +73,7 @@ public class NavigateServlet extends HttpServlet {
 					List productsList = (List) CacheUtil.getObjectCache("products_list");
 					List tmpList = new ArrayList();
 					String sortValue = req.getParameter("sortValue");
-					sortValue = StringUtils.isEmpty(sortValue) ? "1" : sortValue;
+					sortValue = StringUtils.isEmpty(sortValue) ? "-1" : sortValue;
 					req.setAttribute("sortValue", sortValue);
 					if (productsList != null)
 					{
@@ -92,7 +92,7 @@ public class NavigateServlet extends HttpServlet {
 								}
 							});
 						}
-						else
+						else if ("0".equals(sortValue))
 						{
 							Collections.sort(tmpList, new Comparator<Product>()
 							{
