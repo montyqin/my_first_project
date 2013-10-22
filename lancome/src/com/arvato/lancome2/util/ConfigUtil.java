@@ -464,6 +464,9 @@ public class ConfigUtil {
 				    tmpCatalog.setIds(tmpObj.getString("ids"));
 				}
 				tmpCatalog.setLevel(0);
+				if (tmpObj.has("ids"))
+					tmpCatalog.setIds(tmpObj.getString("ids"));
+				
 				if (tmpObj.has("subCategory")) {
 					JSONObject tmpCategory = null;
 					JSONArray subCategorys = tmpObj.getJSONArray("subCategory");

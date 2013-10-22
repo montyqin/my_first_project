@@ -60,7 +60,7 @@ public class CatalogServlet extends HttpServlet {
 					List pts = new ArrayList();
 					
 					String sortValue = request.getParameter("sortValue");
-					sortValue = StringUtils.isEmpty(sortValue) ? "2" : sortValue;
+					sortValue = StringUtils.isEmpty(sortValue) ? "-1" : sortValue;
 					request.setAttribute("sortValue", sortValue);
 					
 					if (products != null)
