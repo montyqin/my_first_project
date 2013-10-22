@@ -104,11 +104,13 @@
 						</div>
 					</c:forEach>
 	            </div>
+	            <c:if test="${fn:length(swipeList) gt 1}">
 	            <ul class="swipe_num">
 	            	<c:forEach begin="1" end="${fn:length(swipeList)}" varStatus="i">
 	            		<li class="${i.index == 1 ? 'active' : '' }"></li>
 	            	</c:forEach>
 				</ul>
+				</c:if>
 	        </div>
 	       	<a href="${adUrl}"><h3 style="text-align:center;color:red;font-size:13px;">${adText}</h3></a>
 	       	<div class="clist"> 
