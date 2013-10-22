@@ -60,7 +60,7 @@ public class CatalogServlet extends HttpServlet {
 					List pts = new ArrayList();
 					
 					String sortValue = request.getParameter("sortValue");
-					sortValue = StringUtils.isEmpty(sortValue) ? "1" : sortValue;
+					sortValue = StringUtils.isEmpty(sortValue) ? "2" : sortValue;
 					request.setAttribute("sortValue", sortValue);
 					
 					if (products != null)
@@ -81,7 +81,7 @@ public class CatalogServlet extends HttpServlet {
 								}
 							});
 						}
-						else
+						else if("0".equals(sortValue))
 						{
 							Collections.sort(pts, new Comparator<Product>()
 							{
@@ -94,6 +94,9 @@ public class CatalogServlet extends HttpServlet {
 									return -(new Integer(o1.getPrice()).compareTo(new Integer(o2.getPrice())));
 								}
 							});
+						}
+						else{
+							//Do Nothing
 						}
 					}
 					request.setAttribute("catalog", catalog);

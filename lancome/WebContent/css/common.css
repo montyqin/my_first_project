@@ -69,7 +69,7 @@ img {
 	top:28%;
 	z-index:90;
 	width:49%;
-	height:50%;
+	height:80%;
 	text-align:right;
 }
 .nav-top .btns > span{
@@ -267,6 +267,7 @@ ul.lancome-nav li {
 
 a:link.menuItem, a:visited.menuItem, a:active.menuItem {
 	float:left;
+	display:inline-block;
 	background-color:#000;
 	color:#fff;
 	width:25%;
@@ -275,7 +276,7 @@ a:link.menuItem, a:visited.menuItem, a:active.menuItem {
 	text-align:center;
 	font-size:16px;
 	font-weight:bold;
-	cursor:hand;
+	cursor:default;
 	text-decoration:none;
 }
 a:link.menuItemSel, a:visited.menuItemSel, a:active.menuItemSel {
@@ -341,8 +342,15 @@ a:link.menuItemSel, a:visited.menuItemSel, a:active.menuItemSel {
 .clear {
 	clear:left;
 }
-.txtcenter {
+.txtcenter,.rmbcenter{
 	text-align:center;
+	height:40px;
+	line-height:20px;
+	overflow-y:hidden;
+}
+
+.rmbcenter{
+	height:20px;
 }
 .admessage {
 	color:#ff0000;

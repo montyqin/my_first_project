@@ -460,6 +460,9 @@ public class ConfigUtil {
 				tmpCatalog.setName(tmpObj.getString("name"));
 				tmpCatalog.setImg(tmpObj.getString("img"));
 				tmpCatalog.setLink(tmpObj.getString("link"));
+				if(tmpObj.has("ids")){
+				    tmpCatalog.setIds(tmpObj.getString("ids"));
+				}
 				tmpCatalog.setLevel(0);
 				if (tmpObj.has("subCategory")) {
 					JSONObject tmpCategory = null;

@@ -10,7 +10,7 @@
 	String contextPath = request.getContextPath();
 	
     String adText ="手机官网购物既有机会体验科颜氏明星四宝旅行装";
-    String adUrl = "http://v.0nk.cn/kiehls/ext/fourb.html";
+    String adUrl = "http://m.kiehls.com.cn/kiehls/ext/fourb.html";
    
 	List list = new ArrayList();
 	
@@ -115,35 +115,49 @@
 				  <ul>	
 					<c:forEach items="${categories}" var="item">
 					<li class="crow level1" >
-						<div id="first_item" class="crow_row" onclick="openSubCategory(this)">
-							<div class="crow_title">
-								<span>
-									${item.name}
-								</span>
-							</div>
-							<div class="crow_arrow"></div>
+						<div id="first_item" class="crow_row" onclick="openSubCategory(this)">							
+						   <c:choose>
+		                       <c:when test="${!empty item.subCategory}">
+		                           <div class="crow_title">
+									<span>
+										${item.name}
+									</span>
+									</div>
+							   </c:when>
+							   <c:otherwise>
+							      <a class="crow_title_a" href="<%=contextPath%>/catalog/${item.id}">${item.name}</a>
+							   </c:otherwise>
+						   </c:choose>
+							<c:if test="${!empty item.subCategory}">
+							    <div class="crow_arrow"></div>
+							</c:if>
 							<div>
 								&nbsp;
 							</div>
-						</div>			
-						<ul class="clist clist_sub" style="opacity: 1; display: none;">
-							<li class="crow level2">				
-								<div class="crow_row_2">     
-								   <c:forEach items="${item.subCategory}" var="subitem">					
-									<div class="crow_item">
-										<a href="<%=contextPath%>/catalog/${subitem.id}">${subitem.name}</a>
-									</div>						
-								  </c:forEach>
-								</div>
-							</li>
-						</ul>
-					</li>
+						</div>
+						<c:if test="${!empty item.subCategory}">
+								<ul class="clist clist_sub" style="opacity: 1; display: none;">
+									<li class="crow level2">
+										<div class="crow_row_2">
+											<c:forEach items="${item.subCategory}" var="subitem">
+												<div class="crow_item">
+													<a href="<%=contextPath%>/catalog/${subitem.id}">${subitem.name}</a>
+												</div>
+											</c:forEach>
+										</div>
+									</li>
+								</ul>
+							</c:if>
+						</li>
 					</c:forEach>
 				</ul>
 			</div>
+ 
+	    <img src="<%=contextPath%>/img/ui/bottom.png" style="width:100%" />	
+
 			<%@include file="subscribe.jsp" %>
-		</article>	
-		<img src="<%=contextPath%>/img/ui/bottom.jpg" style="width:100%" />	
+		</article>
+		
        <jsp:include page="common-footer.jsp"></jsp:include>		
 	</section>
 <script src="<%=contextPath%>/js/jquery-1.9.1.min.js"></script>
@@ -180,6 +194,12 @@
 	});		
 
 	$("#lancome-menu-right").css("display","none");
+
+	$('.crow_title_a').each(function(){
+		if($(this).html()=="十大明星产品"){
+			$(this).attr("href","<%=contextPath%>/ext/top10.html");
+		}
+	})
 	
 </script>
 

@@ -32,6 +32,10 @@ String menuItem = (String) request.getSession().getAttribute("menuItem");
 	<ul class="lancome-nav">
 		<li><a href="<%=contextPath%>/index.jsp">首页</a></li>
 		<c:choose>
+		    <c:when test="${catalog.level==0}">				
+				<div class="nav"></div>
+				<li>${catalog.name}</li>
+			</c:when>
 			<c:when test="${catalog.level==1}">
 				<div class="nav"></div>
 				<li><a href="<%=contextPath%>/index.jsp">浏览产品</a></li>
