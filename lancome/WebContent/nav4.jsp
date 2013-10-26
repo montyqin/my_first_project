@@ -59,7 +59,14 @@ html,body {
 	        		<div class="catalog-list">
 	        			<div class="catalog-img"><img src="${item.imgs}" onclick="showinfo('${item.cid}','${item.id}')"/></div>
 	        			<div class="txtcenter">${item.name}</div>
-	        			<div class="txtcenter">RMB ${item.price}</div>
+	        			<div class="txtcenter">
+	        				<c:if test="${!empty item.capacity}">
+	        					￥ ${item.price}/${item.capacity}
+	        				</c:if>
+	        				<c:if test="${empty item.capacity}">
+	        					￥ ${item.price}
+	        				</c:if>
+	        			</div>
 	        			<div class="product-contain">
 	        				<div class="product-moreinfo" onclick="showinfo('${item.cid}','${item.id}')">详情</div>
 	        				<div class="product-purchase">购买<!-- purchase: item.id --></div>
@@ -183,7 +190,8 @@ html,body {
 					html += '<div class="catalog-list" style="margin-left:5%;">';
 					html += '<div class="catalog-img"><img src="' + p.imgs + '" onclick="showinfo(\"' + p.cid + '\",\"' + p.id + '\")"/></div>';
 					html += '<div class="txtcenter">' + p.name + '</div>';
-	    			html += '<div class="txtcenter">RMB ' + p.price + '</div>';
+					var priceDetail = (p.capacity.length > 0) ? ('￥ ' + p.price + '/' + p.capacity) : ('￥ ' + p.price);
+	    			html += '<div class="txtcenter">' + priceDetail + '</div>';
 	    			html += '<div class="product-contain">';
 	   				html += '<div class="product-moreinfo" onclick="showinfo(\"' + p.cid + '\",\"' + p.id + '\")">详情</div>';
 	   				html += '<div class="product-purchase" style="margin-left:5%;">购买</div>';

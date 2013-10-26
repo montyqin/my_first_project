@@ -47,7 +47,7 @@
 							<c:when test="${!empty p.products}">
 								<c:choose>
 								<c:when test="${p.classify eq 'color' }">
-									<div class="price" style="height:auto"><span style="display:block" name="price-txt">RMB ${p.products[0].price}</span>
+									<div class="price" style="height:auto"><span style="display:block" name="price-txt">￥ ${p.products[0].price}</span>
 										<a class="select" style="width:110px;" href="javascript:void(0)">
 											<select data-pid="${p.id}" name="selProductsColor">
 												<c:forEach items="${p.products}" var="subP">
@@ -59,7 +59,7 @@
 									</div>
 								</c:when>
 								<c:when test="${p.classify eq 'capacity'}">
-									<div class="price" style="height:auto"><span style="display:block" name="price-txt">RMB ${p.products[0].price}</span>
+									<div class="price" style="height:auto"><span style="display:block" name="price-txt">￥ ${p.products[0].price}</span>
 										<a class="select" href="javascript:void(0)">
 											<select data-pid="${p.id}" name="selProducts">
 												<c:forEach items="${p.products}" var="subP">
@@ -75,7 +75,7 @@
 								</c:choose>
 							</c:when>
 							<c:otherwise>
-								<div class="price">RMB ${p.price}</div>
+								<div class="price">￥ ${p.price}</div>
 							</c:otherwise>
 						</c:choose>
 						<div style="margin-top:15px;">
@@ -202,7 +202,7 @@
 				var $me = $(this);
 				if($me.attr('name')==='selProducts'){
 					var $option = $me.children('option:selected');
-					$me.parent().parent().find('span[name="price-txt"]').empty().html('RMB '+$option.data('price'));
+					$me.parent().parent().find('span[name="price-txt"]').empty().html('￥ '+$option.data('price'));
 					$me.parent().parent().parent().find('a[pid]').attr('pid',$option.val());
 					$me.parent().children('span').empty().html($option.text());
 					
@@ -211,7 +211,7 @@
 					$option = null;
 				}else if($me.attr('name')==='selProductsColor'){
 					var $option = $me.children('option:selected');
-					$me.parent().parent().find('span[name="price-txt"]').empty().html('RMB '+$option.data('price'));
+					$me.parent().parent().find('span[name="price-txt"]').empty().html('￥ '+$option.data('price'));
 					$me.parent().parent().parent().find('a[pid]').attr('pid',$option.val());
 					$me.parent().children('span').empty().html('<span class="product-color" style="background-color:'+$option.data('rgb')+'}"></span>'+$option.text());
 					

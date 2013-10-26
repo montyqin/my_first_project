@@ -48,7 +48,14 @@
 	        		<div class="catalog-list">
 	        			<div class="catalog-img"><img src="${item.imgs}" onclick="showinfo('${item.cid}','${item.id}')"/></div>
 	        			<div class="txtcenter">${item.name}</div>
-	        			<div class="txtcenter">RMB ${item.price}</div>
+	        			<div class="txtcenter">
+	        				<c:if test="${!empty item.capacity}">
+	        					￥ ${item.price}/${item.capacity}
+	        				</c:if>
+	        				<c:if test="${empty item.capacity}">
+	        					￥ ${item.price}
+	        				</c:if>
+	        			</div>
 	        			<div class="product-contain">
 	        				<div class="product-moreinfo" onclick="showinfo('${item.cid}','${item.id}')">详情</div>
 	        				<div class="product-purchase" pid="${item.id}" onclick="buynow(this)">购买</div>

@@ -303,6 +303,22 @@ public class ConfigUtil {
 						}
 					}
 					p.setPrice(price);
+					String capacity = "";
+					if (jsonObj.has("capacity"))
+						capacity = jsonObj.getString("capacity");
+					if (StringUtils.isEmpty(capacity))
+					{
+						JSONArray jsonArr = jsonObj.getJSONArray("products");
+						if (jsonArr != null && jsonArr.length() > 0)
+						{
+							JSONObject product = jsonArr.getJSONObject(0);
+							if (product != null)
+							{
+								capacity = product.getString("capacity");
+							}
+						}
+					}
+					p.setCapacity(capacity);
 					p.setIngredient(jsonObj.getString("ingredient"));
 					p.setGuide(jsonObj.getString("guide"));
 					String tmpImgs = jsonObj.getString("imgs");

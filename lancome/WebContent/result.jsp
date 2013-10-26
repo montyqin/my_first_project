@@ -7,7 +7,8 @@
 		"cid":"${item.cid}",
 		"name":"${item.name}",
 		"price":"${item.price}",
-		"imgs":"${item.imgs}"
+		"imgs":"${item.imgs}",
+		"capacity":"${item.capacity}"
 	}<c:if test="${!i.last}">,</c:if>
 	</c:forEach>
 ]
